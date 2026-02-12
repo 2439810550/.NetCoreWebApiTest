@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "day1.Controllers.TestController",
+    "Method": "Login",
+    "RelativePath": "api/Test/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createUserDTO",
+        "Type": "day1.DTOs.CreateUserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "day1.Controllers.TestController",
     "Method": "GetUserAll",
     "RelativePath": "api/Test/user",
     "HttpMethod": "GET",

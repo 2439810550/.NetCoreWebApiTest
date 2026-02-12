@@ -10,5 +10,7 @@ namespace day1.Services
         User CreateUser(DTOs.CreateUserDTO createUserDto);
 
         User? GetById(int id);
+
+        User Login(DTOs.CreateUserDTO createUserDTO);
     }
 }

@@ -19,15 +19,17 @@ namespace day1.Repositories
         {
             return _context.Users.FirstOrDefault(u => u.Id == id);
         }
-
         public List<User> GetAllUsers()
         {
             return _context.Users.ToList();
         }
-
         public bool ExctisUserName(string userName)
         {
             return _context.Users.Any(u => u.UserName == userName);
+        }
+        public User? GetByUserName(string UserName)
+        {
+            return _context.Users.FirstOrDefault(u => u.UserName==UserName);
         }
     }
 }

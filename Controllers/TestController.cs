@@ -25,9 +25,15 @@ namespace day1.Controllers
         [HttpPost("user")]
         public IActionResult AddUser(DTOs.CreateUserDTO createUserDTO)
         {
-            var user = _userService.CreateUser(createUserDTO);
-            return Ok(user);
-
+            try
+            {
+                var user = _userService.CreateUser(createUserDTO);
+                return Ok(ApiResult.Ok(user));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ApiResult.Fail(ex.Message));
+            }
         }
         [HttpGet("id")]
         public IActionResult GetById(int id)
@@ -37,7 +43,18 @@ namespace day1.Controllers
             {
                 return NotFound();
             }
-            return Ok(user);
+            return Ok(ApiResult.Ok(user));
+        }
+
+        [HttpPost("login")]
+        public IActionResult Login(DTOs.CreateUserDTO createUserDTO)
+        {
+        var user=_userService.Login(createUserDTO);
+            if (user == null)
+            {
+                return BadRequest(ApiResult.Fail("用户名或密码错误"));
+            }
+            return Ok(ApiResult.Ok(user));
         }
     }
 }

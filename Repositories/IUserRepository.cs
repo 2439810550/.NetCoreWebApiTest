@@ -7,5 +7,7 @@ namespace day1.Repositories
         List<User> GetAllUsers();
         User? GetById(int id);
         bool ExctisUserName(string userName);
+
+        User? GetByUserName(string UserName);
     }
 }

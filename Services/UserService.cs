@@ -2,6 +2,8 @@
 using day1.Models;
 using day1.Repositories;
 using day1.DTOs;
+using day1.Day1Helper;
+using Microsoft.AspNetCore.Mvc.Routing;
 
 namespace day1.Services
 {
@@ -30,7 +32,7 @@ namespace day1.Services
             var user = new User
             {
                 UserName = createUserDto.UserName,
-                PassWord = createUserDto.PassWord, // 后面我们会加密
+                PassWord = PasswordHelper.HashPassword(createUserDto.PassWord), // 后面我们会加密
                 CreateTime = DateTime.Now
             };
 
@@ -52,6 +54,19 @@ namespace day1.Services
         public User? GetById(int id)
         {
             return _userRepository.GetById(id);
+        }
+
+        public User Login(DTOs.CreateUserDTO createUserDTO)
+        {
+           var user= _userRepository.GetByUserName(createUserDTO.UserName);
+            if (user is null)
+                throw new Exception("用户名或密码错误");
+
+            bool Success = PasswordHelper.VerifyPassword(createUserDTO.PassWord,user.PassWord);
+            if (!Success)
+                throw new Exception("用户名或密码错误");
+
+            return user;
         }
     }
 }
