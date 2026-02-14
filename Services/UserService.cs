@@ -4,6 +4,10 @@ using day1.Repositories;
 using day1.DTOs;
 using day1.Day1Helper;
 using Microsoft.AspNetCore.Mvc.Routing;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using Microsoft.Extensions.Configuration.UserSecrets;
 
 namespace day1.Services
 {
@@ -56,7 +60,7 @@ namespace day1.Services
             return _userRepository.GetById(id);
         }
 
-        public User Login(DTOs.CreateUserDTO createUserDTO)
+        public LoginResponseDto Login(DTOs.CreateUserDTO createUserDTO)
         {
            var user= _userRepository.GetByUserName(createUserDTO.UserName);
             if (user is null)
@@ -65,8 +69,29 @@ namespace day1.Services
             bool Success = PasswordHelper.VerifyPassword(createUserDTO.PassWord,user.PassWord);
             if (!Success)
                 throw new Exception("用户名或密码错误");
-
-            return user;
+            var token=CreatJwtToken(user);
+            return new LoginResponseDto
+            {
+                Id=user.Id,
+                UserName = user.UserName,
+                Token = token
+            };
         }
+        public string CreatJwtToken(User user) 
+        {
+           var key=new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("ThisIsMySuperSecretKey1234567890123456"));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var token = new System.IdentityModel.Tokens.Jwt.JwtSecurityToken(
+                claims: new[]
+                {
+                    new System.Security.Claims.Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
+                    new System.Security.Claims.Claim(ClaimTypes.Name,user.UserName)
+                },
+                expires: DateTime.Now.AddHours(2),
+                signingCredentials: creds
+            );
+            return new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler().WriteToken(token);
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using day1.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,7 +15,7 @@ namespace day1.Controllers
         {
             _userService = userService;
         }
-
+        [Authorize]
         [HttpGet("user")]
         public IActionResult GetUserAll()
         {
