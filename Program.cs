@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using day1.Middlewares;
+using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 var key=Encoding.UTF8.GetBytes("ThisIsMySuperSecretKey1234567890123456");
 builder.Services.AddScoped<IUserService, UserService>();
@@ -64,7 +66,11 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 });
-
+builder.Host.UseSerilog((context, config) =>
+{
+    config.WriteTo.Console();
+    config.WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day);
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -73,6 +79,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 

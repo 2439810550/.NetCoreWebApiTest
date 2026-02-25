@@ -1,4 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
+using day1.Common;
+using day1.Models;
 using day1.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -20,7 +22,7 @@ namespace day1.Controllers
         public IActionResult GetUserAll()
         {
             var users = _userService.GetAllUsers();
-            return Ok(users);
+            return Ok(ApiResponse<List<User>>.SuccessResponse(users));
         }
 
         [HttpPost("user")]
@@ -29,7 +31,7 @@ namespace day1.Controllers
             try
             {
                 var user = _userService.CreateUser(createUserDTO);
-                return Ok(ApiResult.Ok(user));
+                return Ok(ApiResponse<User>.SuccessResponse(user));
             }
             catch (Exception ex)
             {
@@ -44,18 +46,32 @@ namespace day1.Controllers
             {
                 return NotFound();
             }
-            return Ok(ApiResult.Ok(user));
+            return Ok(ApiResponse<User>.SuccessResponse(user));
         }
 
         [HttpPost("login")]
         public IActionResult Login(DTOs.CreateUserDTO createUserDTO)
         {
-        var user=_userService.Login(createUserDTO);
+            var user = _userService.Login(createUserDTO);
             if (user == null)
             {
                 return BadRequest(ApiResult.Fail("用户名或密码错误"));
             }
-            return Ok(ApiResult.Ok(user));
+            return Ok(ApiResponse<DTOs.LoginResponseDto>.SuccessResponse(user));
+        }
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("DeleteByUserName")]
+        public IActionResult DeleteByUserName(string username)
+        {
+            try
+            {
+                _userService.DeleteByUserName(username);
+                return Ok(ApiResponse<object>.SuccessResponse("删除成功"));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ApiResult.Fail(ex.Message));
+            }
         }
     }
 }

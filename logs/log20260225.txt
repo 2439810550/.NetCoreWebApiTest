@@ -1,0 +1,26 @@
+2026-02-25 16:11:24.748 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-25 16:11:25.106 +08:00 [INF] Now listening on: http://localhost:5272
+2026-02-25 16:11:25.432 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-25 16:11:25.433 +08:00 [INF] Hosting environment: Development
+2026-02-25 16:11:25.434 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-02-25 16:11:26.705 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-02-25 16:11:27.021 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 330.5997ms
+2026-02-25 16:11:27.027 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-25 16:11:27.027 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-02-25 16:11:27.031 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 4.3173ms
+2026-02-25 16:11:27.093 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 66.4025ms
+2026-02-25 16:11:27.129 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-02-25 16:11:27.141 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 11.7528ms
+2026-02-25 16:13:18.890 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-25 16:13:19.090 +08:00 [INF] Now listening on: http://localhost:5272
+2026-02-25 16:13:19.165 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-25 16:13:19.167 +08:00 [INF] Hosting environment: Development
+2026-02-25 16:13:19.168 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-02-25 16:13:20.402 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-02-25 16:13:20.694 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 304.8946ms
+2026-02-25 16:13:20.711 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-02-25 16:13:20.714 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-25 16:13:20.721 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 6.7151ms
+2026-02-25 16:13:20.738 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.4287ms
+2026-02-25 16:13:20.803 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-02-25 16:13:20.814 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.287ms

@@ -99,6 +99,27 @@
         }
       }
     },
+    "/api/Test/DeleteByUserName": {
+      "delete": {
+        "tags": [
+          "Test"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [

@@ -7,6 +7,8 @@
 
         public string PassWord { get; set; }
 
+        public string Role { get; set; } = "User";
+
         public DateTime CreateTime { get; set; }
     }
 }

@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "day1.Controllers.TestController",
+    "Method": "DeleteByUserName",
+    "RelativePath": "api/Test/DeleteByUserName",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "username",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "day1.Controllers.TestController",
     "Method": "GetById",
     "RelativePath": "api/Test/id",
     "HttpMethod": "GET",

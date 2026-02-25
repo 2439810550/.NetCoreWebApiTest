@@ -13,5 +13,7 @@ namespace day1.Services
 
         DTOs.LoginResponseDto Login(DTOs.CreateUserDTO createUserDTO);
 
+        void DeleteByUserName(string username);
+
     }
 }

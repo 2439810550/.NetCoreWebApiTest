@@ -1,5 +1,6 @@
 ﻿using day1.Data;
 using day1.Models;
+using Microsoft.EntityFrameworkCore;
 namespace day1.Repositories
 {
     public class UserRepository : IUserRepository
@@ -30,6 +31,11 @@ namespace day1.Repositories
         public User? GetByUserName(string UserName)
         {
             return _context.Users.FirstOrDefault(u => u.UserName==UserName);
+        }
+
+        public int DeleteByUserName(string username)
+        {
+            return _context.Users.Where(u=>u.UserName==username).ExecuteDelete();
         }
     }
 }

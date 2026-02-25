@@ -1,4 +1,5 @@
 ﻿using day1.Models;
+using Microsoft.AspNetCore.Routing.Constraints;
 namespace day1.Repositories
 {
     public interface IUserRepository
@@ -9,5 +10,7 @@ namespace day1.Repositories
         bool ExctisUserName(string userName);
 
         User? GetByUserName(string UserName);
+
+        int DeleteByUserName(string username);
     }
 }

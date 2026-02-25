@@ -85,7 +85,8 @@ namespace day1.Services
                 claims: new[]
                 {
                     new System.Security.Claims.Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
-                    new System.Security.Claims.Claim(ClaimTypes.Name,user.UserName)
+                    new System.Security.Claims.Claim(ClaimTypes.Name,user.UserName),
+                    new System.Security.Claims.Claim(ClaimTypes.Role,user.Role)
                 },
                 expires: DateTime.Now.AddHours(2),
                 signingCredentials: creds
@@ -93,5 +94,18 @@ namespace day1.Services
             return new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler().WriteToken(token);
         }
 
+        public void DeleteByUserName(string username)
+        {
+          var user= _userRepository.GetByUserName(username);
+            if (user==null)
+            {
+                throw new KeyNotFoundException("用户不存在");
+            }
+            if (user.Role == "Admin") 
+            {
+                throw new Exception("管理员用户不能被删除");
+            }
+            _userRepository.DeleteByUserName(username);
+        }
     }
 }
