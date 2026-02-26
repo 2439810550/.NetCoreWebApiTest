@@ -99,6 +99,27 @@
         }
       }
     },
+    "/api/Test/refresh": {
+      "post": {
+        "tags": [
+          "Test"
+        ],
+        "parameters": [
+          {
+            "name": "refreshtoken",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Test/DeleteByUserName": {
       "delete": {
         "tags": [

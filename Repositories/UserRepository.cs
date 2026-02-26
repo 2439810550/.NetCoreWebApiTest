@@ -37,5 +37,16 @@ namespace day1.Repositories
         {
             return _context.Users.Where(u=>u.UserName==username).ExecuteDelete();
         }
+
+        public void UpdateUser(User user)
+        {
+            _context.Update(user);
+            _context.SaveChanges();
+        }
+
+        public User? GetByRefreshToken(string refreshToken)
+        {
+            return _context.Users.FirstOrDefault(u => u.RefreshToken == refreshToken);
+        }
     }
 }

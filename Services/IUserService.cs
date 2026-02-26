@@ -15,5 +15,8 @@ namespace day1.Services
 
         void DeleteByUserName(string username);
 
+        DTOs.LoginResponseDto RefreshToken(string refreshToken);
+
+
     }
 }

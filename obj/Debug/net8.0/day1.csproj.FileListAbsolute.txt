@@ -27,7 +27,6 @@ D:\1\projectExcel\day1\obj\Debug\net8.0\staticwebassets\msbuild.build.day1.props
 D:\1\projectExcel\day1\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.day1.props
 D:\1\projectExcel\day1\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.day1.props
 D:\1\projectExcel\day1\obj\Debug\net8.0\staticwebassets.pack.json
-D:\1\projectExcel\day1\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\1\projectExcel\day1\obj\Debug\net8.0\day1.csproj.Up2Date
 D:\1\projectExcel\day1\obj\Debug\net8.0\day1.dll
 D:\1\projectExcel\day1\obj\Debug\net8.0\refint\day1.dll
@@ -172,3 +171,4 @@ D:\1\projectExcel\day1\bin\Debug\net8.0\System.IO.Pipelines.dll
 D:\1\projectExcel\day1\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 D:\1\projectExcel\day1\bin\Debug\net8.0\System.Text.Json.dll
 D:\1\projectExcel\day1\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\1\projectExcel\day1\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

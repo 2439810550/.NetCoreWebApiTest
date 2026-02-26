@@ -1,0 +1,257 @@
+2026-02-26 09:43:19.558 +08:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-02-26 09:43:19.616 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-02-26 09:43:19.617 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-02-26 09:43:19.618 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-02-26 09:43:19.640 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-02-26 09:43:19.652 +08:00 [INF] Applying migration '20260226014312_AddRefreshToken'.
+2026-02-26 09:43:19.702 +08:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] ADD [RefreshToken] nvarchar(max) NULL;
+2026-02-26 09:43:19.703 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] ADD [RefreshTokenExpiryTime] datetime2 NULL;
+2026-02-26 09:43:19.708 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260226014312_AddRefreshToken', N'8.0.23');
+2026-02-26 10:37:28.837 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-26 10:37:29.208 +08:00 [INF] Now listening on: http://localhost:5272
+2026-02-26 10:37:29.308 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-26 10:37:29.309 +08:00 [INF] Hosting environment: Development
+2026-02-26 10:37:29.310 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-02-26 10:37:31.897 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-02-26 10:37:32.339 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 455.723ms
+2026-02-26 10:37:32.354 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-26 10:37:32.359 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 5.0063ms
+2026-02-26 10:37:32.365 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-02-26 10:37:32.445 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 79.51ms
+2026-02-26 10:37:32.509 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-02-26 10:37:32.526 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 16.9235ms
+2026-02-26 10:37:58.851 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 59
+2026-02-26 10:37:58.938 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 10:37:58.966 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-02-26 10:37:59.368 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-02-26 10:38:00.472 +08:00 [INF] Executed DbCommand (75ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-02-26 10:38:00.990 +08:00 [INF] Executed DbCommand (44ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [PassWord] = @p1, [RefreshToken] = @p2, [RefreshTokenExpiryTime] = @p3, [Role] = @p4, [UserName] = @p5
+OUTPUT 1
+WHERE [Id] = @p6;
+2026-02-26 10:38:01.000 +08:00 [INF] Executed action method day1.Controllers.TestController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1627.931ms.
+2026-02-26 10:38:01.007 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.LoginResponseDto, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 10:38:01.014 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 2044.3023ms
+2026-02-26 10:38:01.015 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 10:38:01.020 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 200 null application/json; charset=utf-8 2169.2269ms
+2026-02-26 10:39:10.653 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/refresh?refreshtoken=81e844a7-67dd-4b61-a59f-8d9a14b5b517 - null 0
+2026-02-26 10:39:10.698 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.ReFresh (day1)'
+2026-02-26 10:39:10.702 +08:00 [INF] Route matched with {action = "ReFresh", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ReFresh(System.String) on controller day1.Controllers.TestController (day1).
+2026-02-26 10:39:10.722 +08:00 [INF] Executing action method day1.Controllers.TestController.ReFresh (day1) - Validation state: "Valid"
+2026-02-26 10:39:10.766 +08:00 [INF] Executed DbCommand (24ms) [Parameters=[@__refreshToken_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[RefreshToken] = @__refreshToken_0
+2026-02-26 10:39:10.772 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [PassWord] = @p1, [RefreshToken] = @p2, [RefreshTokenExpiryTime] = @p3, [Role] = @p4, [UserName] = @p5
+OUTPUT 1
+WHERE [Id] = @p6;
+2026-02-26 10:39:10.774 +08:00 [INF] Executed action method day1.Controllers.TestController.ReFresh (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 50.9613ms.
+2026-02-26 10:39:10.775 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.LoginResponseDto, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 10:39:10.777 +08:00 [INF] Executed action day1.Controllers.TestController.ReFresh (day1) in 73.8305ms
+2026-02-26 10:39:10.778 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.ReFresh (day1)'
+2026-02-26 10:39:10.779 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/refresh?refreshtoken=81e844a7-67dd-4b61-a59f-8d9a14b5b517 - 200 null application/json; charset=utf-8 127.0614ms
+2026-02-26 11:15:26.584 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-26 11:15:26.933 +08:00 [INF] Now listening on: http://localhost:5272
+2026-02-26 11:15:27.308 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-26 11:15:27.310 +08:00 [INF] Hosting environment: Development
+2026-02-26 11:15:27.310 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-02-26 11:15:28.091 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-02-26 11:15:28.439 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 358.576ms
+2026-02-26 11:15:28.460 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-26 11:15:28.464 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 4.4868ms
+2026-02-26 11:15:28.468 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-02-26 11:15:28.507 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.4801ms
+2026-02-26 11:15:28.550 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-02-26 11:15:28.559 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.1377ms
+2026-02-26 11:15:54.031 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 59
+2026-02-26 11:15:54.097 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 11:15:54.125 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-02-26 11:15:54.426 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-02-26 11:15:55.504 +08:00 [INF] Executed DbCommand (107ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-02-26 11:15:55.962 +08:00 [INF] Executed DbCommand (13ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [PassWord] = @p1, [RefreshToken] = @p2, [RefreshTokenExpiryTime] = @p3, [Role] = @p4, [UserName] = @p5
+OUTPUT 1
+WHERE [Id] = @p6;
+2026-02-26 11:15:55.972 +08:00 [INF] Executed action method day1.Controllers.TestController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1541.8751ms.
+2026-02-26 11:15:55.977 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.LoginResponseDto, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 11:15:55.984 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 1854.1656ms
+2026-02-26 11:15:55.984 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 11:15:55.990 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 200 null application/json; charset=utf-8 1959.0319ms
+2026-02-26 11:34:23.417 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-26 11:34:23.716 +08:00 [INF] Now listening on: http://localhost:5272
+2026-02-26 11:34:23.798 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-26 11:34:23.799 +08:00 [INF] Hosting environment: Development
+2026-02-26 11:34:23.801 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-02-26 11:34:24.483 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-02-26 11:34:24.709 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 233.2289ms
+2026-02-26 11:34:24.714 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-26 11:34:24.717 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 3.1366ms
+2026-02-26 11:34:24.722 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-02-26 11:34:24.750 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.9257ms
+2026-02-26 11:34:24.793 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-02-26 11:34:24.801 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 7.9391ms
+2026-02-26 14:41:25.828 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-26 14:41:26.189 +08:00 [INF] Now listening on: http://localhost:5272
+2026-02-26 14:41:26.478 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-26 14:41:26.479 +08:00 [INF] Hosting environment: Development
+2026-02-26 14:41:26.479 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-02-26 14:41:27.592 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-02-26 14:41:27.928 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 347.4986ms
+2026-02-26 14:41:27.935 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-02-26 14:41:27.939 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-26 14:41:27.944 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 4.9604ms
+2026-02-26 14:41:27.992 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 58.0084ms
+2026-02-26 14:41:28.030 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-02-26 14:41:28.043 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 12.1445ms
+2026-02-26 14:42:56.784 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 50
+2026-02-26 14:42:56.859 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 14:42:56.887 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-02-26 14:42:57.152 +08:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-02-26 14:42:57.174 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 283.1825ms
+2026-02-26 14:42:57.175 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 14:42:57.177 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 400 null application/problem+json; charset=utf-8 392.3404ms
+2026-02-26 14:44:12.286 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 50
+2026-02-26 14:44:12.294 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 14:44:12.338 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-02-26 14:44:12.348 +08:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-02-26 14:44:12.349 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 8.1827ms
+2026-02-26 14:44:12.349 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 14:44:12.350 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 400 null application/problem+json; charset=utf-8 63.8285ms
+2026-02-26 14:44:23.729 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-26 14:44:23.969 +08:00 [INF] Now listening on: http://localhost:5272
+2026-02-26 14:44:24.083 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-26 14:44:24.086 +08:00 [INF] Hosting environment: Development
+2026-02-26 14:44:24.087 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-02-26 14:44:24.485 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-02-26 14:44:24.740 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 268.2245ms
+2026-02-26 14:44:24.745 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-26 14:44:24.747 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-02-26 14:44:24.749 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 4.6275ms
+2026-02-26 14:44:24.780 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.8713ms
+2026-02-26 14:44:24.835 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-02-26 14:44:24.844 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.995ms
+2026-02-26 14:44:30.903 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/user - null null
+2026-02-26 14:44:30.961 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-26 14:44:30.965 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-26 14:44:30.965 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Test/user - 401 0 null 62.6901ms
+2026-02-26 14:44:40.624 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 50
+2026-02-26 14:44:40.629 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 14:44:40.648 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-02-26 14:44:40.808 +08:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-02-26 14:44:40.826 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 174.3054ms
+2026-02-26 14:44:40.827 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 14:44:40.828 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 400 null application/problem+json; charset=utf-8 204.3884ms
+2026-02-26 14:46:33.762 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-26 14:46:33.981 +08:00 [INF] Now listening on: http://localhost:5272
+2026-02-26 14:46:34.083 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-26 14:46:34.084 +08:00 [INF] Hosting environment: Development
+2026-02-26 14:46:34.085 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-02-26 14:46:34.541 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-02-26 14:46:34.798 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 265.1914ms
+2026-02-26 14:46:34.803 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-02-26 14:46:34.804 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-26 14:46:34.809 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 5.2753ms
+2026-02-26 14:46:34.830 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.5964ms
+2026-02-26 14:46:34.877 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-02-26 14:46:34.886 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.2378ms
+2026-02-26 14:46:40.880 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 50
+2026-02-26 14:46:40.930 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 14:46:40.948 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-02-26 14:46:41.105 +08:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-02-26 14:46:41.123 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 172.4246ms
+2026-02-26 14:46:41.124 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 14:46:41.126 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 400 null application/problem+json; charset=utf-8 245.6247ms
+2026-02-26 14:47:04.007 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 53
+2026-02-26 14:47:04.011 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 14:47:04.018 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-02-26 14:47:04.071 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-02-26 14:47:18.737 +08:00 [INF] Executed DbCommand (56ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-02-26 14:47:27.228 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 23207.7584ms
+2026-02-26 14:47:27.231 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 14:47:35.157 +08:00 [WRN] 业务异常
+day1.Domain.BusinessException: 用户名或密码错误
+   at day1.Services.UserService.Login(CreateUserDTO createUserDTO) in D:\1\projectExcel\day1\Services\UserService.cs:line 65
+   at day1.Controllers.TestController.Login(CreateUserDTO createUserDTO) in D:\1\projectExcel\day1\Controllers\TestController.cs:line 48
+   at lambda_method2(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at day1.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\1\projectExcel\day1\Middlewares\ExceptionMiddleware.cs:line 22
+2026-02-26 14:48:48.340 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 400 null application/json; charset=utf-8 104332.7ms
+2026-02-26 14:50:52.083 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 38
+2026-02-26 14:50:52.087 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 14:50:52.087 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-02-26 14:50:52.093 +08:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-02-26 14:50:52.093 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 5.1941ms
+2026-02-26 14:50:52.099 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 14:50:52.100 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 400 null application/problem+json; charset=utf-8 47.8043ms
+2026-02-26 16:47:05.013 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-26 16:47:05.372 +08:00 [INF] Now listening on: http://localhost:5272
+2026-02-26 16:47:05.622 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-26 16:47:05.623 +08:00 [INF] Hosting environment: Development
+2026-02-26 16:47:05.623 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-02-26 16:47:06.677 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-02-26 16:47:07.031 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 368.2236ms
+2026-02-26 16:47:07.055 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-26 16:47:07.058 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 3.6428ms
+2026-02-26 16:47:07.064 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-02-26 16:47:07.099 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.5726ms
+2026-02-26 16:47:07.163 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-02-26 16:47:07.174 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 11.1019ms
+2026-02-26 16:47:26.275 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 59
+2026-02-26 16:47:26.346 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 16:47:26.374 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-02-26 16:47:26.682 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-02-26 16:47:31.265 +08:00 [INF] Executed DbCommand (92ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-02-26 16:47:35.974 +08:00 [INF] Executed DbCommand (29ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [PassWord] = @p1, [RefreshToken] = @p2, [RefreshTokenExpiryTime] = @p3, [Role] = @p4, [UserName] = @p5
+OUTPUT 1
+WHERE [Id] = @p6;
+2026-02-26 16:48:24.157 +08:00 [INF] Executed action method day1.Controllers.TestController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 57425.6486ms.
+2026-02-26 16:50:00.665 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-26 16:50:13.538 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 167160.434ms
+2026-02-26 16:50:13.540 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-02-26 16:50:26.415 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 200 null application/json; charset=utf-8 180140.1491ms

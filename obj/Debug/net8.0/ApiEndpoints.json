@@ -49,6 +49,22 @@
   },
   {
     "ContainingType": "day1.Controllers.TestController",
+    "Method": "ReFresh",
+    "RelativePath": "api/Test/refresh",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "refreshtoken",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "day1.Controllers.TestController",
     "Method": "GetUserAll",
     "RelativePath": "api/Test/user",
     "HttpMethod": "GET",

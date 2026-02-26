@@ -24,3 +24,21 @@
 2026-02-25 16:13:20.738 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.4287ms
 2026-02-25 16:13:20.803 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
 2026-02-25 16:13:20.814 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.287ms
+2026-02-25 16:40:06.394 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-25 16:40:06.591 +08:00 [INF] Now listening on: http://localhost:5000
+2026-02-25 16:40:06.594 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-25 16:40:06.594 +08:00 [INF] Hosting environment: Development
+2026-02-25 16:40:06.594 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-02-25 16:40:07.264 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2026-02-25 16:40:07.389 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 0 null 126.9281ms
+2026-02-25 16:40:07.395 +08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/, Response status code: 404
+2026-02-25 16:40:10.927 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2026-02-25 16:40:10.932 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 0 null 3.9765ms
+2026-02-25 16:40:10.933 +08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/, Response status code: 404
+2026-02-25 16:42:21.701 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-25 16:42:21.786 +08:00 [INF] Now listening on: http://localhost:5272
+2026-02-25 16:42:21.789 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-25 16:42:21.789 +08:00 [INF] Hosting environment: Development
+2026-02-25 16:42:21.790 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-02-25 16:42:57.102 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-02-25 16:42:57.202 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 100.7904ms

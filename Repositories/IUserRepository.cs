@@ -1,5 +1,6 @@
 ﻿using day1.Models;
 using Microsoft.AspNetCore.Routing.Constraints;
+using Microsoft.EntityFrameworkCore.Update.Internal;
 namespace day1.Repositories
 {
     public interface IUserRepository
@@ -12,5 +13,8 @@ namespace day1.Repositories
         User? GetByUserName(string UserName);
 
         int DeleteByUserName(string username);
+        void UpdateUser(User user);
+
+        User? GetByRefreshToken(string refreshToken);
     }
 }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using Microsoft.Extensions.Configuration.UserSecrets;
+using day1.Domain;
 
 namespace day1.Services
 {
@@ -31,17 +32,14 @@ namespace day1.Services
             var exct= _userRepository.ExctisUserName(createUserDto.UserName);
             if (exct)
             {
-                throw new Exception("用户名已存在");
+                throw new BusinessException(Domain.Enum.BusinessErrorCode.UserAlreadyExists,"用户名已存在");
             }
             var user = new User
             {
                 UserName = createUserDto.UserName,
-                PassWord = PasswordHelper.HashPassword(createUserDto.PassWord), // 后面我们会加密
+                PassWord = PasswordHelper.HashPassword(createUserDto.PassWord),
                 CreateTime = DateTime.Now
             };
-
-
-
             _userRepository.Add(user);  // ✅ 调用 Repository
             return user;
         }
@@ -64,12 +62,18 @@ namespace day1.Services
         {
            var user= _userRepository.GetByUserName(createUserDTO.UserName);
             if (user is null)
-                throw new Exception("用户名或密码错误");
+                throw new BusinessException(Domain.Enum.BusinessErrorCode.UserNameOrPasswordError,"用户名或密码错误");
 
             bool Success = PasswordHelper.VerifyPassword(createUserDTO.PassWord,user.PassWord);
             if (!Success)
-                throw new Exception("用户名或密码错误");
+                throw new BusinessException(Domain.Enum.BusinessErrorCode.UserNameOrPasswordError, "用户名或密码错误");
             var token=CreatJwtToken(user);
+            var refreshToken = Guid.NewGuid().ToString();
+
+            user.RefreshToken = refreshToken;
+            user.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
+
+            _userRepository.UpdateUser(user);
             return new LoginResponseDto
             {
                 Id=user.Id,
@@ -99,13 +103,32 @@ namespace day1.Services
           var user= _userRepository.GetByUserName(username);
             if (user==null)
             {
-                throw new KeyNotFoundException("用户不存在");
+                throw new BusinessException(Domain.Enum.BusinessErrorCode.UserNotFound,"用户不存在");
             }
             if (user.Role == "Admin") 
             {
-                throw new Exception("管理员用户不能被删除");
+                throw new BusinessException(Domain.Enum.BusinessErrorCode.NotDeleteAdminUser, "管理员用户不能被删除");
             }
             _userRepository.DeleteByUserName(username);
+        }
+
+        public LoginResponseDto RefreshToken(string refreshToken)
+        {
+            var user=_userRepository.GetByRefreshToken(refreshToken);
+            if (user == null || user.RefreshTokenExpiryTime < DateTime.Now) 
+            { 
+                throw new BusinessException(Domain.Enum.BusinessErrorCode.InvalidRefreshToken,"Token不存在或已过期");
+            };
+            var accesstoken= CreatJwtToken(user);
+            var newrefreshToken = Guid.NewGuid().ToString();
+            user.RefreshToken = newrefreshToken;
+            _userRepository.UpdateUser(user);
+            return new LoginResponseDto() 
+            {
+                Id = user.Id,
+                UserName = user.UserName,
+                Token = accesstoken,
+            };
         }
     }
 }

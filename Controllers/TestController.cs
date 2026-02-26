@@ -22,21 +22,14 @@ namespace day1.Controllers
         public IActionResult GetUserAll()
         {
             var users = _userService.GetAllUsers();
-            return Ok(ApiResponse<List<User>>.SuccessResponse(users));
+            return Ok(users);
         }
 
         [HttpPost("user")]
         public IActionResult AddUser(DTOs.CreateUserDTO createUserDTO)
         {
-            try
-            {
                 var user = _userService.CreateUser(createUserDTO);
-                return Ok(ApiResponse<User>.SuccessResponse(user));
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ApiResult.Fail(ex.Message));
-            }
+                return Ok(user);
         }
         [HttpGet("id")]
         public IActionResult GetById(int id)
@@ -46,32 +39,29 @@ namespace day1.Controllers
             {
                 return NotFound();
             }
-            return Ok(ApiResponse<User>.SuccessResponse(user));
+            return Ok(user);
         }
 
         [HttpPost("login")]
         public IActionResult Login(DTOs.CreateUserDTO createUserDTO)
         {
             var user = _userService.Login(createUserDTO);
-            if (user == null)
-            {
-                return BadRequest(ApiResult.Fail("用户名或密码错误"));
-            }
-            return Ok(ApiResponse<DTOs.LoginResponseDto>.SuccessResponse(user));
+            return Ok(user);
+        }
+
+        [HttpPost("refresh")]
+        [AllowAnonymous]
+        public IActionResult ReFresh(string refreshtoken) 
+        {
+                var result= _userService.RefreshToken(refreshtoken);
+                return Ok(result);
         }
         [Authorize(Roles = "Admin")]
         [HttpDelete("DeleteByUserName")]
         public IActionResult DeleteByUserName(string username)
         {
-            try
-            {
                 _userService.DeleteByUserName(username);
-                return Ok(ApiResponse<object>.SuccessResponse("删除成功"));
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ApiResult.Fail(ex.Message));
-            }
+                return Ok("删除成功!");
         }
     }
 }

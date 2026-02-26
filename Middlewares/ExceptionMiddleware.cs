@@ -1,30 +1,53 @@
 ﻿using System.Net;
 using System.Text.Json;
+using day1.Common;
+using day1.Domain;
 using Serilog;
 namespace day1.Middlewares
 {
     public class ExceptionMiddleware
     {
         private readonly RequestDelegate _next;
-        public ExceptionMiddleware(RequestDelegate next)
+        private readonly ILogger<ExceptionMiddleware> _logger;
+        public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger)
         {
             _next = next;
+            _logger = logger;
         }
-
+        /// <summary>
+        /// 全局异常处理中间件，捕获所有未处理的异常，并根据异常类型返回相应的 HTTP 状态码和错误信息。
+        /// </summary>
+        /// <param name="httpContext"></param>
+        /// <returns></returns>
         public async Task InvokeAsync(HttpContext httpContext)
         {
             try
             {
                 await _next(httpContext);
             }
+            catch (BusinessException ex)
+            {
+                _logger.LogWarning(ex, "业务异常");
+                httpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                httpContext.Response.ContentType = "application/json";
+                var response = new ApiResponse<object>
+                {
+                    Success = false,
+                    Code = ex.Code,
+                    Message = ex.Message
+                };
+                await httpContext.Response.WriteAsJsonAsync(response);
+            }
             catch (Exception ex)
             {
-                Log.Error(ex,"全局异常");
+                Log.Error(ex, "系统异常");
                 httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                 httpContext.Response.ContentType = "application/json";
-                var response = new 
-                {    success=false,
-                     message = ex.Message
+                var response = new ApiResponse<object>
+                { 
+                    Success = false,
+                    Message = ex.Message,
+                    Code=500
                 };
                 await httpContext.Response.WriteAsync(JsonSerializer.Serialize(response));
             }
