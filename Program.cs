@@ -11,6 +11,8 @@ using Microsoft.OpenApi.Models;
 using day1.Middlewares;
 using Serilog;
 using day1.Filter;
+using day1.Common;
+using day1.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 ///配置 JWT 认证服务
 var key =Encoding.UTF8.GetBytes("ThisIsMySuperSecretKey1234567890123456");
@@ -85,6 +87,7 @@ builder.Services.AddControllers(options =>
 {
     options.Filters.Add<ApiResponseFilter>();
 });
+builder.Services.AddSingleton<IDateTimeProvider,DateTimeProvider>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

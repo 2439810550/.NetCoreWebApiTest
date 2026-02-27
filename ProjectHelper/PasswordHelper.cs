@@ -1,5 +1,5 @@
 ﻿using BCrypt.Net;
-namespace day1.Day1Helper
+namespace day1.ProjectHelper
 {
     public class PasswordHelper
     {

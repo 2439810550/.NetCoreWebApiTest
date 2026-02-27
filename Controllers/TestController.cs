@@ -13,9 +13,11 @@ namespace day1.Controllers
     public class TestController : ControllerBase
     {
         private readonly IUserService _userService;
-        public TestController(IUserService userService)
+        private readonly ITokenService _tokenService;
+        public TestController(IUserService userService, ITokenService tokenService)
         {
             _userService = userService;
+            _tokenService = tokenService;
         }
         [Authorize]
         [HttpGet("user")]
@@ -53,7 +55,7 @@ namespace day1.Controllers
         [AllowAnonymous]
         public IActionResult ReFresh(string refreshtoken) 
         {
-                var result= _userService.RefreshToken(refreshtoken);
+                var result= _tokenService.RefreshToken(refreshtoken);
                 return Ok(result);
         }
         [Authorize(Roles = "Admin")]

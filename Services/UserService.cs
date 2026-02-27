@@ -2,22 +2,28 @@
 using day1.Models;
 using day1.Repositories;
 using day1.DTOs;
-using day1.Day1Helper;
+using day1.ProjectHelper;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using Microsoft.Extensions.Configuration.UserSecrets;
 using day1.Domain;
+using day1.Interfaces;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace day1.Services
 {
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
-        public UserService(IUserRepository userRepository)
+        private readonly ITokenService _tokenService;
+        private readonly IDateTimeProvider _dateTimeProvider;
+        public UserService(IUserRepository userRepository,ITokenService tokenService,IDateTimeProvider dateTimeProvider)
         {
             _userRepository = userRepository;
+            _tokenService = tokenService;
+            _dateTimeProvider = dateTimeProvider;
         }
 
         public List<User> GetAllUsers()
@@ -38,7 +44,7 @@ namespace day1.Services
             {
                 UserName = createUserDto.UserName,
                 PassWord = PasswordHelper.HashPassword(createUserDto.PassWord),
-                CreateTime = DateTime.Now
+                CreateTime =_dateTimeProvider.UtcNow
             };
             _userRepository.Add(user);  // ✅ 调用 Repository
             return user;
@@ -67,11 +73,11 @@ namespace day1.Services
             bool Success = PasswordHelper.VerifyPassword(createUserDTO.PassWord,user.PassWord);
             if (!Success)
                 throw new BusinessException(Domain.Enum.BusinessErrorCode.UserNameOrPasswordError, "用户名或密码错误");
-            var token=CreatJwtToken(user);
-            var refreshToken = Guid.NewGuid().ToString();
+            var token=_tokenService.CreateAccessToken(user);
+            var refreshToken =_tokenService.CreateRefreshToken();
 
             user.RefreshToken = refreshToken;
-            user.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
+            user.RefreshTokenExpiryTime =_dateTimeProvider.UtcNow.AddDays(7);
 
             _userRepository.UpdateUser(user);
             return new LoginResponseDto
@@ -80,22 +86,6 @@ namespace day1.Services
                 UserName = user.UserName,
                 Token = token
             };
-        }
-        public string CreatJwtToken(User user) 
-        {
-           var key=new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("ThisIsMySuperSecretKey1234567890123456"));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var token = new System.IdentityModel.Tokens.Jwt.JwtSecurityToken(
-                claims: new[]
-                {
-                    new System.Security.Claims.Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
-                    new System.Security.Claims.Claim(ClaimTypes.Name,user.UserName),
-                    new System.Security.Claims.Claim(ClaimTypes.Role,user.Role)
-                },
-                expires: DateTime.Now.AddHours(2),
-                signingCredentials: creds
-            );
-            return new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler().WriteToken(token);
         }
 
         public void DeleteByUserName(string username)
@@ -110,25 +100,6 @@ namespace day1.Services
                 throw new BusinessException(Domain.Enum.BusinessErrorCode.NotDeleteAdminUser, "管理员用户不能被删除");
             }
             _userRepository.DeleteByUserName(username);
-        }
-
-        public LoginResponseDto RefreshToken(string refreshToken)
-        {
-            var user=_userRepository.GetByRefreshToken(refreshToken);
-            if (user == null || user.RefreshTokenExpiryTime < DateTime.Now) 
-            { 
-                throw new BusinessException(Domain.Enum.BusinessErrorCode.InvalidRefreshToken,"Token不存在或已过期");
-            };
-            var accesstoken= CreatJwtToken(user);
-            var newrefreshToken = Guid.NewGuid().ToString();
-            user.RefreshToken = newrefreshToken;
-            _userRepository.UpdateUser(user);
-            return new LoginResponseDto() 
-            {
-                Id = user.Id,
-                UserName = user.UserName,
-                Token = accesstoken,
-            };
         }
     }
 }
