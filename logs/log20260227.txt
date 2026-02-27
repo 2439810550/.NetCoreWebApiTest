@@ -1,0 +1,83 @@
+2026-02-27 10:48:11.092 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-27 10:48:11.479 +08:00 [INF] Now listening on: http://localhost:5272
+2026-02-27 10:48:11.784 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-27 10:48:11.785 +08:00 [INF] Hosting environment: Development
+2026-02-27 10:48:11.785 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-02-27 10:48:13.001 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-02-27 10:48:13.356 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 365.1877ms
+2026-02-27 10:48:13.368 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-27 10:48:13.371 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 3.325ms
+2026-02-27 10:48:13.373 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-02-27 10:48:13.428 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 55.0338ms
+2026-02-27 10:48:13.469 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-02-27 10:48:13.481 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 12.2232ms
+2026-02-27 10:49:32.717 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-27 10:49:33.048 +08:00 [INF] Now listening on: http://localhost:5272
+2026-02-27 10:49:33.145 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-27 10:49:33.147 +08:00 [INF] Hosting environment: Development
+2026-02-27 10:49:33.148 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-02-27 10:49:33.282 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-02-27 10:49:33.530 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 255.2687ms
+2026-02-27 10:49:33.541 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-27 10:49:33.541 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-02-27 10:49:33.545 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 4.223ms
+2026-02-27 10:49:33.571 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.5254ms
+2026-02-27 10:49:33.614 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-02-27 10:49:33.624 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.7857ms
+2026-02-27 10:50:17.225 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/user - application/json 53
+2026-02-27 10:50:17.299 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.AddUser (day1)'
+2026-02-27 10:50:17.326 +08:00 [INF] Route matched with {action = "AddUser", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddUser(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-02-27 10:50:17.589 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-27 10:50:17.615 +08:00 [INF] Executed action day1.Controllers.TestController.AddUser (day1) in 283.4887ms
+2026-02-27 10:50:17.616 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.AddUser (day1)'
+2026-02-27 10:50:17.618 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/user - 400 null application/json; charset=utf-8 392.8975ms
+2026-02-27 10:50:41.497 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/user - application/json 57
+2026-02-27 10:50:41.501 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.AddUser (day1)'
+2026-02-27 10:50:41.539 +08:00 [INF] Route matched with {action = "AddUser", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddUser(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-02-27 10:50:41.548 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-27 10:50:41.549 +08:00 [INF] Executed action day1.Controllers.TestController.AddUser (day1) in 8.0956ms
+2026-02-27 10:50:41.549 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.AddUser (day1)'
+2026-02-27 10:50:41.550 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/user - 400 null application/json; charset=utf-8 54.7775ms
+2026-02-27 10:50:50.746 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/user - application/json 56
+2026-02-27 10:50:50.749 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.AddUser (day1)'
+2026-02-27 10:50:50.750 +08:00 [INF] Route matched with {action = "AddUser", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddUser(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-02-27 10:50:50.810 +08:00 [INF] Executing action method day1.Controllers.TestController.AddUser (day1) - Validation state: "Valid"
+2026-02-27 10:50:52.149 +08:00 [INF] Executed DbCommand (108ms) [Parameters=[@__userName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[UserName] = @__userName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-27 10:50:52.550 +08:00 [INF] Executed DbCommand (36ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([CreateTime], [PassWord], [RefreshToken], [RefreshTokenExpiryTime], [Role], [UserName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-02-27 10:50:52.568 +08:00 [INF] Executed action method day1.Controllers.TestController.AddUser (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1752.4954ms.
+2026-02-27 10:50:52.569 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-27 10:50:52.577 +08:00 [INF] Executed action day1.Controllers.TestController.AddUser (day1) in 1824.3356ms
+2026-02-27 10:50:52.578 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.AddUser (day1)'
+2026-02-27 10:50:52.584 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/user - 200 null application/json; charset=utf-8 1837.8585ms
+2026-02-27 10:51:30.392 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-27 10:51:30.607 +08:00 [INF] Now listening on: http://localhost:5272
+2026-02-27 10:51:30.706 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-27 10:51:30.706 +08:00 [INF] Hosting environment: Development
+2026-02-27 10:51:30.707 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-02-27 10:51:31.123 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-02-27 10:51:31.408 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 296.8107ms
+2026-02-27 10:51:31.411 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-27 10:51:31.414 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-02-27 10:51:31.415 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 4.734ms
+2026-02-27 10:51:31.442 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.6188ms
+2026-02-27 10:51:31.493 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-02-27 10:51:31.502 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.7786ms
+2026-02-27 10:51:50.525 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/user - application/json 54
+2026-02-27 10:51:50.574 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.AddUser (day1)'
+2026-02-27 10:51:50.592 +08:00 [INF] Route matched with {action = "AddUser", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddUser(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-02-27 10:51:50.752 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-27 10:51:50.774 +08:00 [INF] Executed action day1.Controllers.TestController.AddUser (day1) in 176.9603ms
+2026-02-27 10:51:50.775 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.AddUser (day1)'
+2026-02-27 10:51:50.777 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/user - 400 null application/json; charset=utf-8 251.5166ms

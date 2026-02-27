@@ -23,6 +23,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 ///注册 UserRepository 到依赖注入容器中
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ITokenService,TokenService>();
 ///配置 FluentValidation，自动注册 CreateUserDtoValidator
 builder.Services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserDtoValidator>());
 ///配置 JWT 认证服务，设置默认认证方案为 JWT Bearer，并配置 JWT Bearer 选项，包括 Token 验证参数
