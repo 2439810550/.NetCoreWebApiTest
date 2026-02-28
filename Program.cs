@@ -13,9 +13,13 @@ using Serilog;
 using day1.Filter;
 using day1.Common;
 using day1.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using day1.DYSdk.DYApi;
 var builder = WebApplication.CreateBuilder(args);
 ///配置 JWT 认证服务
-var key =Encoding.UTF8.GetBytes("ThisIsMySuperSecretKey1234567890123456");
+var jwtKey = builder.Configuration["Jwt:Key"] ?? throw new Exception("Jwt:Key missing");
+var key = Encoding.UTF8.GetBytes(jwtKey);
+//var key =Encoding.UTF8.GetBytes("ThisIsMySuperSecretKey1234567890123456");
 ///注册 UserService 和 UserRepository 到依赖注入容器中
 builder.Services.AddScoped<IUserService, UserService>();
 ///配置 Entity Framework Core 使用 SQL Server 数据库，并注册 AppDbContext 到依赖注入容器中
@@ -89,6 +93,22 @@ builder.Services.AddControllers(options =>
     options.Filters.Add<ApiResponseFilter>();
 });
 builder.Services.AddSingleton<IDateTimeProvider,DateTimeProvider>();
+///配置 ApiBehaviorOptions，禁用默认的模型验证错误响应，以便使用自定义的 ApiResponseFilter 处理模型验证错误
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+});
+///全局注册 ValidationFilter，以便在模型验证失败时抛出自定义的 BusinessException 异常
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<ValidationFilter>();
+});
+builder.Services.AddHttpClient<IDouYinVideoApiService, DouYinVideoApiService>(client => 
+{
+    client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36");
+    client.Timeout = TimeSpan.FromSeconds(30);
+});
+builder.Services.AddScoped<DYVideoServer>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

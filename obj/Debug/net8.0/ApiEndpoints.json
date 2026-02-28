@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "day1.Controllers.DYVideoController",
+    "Method": "RemoveWatermark",
+    "RelativePath": "api/DYVideo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "videoUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "day1.Controllers.TestController",
     "Method": "DeleteByUserName",
     "RelativePath": "api/Test/DeleteByUserName",

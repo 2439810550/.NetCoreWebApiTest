@@ -69,10 +69,16 @@ namespace day1.Services
            var user= _userRepository.GetByUserName(createUserDTO.UserName);
             if (user is null)
                 throw new BusinessException(Domain.Enum.BusinessErrorCode.UserNameOrPasswordError,"用户名或密码错误");
-
+            if (user.LockOutEndTime.HasValue && user.LockOutEndTime > _dateTimeProvider.UtcNow)
+                throw new BusinessException(Domain.Enum.BusinessErrorCode.AccountLocked, $"账户已锁定，请于{user.LockOutEndTime.Value.ToLocalTime()}后再试");
             bool Success = PasswordHelper.VerifyPassword(createUserDTO.PassWord,user.PassWord);
-            if (!Success)
+            if (!Success) 
+            {
+                HandleFailedLogin(user);
                 throw new BusinessException(Domain.Enum.BusinessErrorCode.UserNameOrPasswordError, "用户名或密码错误");
+            }
+            user.FailedLoginCount = 0;
+            user.LockOutEndTime = null;
             var token=_tokenService.CreateAccessToken(user);
             var refreshToken =_tokenService.CreateRefreshToken();
 
@@ -86,6 +92,17 @@ namespace day1.Services
                 UserName = user.UserName,
                 Token = token
             };
+        }
+
+        private void HandleFailedLogin(User user)
+        {
+            user.FailedLoginCount++;
+            if (user.FailedLoginCount >= 5)
+            {
+                user.LockOutEndTime = _dateTimeProvider.UtcNow.AddMinutes(5);
+                user.FailedLoginCount = 0; // 重置失败计数
+            }
+            _userRepository.UpdateUser(user);
         }
 
         public void DeleteByUserName(string username)

@@ -5,6 +5,27 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/DYVideo": {
+      "get": {
+        "tags": [
+          "DYVideo"
+        ],
+        "parameters": [
+          {
+            "name": "videoUrl",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Test/user": {
       "get": {
         "tags": [

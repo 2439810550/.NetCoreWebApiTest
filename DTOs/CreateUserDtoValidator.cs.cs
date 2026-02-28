@@ -11,7 +11,7 @@ namespace day1.DTOs
         RuleFor(x => x.PassWord)
             .NotEmpty().WithMessage("密码不能为空")
             .MinimumLength(6).WithMessage("密码长度不能小于6位")
-            .Matches(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$").WithMessage("密码必须包含字母和数字");
+            .Matches(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d._-]+$").WithMessage("密码必须包含字母和数字且不能有._-之外的符号");
         }
     }
 }

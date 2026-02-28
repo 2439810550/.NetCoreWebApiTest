@@ -1,5 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using day1.Common;
+using day1.Domain.Enum;
+using day1.Domain;
 using day1.Models;
 using day1.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -30,7 +32,18 @@ namespace day1.Controllers
         [HttpPost("user")]
         public IActionResult AddUser(DTOs.CreateUserDTO createUserDTO)
         {
-                var user = _userService.CreateUser(createUserDTO);
+            if (!ModelState.IsValid)
+            {
+                var errorMessages = ModelState
+                    .Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage);
+
+                throw new BusinessException(
+                    BusinessErrorCode.ValidationError,
+                    string.Join("; ", errorMessages));
+            }
+            var user = _userService.CreateUser(createUserDTO);
                 return Ok(user);
         }
         [HttpGet("id")]
