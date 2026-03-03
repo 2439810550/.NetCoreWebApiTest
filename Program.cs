@@ -15,6 +15,7 @@ using day1.Common;
 using day1.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using day1.DYSdk.DYApi;
+using day1.Models;
 var builder = WebApplication.CreateBuilder(args);
 ///配置 JWT 认证服务
 var jwtKey = builder.Configuration["Jwt:Key"] ?? throw new Exception("Jwt:Key missing");
@@ -109,6 +110,7 @@ builder.Services.AddHttpClient<IDouYinVideoApiService, DouYinVideoApiService>(cl
     client.Timeout = TimeSpan.FromSeconds(30);
 });
 builder.Services.AddScoped<DYVideoServer>();
+builder.Services.AddScoped<DBInitializer>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -126,4 +128,12 @@ app.UseAuthorization();
 app.MapControllers();
 
 
+
+using (var scope = app.Services.CreateScope())
+{
+   
+    scope.ServiceProvider.GetRequiredService<DBInitializer>().InitializeAsync().Wait();
+
+}
 app.Run();
+

@@ -13,6 +13,7 @@ namespace day1.Services
             _douYinVideoApiService = douYinVideoApiService;
         }
 
+
         public async Task<ApiResponse<DYIRemoveVideoWatermarkDTO>> RemoveWatermarkAsync(string videoUrl)
         {
             var apiResponse = await _douYinVideoApiService.RemoveVideoWatermarkAsync(videoUrl);

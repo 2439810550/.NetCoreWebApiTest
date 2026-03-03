@@ -1,0 +1,536 @@
+2026-03-02 15:29:01.346 +08:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 15:29:01.396 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-02 15:29:01.397 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 15:29:01.398 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-02 15:29:01.450 +08:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-02 15:29:01.459 +08:00 [INF] No migrations were applied. The database is already up to date.
+2026-03-02 15:45:22.575 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-02 15:45:22.885 +08:00 [INF] Now listening on: http://localhost:5272
+2026-03-02 15:45:22.983 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-02 15:45:22.983 +08:00 [INF] Hosting environment: Development
+2026-03-02 15:45:22.984 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-03-02 15:45:24.882 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-03-02 15:45:25.191 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 322.6115ms
+2026-03-02 15:45:25.206 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-02 15:45:25.210 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 4.4024ms
+2026-03-02 15:45:25.215 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-03-02 15:45:25.293 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 77.9905ms
+2026-03-02 15:45:25.381 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-03-02 15:45:25.392 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.854ms
+2026-03-02 15:55:24.442 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-02 15:55:25.038 +08:00 [INF] Now listening on: http://localhost:5272
+2026-03-02 15:55:25.139 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-02 15:55:25.140 +08:00 [INF] Hosting environment: Development
+2026-03-02 15:55:25.140 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-03-02 15:55:26.343 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-03-02 15:55:26.646 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 314.7026ms
+2026-03-02 15:55:26.650 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-02 15:55:26.651 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-03-02 15:55:26.654 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 4.1468ms
+2026-03-02 15:55:26.679 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.8328ms
+2026-03-02 15:55:26.813 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-03-02 15:55:26.824 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 11.2169ms
+2026-03-02 15:55:43.751 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 59
+2026-03-02 15:55:43.819 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-02 15:55:43.847 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-02 15:55:48.444 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-03-02 15:55:49.855 +08:00 [INF] Executed DbCommand (86ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-02 15:55:49.894 +08:00 [ERR] An exception occurred while iterating over the results of a query for context type 'day1.Data.AppDbContext'.
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int64'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int64()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt64(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int64'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int64()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt64(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2026-03-02 15:56:11.389 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 27537.5451ms
+2026-03-02 15:56:11.392 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-02 15:56:11.421 +08:00 [ERR] 系统异常
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int64'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int64()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt64(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method14(Closure, QueryContext)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at day1.Repositories.UserRepository.GetByUserName(String UserName) in D:\1\projectExcel\day1\Repositories\UserRepository.cs:line 33
+   at day1.Services.UserService.Login(CreateUserDTO createUserDTO) in D:\1\projectExcel\day1\Services\UserService.cs:line 69
+   at day1.Controllers.TestController.Login(CreateUserDTO createUserDTO) in D:\1\projectExcel\day1\Controllers\TestController.cs:line 63
+   at lambda_method4(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at day1.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\1\projectExcel\day1\Middlewares\ExceptionMiddleware.cs:line 26
+2026-03-02 15:56:11.445 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 500 null application/json 27693.8858ms
+2026-03-02 15:56:13.592 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 59
+2026-03-02 15:56:13.596 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-02 15:56:13.597 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-02 15:56:25.633 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-03-02 15:56:26.468 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-02 15:56:26.469 +08:00 [ERR] An exception occurred while iterating over the results of a query for context type 'day1.Data.AppDbContext'.
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int64'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int64()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt64(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int64'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int64()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt64(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2026-03-02 15:56:37.209 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 23609.0894ms
+2026-03-02 15:56:37.211 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-02 15:56:39.271 +08:00 [ERR] 系统异常
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int64'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int64()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt64(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method14(Closure, QueryContext)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at day1.Repositories.UserRepository.GetByUserName(String UserName) in D:\1\projectExcel\day1\Repositories\UserRepository.cs:line 33
+   at day1.Services.UserService.Login(CreateUserDTO createUserDTO) in D:\1\projectExcel\day1\Services\UserService.cs:line 69
+   at day1.Controllers.TestController.Login(CreateUserDTO createUserDTO) in D:\1\projectExcel\day1\Controllers\TestController.cs:line 63
+   at lambda_method4(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at day1.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\1\projectExcel\day1\Middlewares\ExceptionMiddleware.cs:line 26
+2026-03-02 15:56:41.261 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 500 null application/json 27669.1425ms
+2026-03-02 15:56:43.586 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 59
+2026-03-02 15:56:43.589 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-02 15:56:43.590 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-02 15:56:56.311 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-03-02 15:57:19.820 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-02 15:57:19.822 +08:00 [ERR] An exception occurred while iterating over the results of a query for context type 'day1.Data.AppDbContext'.
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int64'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int64()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt64(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int64'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int64()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt64(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2026-03-02 16:02:32.745 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-02 16:02:33.180 +08:00 [INF] Now listening on: http://localhost:5272
+2026-03-02 16:02:33.507 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-02 16:02:33.508 +08:00 [INF] Hosting environment: Development
+2026-03-02 16:02:33.509 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-03-02 16:02:34.167 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-03-02 16:02:34.623 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 474.5528ms
+2026-03-02 16:02:34.642 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-02 16:02:34.675 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-03-02 16:02:34.675 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 33.8471ms
+2026-03-02 16:02:34.710 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 35.1831ms
+2026-03-02 16:02:34.752 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-03-02 16:02:34.763 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 11.3798ms
+2026-03-02 16:02:49.348 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 59
+2026-03-02 16:02:49.419 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-02 16:02:49.447 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-02 16:02:52.213 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-03-02 16:02:53.338 +08:00 [INF] Executed DbCommand (71ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-02 16:02:53.384 +08:00 [ERR] An exception occurred while iterating over the results of a query for context type 'day1.Data.AppDbContext'.
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int64'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int64()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt64(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int64'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int64()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt64(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2026-03-02 16:05:39.989 +08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 16:05:40.043 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-02 16:05:40.045 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 16:05:40.046 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-02 16:05:40.071 +08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-02 16:05:40.082 +08:00 [INF] No migrations were applied. The database is already up to date.
+2026-03-02 16:06:13.943 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-02 16:06:14.152 +08:00 [INF] Now listening on: http://localhost:5272
+2026-03-02 16:06:14.248 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-02 16:06:14.249 +08:00 [INF] Hosting environment: Development
+2026-03-02 16:06:14.249 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-03-02 16:06:14.428 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-03-02 16:06:14.652 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 230.0514ms
+2026-03-02 16:06:14.655 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-02 16:06:14.655 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-03-02 16:06:14.658 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 3.362ms
+2026-03-02 16:06:14.687 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.4491ms
+2026-03-02 16:06:14.732 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-03-02 16:06:14.740 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.0836ms
+2026-03-02 16:06:44.047 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 59
+2026-03-02 16:06:44.114 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-02 16:06:44.133 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-02 16:06:45.891 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-03-02 16:06:46.859 +08:00 [INF] Executed DbCommand (41ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-02 16:06:46.903 +08:00 [ERR] An exception occurred while iterating over the results of a query for context type 'day1.Data.AppDbContext'.
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int64'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int64()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt64(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int64'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int64()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt64(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2026-03-02 16:10:14.956 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 16:10:15.005 +08:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-02 16:10:15.006 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 16:10:15.007 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-02 16:10:15.022 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-02 16:10:15.032 +08:00 [INF] No migrations were applied. The database is already up to date.
+2026-03-02 16:11:24.698 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-02 16:11:25.062 +08:00 [INF] Now listening on: http://localhost:5272
+2026-03-02 16:11:25.792 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-02 16:11:25.793 +08:00 [INF] Hosting environment: Development
+2026-03-02 16:11:25.793 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-03-02 16:11:26.030 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-03-02 16:11:26.357 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 336.9748ms
+2026-03-02 16:11:26.398 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-02 16:11:26.402 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 4.8585ms
+2026-03-02 16:11:26.405 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-03-02 16:11:26.438 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.702ms
+2026-03-02 16:11:26.498 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-03-02 16:11:26.513 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.9284ms
+2026-03-02 16:11:42.775 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 59
+2026-03-02 16:11:42.838 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-02 16:11:42.867 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-02 16:11:44.462 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-03-02 16:11:45.965 +08:00 [INF] Executed DbCommand (37ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-02 16:11:46.107 +08:00 [ERR] An exception occurred while iterating over the results of a query for context type 'day1.Data.AppDbContext'.
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int64'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int64()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt64(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int64'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int64()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt64(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2026-03-02 16:22:55.339 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 16:22:55.382 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-02 16:22:55.383 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 16:22:55.433 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2026-03-02 16:22:55.434 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 16:22:55.435 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-02 16:22:55.440 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-02 16:22:55.452 +08:00 [INF] Applying migration '20260224081501_AddUserRole'.
+2026-03-02 16:22:55.473 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] bigint NOT NULL IDENTITY,
+    [UserName] nvarchar(max) NOT NULL,
+    [PassWord] nvarchar(max) NOT NULL,
+    [Role] nvarchar(max) NOT NULL,
+    [CreateTime] datetime2 NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);
+2026-03-02 16:22:55.475 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260224081501_AddUserRole', N'8.0.23');
+2026-03-02 16:22:55.479 +08:00 [INF] Applying migration '20260226014312_AddRefreshToken'.
+2026-03-02 16:22:55.489 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] ADD [RefreshToken] nvarchar(max) NULL;
+2026-03-02 16:22:55.490 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] ADD [RefreshTokenExpiryTime] datetime2 NULL;
+2026-03-02 16:22:55.490 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260226014312_AddRefreshToken', N'8.0.23');
+2026-03-02 16:22:55.491 +08:00 [INF] Applying migration '20260227074541_AddLoginLock'.
+2026-03-02 16:22:55.496 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] ADD [FailedLoginCount] int NOT NULL DEFAULT 0;
+2026-03-02 16:22:55.496 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] ADD [LockOutEndTime] datetime2 NULL;
+2026-03-02 16:22:55.497 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260227074541_AddLoginLock', N'8.0.23');
+2026-03-02 16:22:55.497 +08:00 [INF] Applying migration '20260228072839_AddRbac'.
+2026-03-02 16:22:55.514 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Permissions] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Code] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Permissions] PRIMARY KEY ([Id])
+);
+2026-03-02 16:22:55.516 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Roles] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Roles] PRIMARY KEY ([Id])
+);
+2026-03-02 16:22:55.517 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [RolePermissions] (
+    [RoleId] bigint NOT NULL,
+    [PermissionId] bigint NOT NULL,
+    CONSTRAINT [PK_RolePermissions] PRIMARY KEY ([RoleId], [PermissionId]),
+    CONSTRAINT [FK_RolePermissions_Permissions_PermissionId] FOREIGN KEY ([PermissionId]) REFERENCES [Permissions] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_RolePermissions_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Roles] ([Id]) ON DELETE CASCADE
+);
+2026-03-02 16:22:55.530 +08:00 [ERR] Failed executing DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserRoles] (
+    [UserId] bigint NOT NULL,
+    [RoleId] bigint NOT NULL,
+    [UserId1] int NOT NULL,
+    CONSTRAINT [PK_UserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_UserRoles_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Roles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_UserRoles_Users_UserId1] FOREIGN KEY ([UserId1]) REFERENCES [Users] ([Id]) ON DELETE CASCADE
+);
+2026-03-02 16:28:58.396 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 16:28:58.439 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-02 16:28:58.440 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 16:28:58.441 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-02 16:28:58.452 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-02 16:28:58.462 +08:00 [INF] Applying migration '20260228072839_AddRbac'.
+2026-03-02 16:28:58.503 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Permissions] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Code] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Permissions] PRIMARY KEY ([Id])
+);
+2026-03-02 16:28:58.504 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Roles] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Roles] PRIMARY KEY ([Id])
+);
+2026-03-02 16:28:58.505 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [RolePermissions] (
+    [RoleId] bigint NOT NULL,
+    [PermissionId] bigint NOT NULL,
+    CONSTRAINT [PK_RolePermissions] PRIMARY KEY ([RoleId], [PermissionId]),
+    CONSTRAINT [FK_RolePermissions_Permissions_PermissionId] FOREIGN KEY ([PermissionId]) REFERENCES [Permissions] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_RolePermissions_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Roles] ([Id]) ON DELETE CASCADE
+);
+2026-03-02 16:28:58.511 +08:00 [ERR] Failed executing DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserRoles] (
+    [UserId] bigint NOT NULL,
+    [RoleId] bigint NOT NULL,
+    [UserId1] int NOT NULL,
+    CONSTRAINT [PK_UserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_UserRoles_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Roles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_UserRoles_Users_UserId1] FOREIGN KEY ([UserId1]) REFERENCES [Users] ([Id]) ON DELETE CASCADE
+);
+2026-03-02 16:35:12.129 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 16:35:12.171 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-02 16:35:12.173 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 16:35:12.173 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-02 16:35:12.184 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-02 16:35:12.194 +08:00 [INF] Applying migration '20260228072839_AddRbac'.
+2026-03-02 16:35:12.233 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Permissions] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Code] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Permissions] PRIMARY KEY ([Id])
+);
+2026-03-02 16:35:12.235 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Roles] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Roles] PRIMARY KEY ([Id])
+);
+2026-03-02 16:35:12.236 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [RolePermissions] (
+    [RoleId] bigint NOT NULL,
+    [PermissionId] bigint NOT NULL,
+    CONSTRAINT [PK_RolePermissions] PRIMARY KEY ([RoleId], [PermissionId]),
+    CONSTRAINT [FK_RolePermissions_Permissions_PermissionId] FOREIGN KEY ([PermissionId]) REFERENCES [Permissions] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_RolePermissions_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Roles] ([Id]) ON DELETE CASCADE
+);
+2026-03-02 16:35:12.238 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserRoles] (
+    [UserId] bigint NOT NULL,
+    [RoleId] bigint NOT NULL,
+    [UserId1] bigint NOT NULL,
+    CONSTRAINT [PK_UserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_UserRoles_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Roles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_UserRoles_Users_UserId1] FOREIGN KEY ([UserId1]) REFERENCES [Users] ([Id]) ON DELETE CASCADE
+);
+2026-03-02 16:35:12.247 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_RolePermissions_PermissionId] ON [RolePermissions] ([PermissionId]);
+2026-03-02 16:35:12.248 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserRoles_RoleId] ON [UserRoles] ([RoleId]);
+2026-03-02 16:35:12.249 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserRoles_UserId1] ON [UserRoles] ([UserId1]);
+2026-03-02 16:35:12.250 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260228072839_AddRbac', N'8.0.23');
+2026-03-02 16:35:12.255 +08:00 [INF] Applying migration '20260302083452_xiugaiusersidislong'.
+2026-03-02 16:35:12.260 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260302083452_xiugaiusersidislong', N'8.0.23');
+2026-03-02 16:37:43.497 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-02 16:37:43.862 +08:00 [INF] Now listening on: http://localhost:5272
+2026-03-02 16:37:43.953 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-02 16:37:43.954 +08:00 [INF] Hosting environment: Development
+2026-03-02 16:37:43.954 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-03-02 16:37:44.172 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-03-02 16:37:44.471 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 309.3045ms
+2026-03-02 16:37:44.507 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-02 16:37:44.512 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 4.6704ms
+2026-03-02 16:37:44.514 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-03-02 16:37:44.540 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 26.0301ms
+2026-03-02 16:37:44.605 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-03-02 16:37:44.614 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.8962ms
+2026-03-02 16:39:37.024 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/user - application/json 59
+2026-03-02 16:39:37.088 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.AddUser (day1)'
+2026-03-02 16:39:37.115 +08:00 [INF] Route matched with {action = "AddUser", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddUser(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-02 16:39:40.445 +08:00 [INF] Executing action method day1.Controllers.TestController.AddUser (day1) - Validation state: "Valid"
+2026-03-02 16:39:41.473 +08:00 [INF] Executed DbCommand (39ms) [Parameters=[@__userName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[UserName] = @__userName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-02 16:39:41.946 +08:00 [INF] Executed DbCommand (31ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([CreateTime], [FailedLoginCount], [LockOutEndTime], [PassWord], [RefreshToken], [RefreshTokenExpiryTime], [Role], [UserName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2026-03-02 16:39:41.964 +08:00 [INF] Executed action method day1.Controllers.TestController.AddUser (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1515.7594ms.
+2026-03-02 16:39:41.972 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-02 16:39:41.989 +08:00 [INF] Executed action day1.Controllers.TestController.AddUser (day1) in 4870.0401ms
+2026-03-02 16:39:41.992 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.AddUser (day1)'
+2026-03-02 16:39:41.999 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/user - 200 null application/json; charset=utf-8 4974.6151ms
+2026-03-02 16:42:48.331 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 59
+2026-03-02 16:42:48.346 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-02 16:42:48.349 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-02 16:42:49.747 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-03-02 16:42:49.813 +08:00 [INF] Executed DbCommand (29ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-02 16:42:50.142 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-02 16:42:51.004 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[@p8='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [Role] = @p6, [UserName] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-03-02 16:42:51.008 +08:00 [INF] Executed action method day1.Controllers.TestController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1260.0159ms.
+2026-03-02 16:42:51.009 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-02 16:42:51.010 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 2660.665ms
+2026-03-02 16:42:51.011 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-02 16:42:51.012 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 200 null application/json; charset=utf-8 2680.5827ms
+2026-03-02 16:48:44.640 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/user - null null
+2026-03-02 16:48:44.694 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.GetUserAll (day1)'
+2026-03-02 16:48:44.696 +08:00 [INF] Route matched with {action = "GetUserAll", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserAll() on controller day1.Controllers.TestController (day1).
+2026-03-02 16:48:45.967 +08:00 [INF] Executing action method day1.Controllers.TestController.GetUserAll (day1) - Validation state: "Valid"
+2026-03-02 16:48:46.030 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+2026-03-02 16:48:46.032 +08:00 [INF] Executed action method day1.Controllers.TestController.GetUserAll (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 63.5928ms.
+2026-03-02 16:48:46.033 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-02 16:48:46.037 +08:00 [INF] Executed action day1.Controllers.TestController.GetUserAll (day1) in 1340.5793ms
+2026-03-02 16:48:46.038 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.GetUserAll (day1)'
+2026-03-02 16:48:46.039 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Test/user - 200 null application/json; charset=utf-8 1399.0388ms
+2026-03-02 16:49:08.364 +08:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5272/api/Test/DeleteByUserName?username=%E5%BC%A0%E4%B8%89%E4%B8%89 - null null
+2026-03-02 16:49:08.376 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2026-03-02 16:49:08.378 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-03-02 16:49:08.379 +08:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5272/api/Test/DeleteByUserName?username=%E5%BC%A0%E4%B8%89%E4%B8%89 - 403 0 null 14.6948ms

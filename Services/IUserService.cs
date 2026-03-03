@@ -9,12 +9,11 @@ namespace day1.Services
 
         User CreateUser(DTOs.CreateUserDTO createUserDto);
 
-        User? GetById(int id);
+        User? GetById(long id);
 
         DTOs.LoginResponseDto Login(DTOs.CreateUserDTO createUserDTO);
 
         void DeleteByUserName(string username);
-
 
 
     }

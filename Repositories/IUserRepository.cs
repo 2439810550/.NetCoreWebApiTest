@@ -7,7 +7,7 @@ namespace day1.Repositories
     {
         void Add(User user);
         List<User> GetAllUsers();
-        User? GetById(int id);
+        User? GetById(long id);
         bool ExctisUserName(string userName);
 
         User? GetByUserName(string UserName);
@@ -16,5 +16,8 @@ namespace day1.Repositories
         void UpdateUser(User user);
 
         User? GetByRefreshToken(string refreshToken);
+
+        List<string> GetUserRoles(long userid);
+        List<string> GetByUserId();
     }
 }

@@ -7,7 +7,6 @@ namespace day1.DYSdk.DYApi
     {
         Task<DYVideoRemoveWatermarkApiResponse> RemoveVideoWatermarkAsync(string videoUrl);
     }
-
     public class DouYinVideoApiService : IDouYinVideoApiService
     {
         private readonly HttpClient _httpClient;
@@ -26,7 +25,7 @@ namespace day1.DYSdk.DYApi
                 //return System.Text.Json.JsonSerializer.Deserialize<DYVideoRemoveWatermarkApiResponse>(content);
                 return JsonSerializer.Deserialize<DYVideoRemoveWatermarkApiResponse>(content, new JsonSerializerOptions
                 {
-                    PropertyNameCaseInsensitive = true
+                    PropertyNameCaseInsensitive = true//反序列化时是否忽略属性名的大小写（默认 false）。
                 });
             }
             catch (HttpRequestException ex)
@@ -38,7 +37,7 @@ namespace day1.DYSdk.DYApi
             {
                 return new DYVideoRemoveWatermarkApiResponse { Code = -1, Message = $"数据解析失败: {ex.Message}" };
             }
-
+            
         }
     }
 }

@@ -21,7 +21,7 @@ namespace day1.Controllers
             _userService = userService;
             _tokenService = tokenService;
         }
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet("user")]
         public IActionResult GetUserAll()
         {
@@ -46,8 +46,9 @@ namespace day1.Controllers
             var user = _userService.CreateUser(createUserDTO);
                 return Ok(user);
         }
+        [Authorize(Roles ="Admin")]
         [HttpGet("id")]
-        public IActionResult GetById(int id)
+        public IActionResult GetById(long id)
         {
             var user = _userService.GetById(id);
             if (user == null)
@@ -56,14 +57,12 @@ namespace day1.Controllers
             }
             return Ok(user);
         }
-
         [HttpPost("login")]
         public IActionResult Login(DTOs.CreateUserDTO createUserDTO)
         {
             var user = _userService.Login(createUserDTO);
             return Ok(user);
         }
-
         [HttpPost("refresh")]
         [AllowAnonymous]
         public IActionResult ReFresh(string refreshtoken) 

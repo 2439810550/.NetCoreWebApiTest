@@ -12,11 +12,14 @@ namespace day1.Repositories
         }
         public void Add(User user)
         {
-            _context.Add(user);
+            _context.Users.Add(user);
+            _context.SaveChanges();
+            //只允许注册用户角色 1管理员 2用户
+            _context.UserRoles.Add(new UserRole {UserId=user.Id,RoleId=2 }) ;
             _context.SaveChanges();
         }
 
-        public User? GetById(int id)
+        public User? GetById(long id)
         {
             return _context.Users.FirstOrDefault(u => u.Id == id);
         }
@@ -40,13 +43,23 @@ namespace day1.Repositories
 
         public void UpdateUser(User user)
         {
-            _context.Update(user);
+            _context.Users.Update(user);
             _context.SaveChanges();
         }
 
         public User? GetByRefreshToken(string refreshToken)
         {
             return _context.Users.FirstOrDefault(u => u.RefreshToken == refreshToken);
+        }
+
+        public List<string> GetUserRoles(long userid)
+        {
+            return _context.UserRoles.Where(u=>u.UserId==userid).Select(u => u.Role.Name).ToList();
+        }
+
+        public List<string> GetByUserId()
+        {
+            throw new NotImplementedException();
         }
     }
 }

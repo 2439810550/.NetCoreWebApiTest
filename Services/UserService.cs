@@ -59,7 +59,7 @@ namespace day1.Services
                 throw new Exception("密码必须包含字母和数字");
         }
 
-        public User? GetById(int id)
+        public User? GetById(long id)
         {
             return _userRepository.GetById(id);
         }
@@ -79,7 +79,8 @@ namespace day1.Services
             }
             user.FailedLoginCount = 0;
             user.LockOutEndTime = null;
-            var token=_tokenService.CreateAccessToken(user);
+            var roles = _userRepository.GetUserRoles(user.Id);
+            var token=_tokenService.CreateAccessToken(user,roles);
             var refreshToken =_tokenService.CreateRefreshToken();
 
             user.RefreshToken = refreshToken;
@@ -97,6 +98,7 @@ namespace day1.Services
         private void HandleFailedLogin(User user)
         {
             user.FailedLoginCount++;
+
             if (user.FailedLoginCount >= 5)
             {
                 user.LockOutEndTime = _dateTimeProvider.UtcNow.AddMinutes(5);
@@ -118,5 +120,6 @@ namespace day1.Services
             }
             _userRepository.DeleteByUserName(username);
         }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.IdentityModel.Tokens.Jwt;
+﻿using System.Data;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using day1.Domain;
@@ -23,7 +24,7 @@ namespace day1.Services
             _userRepository = userRepository;
             _dateTimeProvider = dateTimeProvider;
         }
-        public string CreateAccessToken(User user)
+        public string CreateAccessToken(User user,List<string> roles)
         {
             #region 老的Token生成方式
             //var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("ThisIsMySuperSecretKey1234567890123456"));
@@ -46,12 +47,16 @@ namespace day1.Services
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var claims = new[]
+            var claims = new List<Claim>
             {
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new Claim(ClaimTypes.Name, user.UserName),
-            new Claim(ClaimTypes.Role, user.Role)
+            new Claim(ClaimTypes.Name, user.UserName)
+                //new Claim(ClaimTypes.Role, user.Role)
         };
+            foreach (var role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
 
             var token = new JwtSecurityToken(
                 issuer: _configuration["Jwt:Issuer"],
@@ -76,9 +81,9 @@ namespace day1.Services
             if (user == null || user.RefreshTokenExpiryTime < _dateTimeProvider.UtcNow)
             {
                 throw new BusinessException(Domain.Enum.BusinessErrorCode.InvalidRefreshToken, "Token不存在或已过期");
-            }
-            ;
-            var accesstoken = CreateAccessToken(user);
+            };
+            var roles = _userRepository.GetUserRoles(user.Id);
+            var accesstoken = CreateAccessToken(user, roles);
             var newrefreshToken = CreateRefreshToken();
             user.RefreshToken = newrefreshToken;
             _userRepository.UpdateUser(user);

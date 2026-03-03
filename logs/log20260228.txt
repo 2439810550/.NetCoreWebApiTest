@@ -241,3 +241,67 @@ System.InvalidOperationException: Unable to resolve service for type 'day1.Servi
 2026-02-28 11:11:36.197 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 260359.2242ms
 2026-02-28 11:11:36.199 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
 2026-02-28 11:11:38.110 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=https%3A%2F%2Fv.douyin.com%2FYEoc6LIJe0M%2F - 200 null application/json; charset=utf-8 262366.8241ms
+2026-02-28 15:28:38.686 +08:00 [WRN] The foreign key property 'UserRole.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2026-02-28 15:28:38.836 +08:00 [WRN] The foreign key property 'UserRole.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2026-02-28 15:29:00.192 +08:00 [WRN] The foreign key property 'UserRole.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2026-02-28 15:29:00.955 +08:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-02-28 15:29:00.981 +08:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-02-28 15:29:00.982 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-02-28 15:29:00.983 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-02-28 15:29:01.042 +08:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-02-28 15:29:01.052 +08:00 [INF] Applying migration '20260228072839_AddRbac'.
+2026-02-28 15:29:01.138 +08:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Permissions] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Code] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Permissions] PRIMARY KEY ([Id])
+);
+2026-02-28 15:29:01.140 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Roles] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Roles] PRIMARY KEY ([Id])
+);
+2026-02-28 15:29:01.150 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [RolePermissions] (
+    [RoleId] bigint NOT NULL,
+    [PermissionId] bigint NOT NULL,
+    CONSTRAINT [PK_RolePermissions] PRIMARY KEY ([RoleId], [PermissionId]),
+    CONSTRAINT [FK_RolePermissions_Permissions_PermissionId] FOREIGN KEY ([PermissionId]) REFERENCES [Permissions] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_RolePermissions_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Roles] ([Id]) ON DELETE CASCADE
+);
+2026-02-28 15:29:01.153 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserRoles] (
+    [UserId] bigint NOT NULL,
+    [RoleId] bigint NOT NULL,
+    [UserId1] int NOT NULL,
+    CONSTRAINT [PK_UserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_UserRoles_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Roles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_UserRoles_Users_UserId1] FOREIGN KEY ([UserId1]) REFERENCES [Users] ([Id]) ON DELETE CASCADE
+);
+2026-02-28 15:29:01.164 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_RolePermissions_PermissionId] ON [RolePermissions] ([PermissionId]);
+2026-02-28 15:29:01.166 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserRoles_RoleId] ON [UserRoles] ([RoleId]);
+2026-02-28 15:29:01.168 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserRoles_UserId1] ON [UserRoles] ([UserId1]);
+2026-02-28 15:29:01.191 +08:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260228072839_AddRbac', N'8.0.23');
+2026-02-28 15:30:16.464 +08:00 [WRN] The foreign key property 'UserRole.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2026-02-28 15:30:16.818 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-02-28 15:30:16.835 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-02-28 15:30:16.852 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
