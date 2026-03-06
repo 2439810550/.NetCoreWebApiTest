@@ -96,7 +96,8 @@ namespace day1.Services
             {
                 Id=user.Id,
                 UserName = user.UserName,
-                Token = token
+                Token = token,
+                RefreshToken=refreshToken,
             };
         }
 
