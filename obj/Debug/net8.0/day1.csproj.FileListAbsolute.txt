@@ -165,10 +165,10 @@ D:\1\projectExcel\day1\obj\Debug\net8.0\staticwebassets\msbuild.build.day1.props
 D:\1\projectExcel\day1\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.day1.props
 D:\1\projectExcel\day1\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.day1.props
 D:\1\projectExcel\day1\obj\Debug\net8.0\staticwebassets.pack.json
-D:\1\projectExcel\day1\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\1\projectExcel\day1\obj\Debug\net8.0\day1.csproj.Up2Date
 D:\1\projectExcel\day1\obj\Debug\net8.0\day1.dll
 D:\1\projectExcel\day1\obj\Debug\net8.0\refint\day1.dll
 D:\1\projectExcel\day1\obj\Debug\net8.0\day1.pdb
 D:\1\projectExcel\day1\obj\Debug\net8.0\day1.genruntimeconfig.cache
 D:\1\projectExcel\day1\obj\Debug\net8.0\ref\day1.dll
+D:\1\projectExcel\day1\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -19,5 +19,6 @@ namespace day1.Repositories
 
         List<string> GetUserRoles(long userid);
         List<string> GetByUserId();
+        List<string> GetUserPemissions(long userid);
     }
 }

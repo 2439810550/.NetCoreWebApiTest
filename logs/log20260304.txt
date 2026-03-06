@@ -1,0 +1,711 @@
+2026-03-04 11:08:27.249 +08:00 [INF] Executed DbCommand (192ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-03-04 11:08:27.402 +08:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-03-04 11:08:27.448 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-03-04 11:08:27.615 +08:00 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-03-04 11:08:27.640 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-03-04 11:08:27.725 +08:00 [INF] Executed DbCommand (67ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-03-04 11:08:27.742 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-03-04 11:08:27.903 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-04 11:08:28.135 +08:00 [INF] Now listening on: http://localhost:5272
+2026-03-04 11:08:28.235 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-04 11:08:28.236 +08:00 [INF] Hosting environment: Development
+2026-03-04 11:08:28.236 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-03-04 11:08:30.233 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-03-04 11:08:30.607 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 388.1874ms
+2026-03-04 11:08:30.623 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-04 11:08:30.626 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 3.139ms
+2026-03-04 11:08:30.664 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-03-04 11:08:30.735 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 71.1705ms
+2026-03-04 11:08:30.778 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-03-04 11:08:30.795 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 16.7435ms
+2026-03-04 11:09:03.558 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/id?id=1 - null null
+2026-03-04 11:09:17.336 +08:00 [INF] Authorization failed. Fail() was explicitly called.
+2026-03-04 11:09:17.341 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-03-04 11:09:28.728 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Test/id?id=1 - 401 0 null 25170.4302ms
+2026-03-04 11:10:08.174 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 55
+2026-03-04 11:10:08.181 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 11:10:08.202 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-04 11:10:08.322 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-03-04 11:10:08.367 +08:00 [INF] Executed DbCommand (21ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-04 11:10:11.679 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-04 11:12:10.758 +08:00 [INF] Executed DbCommand (25ms) [Parameters=[@p8='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [Role] = @p6, [UserName] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-03-04 11:12:13.249 +08:00 [INF] Executed action method day1.Controllers.TestController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 124922.8695ms.
+2026-03-04 11:12:17.802 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-04 11:12:20.230 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 132023.3224ms
+2026-03-04 11:12:20.231 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 11:12:21.355 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 200 null application/json; charset=utf-8 133181.2958ms
+2026-03-04 11:12:38.655 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/id?id=1 - null null
+2026-03-04 11:12:46.098 +08:00 [INF] Executed DbCommand (26ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [UserRoles] AS [u]
+    WHERE [r0].[Id] = [u].[RoleId] AND [u].[UserId] = @__userid_0)
+2026-03-04 11:12:54.622 +08:00 [INF] Authorization failed. These requirements were not met:
+day1.Domain.Security.PermissionRequirement
+2026-03-04 11:12:54.624 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-03-04 11:12:56.991 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Test/id?id=1 - 403 0 null 18335.8515ms
+2026-03-04 11:15:47.480 +08:00 [INF] Executed DbCommand (81ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-03-04 11:15:47.579 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-03-04 11:15:47.629 +08:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-03-04 11:15:47.792 +08:00 [INF] Executed DbCommand (106ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-03-04 11:15:47.806 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-03-04 11:15:47.858 +08:00 [INF] Executed DbCommand (37ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-03-04 11:15:47.866 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-03-04 11:15:47.897 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-04 11:15:48.072 +08:00 [INF] Now listening on: http://localhost:5272
+2026-03-04 11:15:48.157 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-04 11:15:48.158 +08:00 [INF] Hosting environment: Development
+2026-03-04 11:15:48.158 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-03-04 11:15:49.479 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-03-04 11:15:49.818 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 355.0735ms
+2026-03-04 11:15:49.869 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-04 11:15:49.870 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-03-04 11:15:49.873 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 3.9303ms
+2026-03-04 11:15:49.912 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 42.3015ms
+2026-03-04 11:15:49.959 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-03-04 11:15:49.972 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 13.0303ms
+2026-03-04 11:16:06.681 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 65
+2026-03-04 11:16:06.746 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 11:16:06.766 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-04 11:16:06.902 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-03-04 11:16:06.959 +08:00 [INF] Executed DbCommand (32ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-04 11:16:39.940 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 33169.6958ms
+2026-03-04 11:16:39.943 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 11:16:39.960 +08:00 [WRN] 业务异常
+day1.Domain.BusinessException: 用户名或密码错误
+   at day1.Services.UserService.Login(CreateUserDTO createUserDTO) in D:\1\projectExcel\day1\Services\UserService.cs:line 71
+   at day1.Controllers.TestController.Login(CreateUserDTO createUserDTO) in D:\1\projectExcel\day1\Controllers\TestController.cs:line 63
+   at lambda_method71(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at day1.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\1\projectExcel\day1\Middlewares\ExceptionMiddleware.cs:line 26
+2026-03-04 11:16:40.012 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 400 null application/json; charset=utf-8 33331.4317ms
+2026-03-04 11:16:46.275 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 55
+2026-03-04 11:16:46.279 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 11:16:46.280 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-04 11:16:46.307 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-03-04 11:16:46.356 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-04 11:16:47.915 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-04 11:16:49.252 +08:00 [INF] Executed DbCommand (18ms) [Parameters=[@p8='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [Role] = @p6, [UserName] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-03-04 11:16:49.261 +08:00 [INF] Executed action method day1.Controllers.TestController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2950.5535ms.
+2026-03-04 11:16:49.267 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-04 11:16:49.274 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 2990.4402ms
+2026-03-04 11:16:49.274 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 11:16:49.275 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 200 null application/json; charset=utf-8 2999.7665ms
+2026-03-04 11:17:04.615 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - null null
+2026-03-04 11:17:04.643 +08:00 [ERR] 系统异常
+System.InvalidOperationException: The AuthorizationPolicy named: 'User.Read' was not found.
+   at Microsoft.AspNetCore.Authorization.AuthorizationPolicy.CombineAsync(IAuthorizationPolicyProvider policyProvider, IEnumerable`1 authorizeData, IEnumerable`1 policies)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at day1.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\1\projectExcel\day1\Middlewares\ExceptionMiddleware.cs:line 26
+2026-03-04 11:17:04.647 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - 500 null application/json 32.4355ms
+2026-03-04 11:18:09.211 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - null null
+2026-03-04 11:18:09.289 +08:00 [ERR] 系统异常
+System.InvalidOperationException: The AuthorizationPolicy named: 'User.Read' was not found.
+   at Microsoft.AspNetCore.Authorization.AuthorizationPolicy.CombineAsync(IAuthorizationPolicyProvider policyProvider, IEnumerable`1 authorizeData, IEnumerable`1 policies)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at day1.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\1\projectExcel\day1\Middlewares\ExceptionMiddleware.cs:line 26
+2026-03-04 11:18:09.291 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - 500 null application/json 80.985ms
+2026-03-04 11:19:07.205 +08:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-03-04 11:19:07.271 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-03-04 11:19:07.299 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-03-04 11:19:07.348 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-03-04 11:19:07.358 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-03-04 11:19:07.389 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-03-04 11:19:07.395 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-03-04 11:19:07.420 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-04 11:19:07.564 +08:00 [INF] Now listening on: http://localhost:5272
+2026-03-04 11:19:07.644 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-04 11:19:07.645 +08:00 [INF] Hosting environment: Development
+2026-03-04 11:19:07.646 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-03-04 11:19:08.019 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-03-04 11:19:08.231 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 220.3112ms
+2026-03-04 11:19:08.232 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-03-04 11:19:08.234 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-04 11:19:08.238 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 3.6088ms
+2026-03-04 11:19:08.270 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.8709ms
+2026-03-04 11:19:08.313 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-03-04 11:19:08.322 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.6602ms
+2026-03-04 11:19:24.993 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 55
+2026-03-04 11:19:25.042 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 11:19:25.058 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-04 11:19:25.153 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-03-04 11:19:25.178 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-04 11:19:26.843 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-04 11:19:27.435 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@p8='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [Role] = @p6, [UserName] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-03-04 11:19:27.444 +08:00 [INF] Executed action method day1.Controllers.TestController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2287.6796ms.
+2026-03-04 11:19:27.450 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-04 11:19:27.459 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 2396.6984ms
+2026-03-04 11:19:27.460 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 11:19:27.463 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 200 null application/json; charset=utf-8 2470.0921ms
+2026-03-04 11:19:39.135 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - null null
+2026-03-04 11:19:50.063 +08:00 [INF] Authorization failed. Fail() was explicitly called.
+2026-03-04 11:19:50.067 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-03-04 11:19:55.130 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - 401 0 null 15994.6958ms
+2026-03-04 11:20:05.551 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - null null
+2026-03-04 11:20:11.792 +08:00 [INF] Executed DbCommand (23ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [UserRoles] AS [u]
+    WHERE [r0].[Id] = [u].[RoleId] AND [u].[UserId] = @__userid_0)
+2026-03-04 11:20:27.642 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.GetById (day1)'
+2026-03-04 11:20:27.664 +08:00 [INF] Route matched with {action = "GetById", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetById(Int64) on controller day1.Controllers.TestController (day1).
+2026-03-04 11:20:36.059 +08:00 [INF] Executing action method day1.Controllers.TestController.GetById (day1) - Validation state: "Valid"
+2026-03-04 11:20:46.118 +08:00 [INF] Executed DbCommand (13ms) [Parameters=[@__id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__id_0
+2026-03-04 11:20:59.150 +08:00 [INF] Executed action method day1.Controllers.TestController.GetById (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 23090.5672ms.
+2026-03-04 11:21:02.563 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-04 11:21:04.147 +08:00 [INF] Executed action day1.Controllers.TestController.GetById (day1) in 36479.0578ms
+2026-03-04 11:21:04.154 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.GetById (day1)'
+2026-03-04 11:21:04.154 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - 200 null application/json; charset=utf-8 58603.3363ms
+2026-03-04 15:48:58.268 +08:00 [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-03-04 15:48:58.375 +08:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-03-04 15:48:58.429 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-03-04 15:48:58.511 +08:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-03-04 15:48:58.525 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-03-04 15:48:58.574 +08:00 [INF] Executed DbCommand (32ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-03-04 15:48:58.581 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-03-04 15:48:58.628 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-04 15:48:58.883 +08:00 [INF] Now listening on: http://localhost:5272
+2026-03-04 15:48:58.979 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-04 15:48:58.980 +08:00 [INF] Hosting environment: Development
+2026-03-04 15:48:58.981 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-03-04 15:49:00.790 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-03-04 15:49:01.171 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 391.9696ms
+2026-03-04 15:49:01.177 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-04 15:49:01.181 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 3.6697ms
+2026-03-04 15:49:01.191 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-03-04 15:49:01.257 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 66.3376ms
+2026-03-04 15:49:01.299 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-03-04 15:49:01.313 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.8108ms
+2026-03-04 15:55:45.467 +08:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-03-04 15:55:45.537 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-03-04 15:55:45.568 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-03-04 15:55:45.621 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-03-04 15:55:45.632 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-03-04 15:55:45.662 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-03-04 15:55:45.670 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-03-04 15:55:45.701 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-04 15:55:45.884 +08:00 [INF] Now listening on: http://localhost:5272
+2026-03-04 15:55:45.989 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-04 15:55:45.991 +08:00 [INF] Hosting environment: Development
+2026-03-04 15:55:45.991 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-03-04 15:55:47.592 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-03-04 15:55:47.936 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 355.7457ms
+2026-03-04 15:55:47.941 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-04 15:55:47.945 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 3.2075ms
+2026-03-04 15:55:47.948 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-03-04 15:55:48.014 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 65.7228ms
+2026-03-04 15:55:48.053 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-03-04 15:55:48.067 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 13.9655ms
+2026-03-04 15:56:05.607 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - null null
+2026-03-04 15:56:12.473 +08:00 [INF] Authorization failed. Fail() was explicitly called.
+2026-03-04 15:56:12.477 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-03-04 15:56:14.158 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - 401 0 null 8550.7332ms
+2026-03-04 15:57:43.327 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 55
+2026-03-04 15:57:43.334 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 15:57:43.356 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-04 15:57:44.100 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-03-04 15:57:44.157 +08:00 [INF] Executed DbCommand (33ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-04 15:57:46.430 +08:00 [INF] Executed DbCommand (17ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-04 15:57:47.809 +08:00 [INF] Executed DbCommand (58ms) [Parameters=[@p8='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [Role] = @p6, [UserName] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-03-04 15:57:47.819 +08:00 [INF] Executed action method day1.Controllers.TestController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3715.5831ms.
+2026-03-04 15:57:47.825 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-04 15:57:47.835 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 4474.5718ms
+2026-03-04 15:57:47.836 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 15:57:47.839 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 200 null application/json; charset=utf-8 4513.0085ms
+2026-03-04 15:58:08.299 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - null null
+2026-03-04 15:58:12.021 +08:00 [INF] Executed DbCommand (28ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [UserRoles] AS [u]
+    WHERE [r0].[Id] = [u].[RoleId] AND [u].[UserId] = @__userid_0)
+2026-03-04 15:58:13.797 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.GetById (day1)'
+2026-03-04 15:58:13.817 +08:00 [INF] Route matched with {action = "GetById", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetById(Int64) on controller day1.Controllers.TestController (day1).
+2026-03-04 15:58:18.174 +08:00 [INF] Executing action method day1.Controllers.TestController.GetById (day1) - Validation state: "Valid"
+2026-03-04 15:58:18.183 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__id_0
+2026-03-04 15:58:18.185 +08:00 [INF] Executed action method day1.Controllers.TestController.GetById (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 9.8395ms.
+2026-03-04 15:58:18.186 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-04 15:58:19.166 +08:00 [INF] Executed action day1.Controllers.TestController.GetById (day1) in 5348.2845ms
+2026-03-04 15:58:19.167 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.GetById (day1)'
+2026-03-04 15:58:19.168 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - 200 null application/json; charset=utf-8 10869.3996ms
+2026-03-04 16:01:47.736 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - null null
+2026-03-04 16:01:48.897 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [UserRoles] AS [u]
+    WHERE [r0].[Id] = [u].[RoleId] AND [u].[UserId] = @__userid_0)
+2026-03-04 16:01:48.899 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.GetById (day1)'
+2026-03-04 16:01:48.900 +08:00 [INF] Route matched with {action = "GetById", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetById(Int64) on controller day1.Controllers.TestController (day1).
+2026-03-04 16:01:48.913 +08:00 [INF] Executing action method day1.Controllers.TestController.GetById (day1) - Validation state: "Valid"
+2026-03-04 16:01:48.916 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__id_0
+2026-03-04 16:01:48.917 +08:00 [INF] Executed action method day1.Controllers.TestController.GetById (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.5741ms.
+2026-03-04 16:01:48.918 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-04 16:01:49.058 +08:00 [INF] Executed action day1.Controllers.TestController.GetById (day1) in 157.0894ms
+2026-03-04 16:01:49.059 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.GetById (day1)'
+2026-03-04 16:01:49.059 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - 200 null application/json; charset=utf-8 1323.9815ms
+2026-03-04 16:33:48.283 +08:00 [INF] Executed DbCommand (101ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-03-04 16:33:48.367 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-03-04 16:33:48.397 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-03-04 16:33:48.466 +08:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-03-04 16:33:48.478 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-03-04 16:33:48.522 +08:00 [INF] Executed DbCommand (29ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-03-04 16:33:48.529 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-03-04 16:33:48.563 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-04 16:33:48.756 +08:00 [INF] Now listening on: http://localhost:5272
+2026-03-04 16:33:48.851 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-04 16:33:48.852 +08:00 [INF] Hosting environment: Development
+2026-03-04 16:33:48.852 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-03-04 16:33:49.166 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-03-04 16:33:49.430 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 273.0434ms
+2026-03-04 16:33:49.437 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-04 16:33:49.440 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 3.5235ms
+2026-03-04 16:33:49.450 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-03-04 16:33:49.490 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.6047ms
+2026-03-04 16:33:49.561 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-03-04 16:33:49.570 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.6033ms
+2026-03-04 16:33:56.624 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - null null
+2026-03-04 16:34:43.061 +08:00 [INF] Authorization failed. Fail() was explicitly called.
+2026-03-04 16:34:43.065 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-03-04 16:34:43.066 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - 401 0 null 46441.9138ms
+2026-03-04 16:35:04.309 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 55
+2026-03-04 16:35:04.316 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 16:35:04.336 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-04 16:35:04.440 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-03-04 16:35:04.485 +08:00 [INF] Executed DbCommand (23ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-04 16:35:07.332 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-04 16:35:08.325 +08:00 [INF] Executed DbCommand (34ms) [Parameters=[@p8='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [Role] = @p6, [UserName] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-03-04 16:35:08.334 +08:00 [INF] Executed action method day1.Controllers.TestController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3890.1649ms.
+2026-03-04 16:35:08.340 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-04 16:35:08.349 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 4009.3864ms
+2026-03-04 16:35:08.350 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 16:35:08.353 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 200 null application/json; charset=utf-8 4043.2471ms
+2026-03-04 16:35:22.480 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - null null
+2026-03-04 16:36:33.848 +08:00 [INF] Executed DbCommand (14ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [UserRoles] AS [u]
+    WHERE [r0].[Id] = [u].[RoleId] AND [u].[UserId] = @__userid_0)
+2026-03-04 16:38:43.218 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.GetById (day1)'
+2026-03-04 16:38:43.227 +08:00 [INF] Route matched with {action = "GetById", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetById(Int64) on controller day1.Controllers.TestController (day1).
+2026-03-04 16:38:43.244 +08:00 [INF] Executing action method day1.Controllers.TestController.GetById (day1) - Validation state: "Valid"
+2026-03-04 16:38:43.253 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__id_0
+2026-03-04 16:38:43.254 +08:00 [INF] Executed action method day1.Controllers.TestController.GetById (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 9.174ms.
+2026-03-04 16:38:43.255 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-04 16:38:43.953 +08:00 [INF] Executed action day1.Controllers.TestController.GetById (day1) in 724.4333ms
+2026-03-04 16:38:43.953 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.GetById (day1)'
+2026-03-04 16:38:43.954 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Test/id?id=3 - 200 null application/json; charset=utf-8 201474.4655ms
+2026-03-04 16:38:50.946 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/id?id=1 - null null
+2026-03-04 16:39:02.980 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [UserRoles] AS [u]
+    WHERE [r0].[Id] = [u].[RoleId] AND [u].[UserId] = @__userid_0)
+2026-03-04 16:39:02.983 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.GetById (day1)'
+2026-03-04 16:39:02.983 +08:00 [INF] Route matched with {action = "GetById", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetById(Int64) on controller day1.Controllers.TestController (day1).
+2026-03-04 16:39:02.997 +08:00 [INF] Executing action method day1.Controllers.TestController.GetById (day1) - Validation state: "Valid"
+2026-03-04 16:39:02.999 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__id_0
+2026-03-04 16:39:03.001 +08:00 [INF] Executed action method day1.Controllers.TestController.GetById (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.7675ms.
+2026-03-04 16:39:03.002 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-04 16:39:03.559 +08:00 [INF] Executed action day1.Controllers.TestController.GetById (day1) in 574.8196ms
+2026-03-04 16:39:03.560 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.GetById (day1)'
+2026-03-04 16:39:03.561 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Test/id?id=1 - 200 null application/json; charset=utf-8 12614.6841ms
+2026-03-04 16:39:29.280 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 59
+2026-03-04 16:39:29.293 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 16:39:29.294 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-04 16:39:29.312 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-03-04 16:39:29.315 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-04 16:39:31.501 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-04 16:39:32.006 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@p8='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [Role] = @p6, [UserName] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-03-04 16:39:32.008 +08:00 [INF] Executed action method day1.Controllers.TestController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2694.9467ms.
+2026-03-04 16:39:32.009 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-04 16:39:32.010 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 2714.3153ms
+2026-03-04 16:39:32.011 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 16:39:32.011 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 200 null application/json; charset=utf-8 2731.4985ms
+2026-03-04 16:39:49.114 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/id?id=1 - null null
+2026-03-04 16:40:09.419 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [UserRoles] AS [u]
+    WHERE [r0].[Id] = [u].[RoleId] AND [u].[UserId] = @__userid_0)
+2026-03-04 16:43:40.916 +08:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-03-04 16:43:41.010 +08:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-03-04 16:43:41.053 +08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-03-04 16:43:41.105 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-03-04 16:43:41.117 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-03-04 16:43:41.158 +08:00 [INF] Executed DbCommand (25ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-03-04 16:43:41.167 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-03-04 16:43:41.199 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-04 16:43:41.394 +08:00 [INF] Now listening on: http://localhost:5272
+2026-03-04 16:43:41.480 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-04 16:43:41.481 +08:00 [INF] Hosting environment: Development
+2026-03-04 16:43:41.482 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-03-04 16:43:42.412 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-03-04 16:43:42.693 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 292.6328ms
+2026-03-04 16:43:42.724 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-03-04 16:43:42.733 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-04 16:43:42.737 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 3.5094ms
+2026-03-04 16:43:42.757 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.2032ms
+2026-03-04 16:43:42.823 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-03-04 16:43:42.833 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.9543ms
+2026-03-04 16:43:59.382 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 59
+2026-03-04 16:43:59.455 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 16:43:59.477 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-04 16:43:59.605 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-03-04 16:43:59.647 +08:00 [INF] Executed DbCommand (15ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-04 16:44:01.290 +08:00 [INF] Executed DbCommand (28ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-04 16:44:02.204 +08:00 [INF] Executed DbCommand (18ms) [Parameters=[@p8='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [Role] = @p6, [UserName] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-03-04 16:44:02.213 +08:00 [INF] Executed action method day1.Controllers.TestController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2605.1216ms.
+2026-03-04 16:44:02.219 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-04 16:44:02.229 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 2747.7775ms
+2026-03-04 16:44:02.229 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 16:44:02.232 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 200 null application/json; charset=utf-8 2850.265ms
+2026-03-04 16:44:18.981 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/id?id=1 - null null
+2026-03-04 16:44:32.330 +08:00 [INF] Executed DbCommand (21ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [UserRoles] AS [u]
+    WHERE [r0].[Id] = [u].[RoleId] AND [u].[UserId] = @__userid_0)
+2026-03-04 16:46:31.940 +08:00 [INF] Executed DbCommand (27ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [UserRoles] AS [u]
+    WHERE [r0].[Id] = [u].[RoleId] AND [u].[UserId] = @__userid_0)
+2026-03-04 16:46:31.943 +08:00 [INF] Authorization failed. These requirements were not met:
+day1.Domain.Security.PermissionRequirement
+2026-03-04 16:46:31.947 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-03-04 16:46:31.947 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Test/id?id=1 - 403 0 null 132967.0531ms
+2026-03-04 16:46:32.890 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-03-04 16:46:32.942 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 52.4267ms
+2026-03-04 16:46:32.953 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-03-04 16:46:32.953 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-04 16:46:32.956 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 3.4467ms
+2026-03-04 16:46:32.964 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.5201ms
+2026-03-04 16:46:33.023 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-03-04 16:46:33.026 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/favicon-32x32.png - null null
+2026-03-04 16:46:33.031 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.2377ms
+2026-03-04 16:46:33.039 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-03-04 16:46:33.040 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/favicon-32x32.png - 200 628 image/png 14.2169ms
+2026-03-04 16:46:54.268 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Test/login - application/json 59
+2026-03-04 16:46:54.272 +08:00 [INF] Executing endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 16:46:54.833 +08:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.TestController (day1).
+2026-03-04 16:46:54.879 +08:00 [INF] Executing action method day1.Controllers.TestController.Login (day1) - Validation state: "Valid"
+2026-03-04 16:46:54.885 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Role], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-04 16:46:55.571 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-04 16:46:56.124 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@p8='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [Role] = @p6, [UserName] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-03-04 16:46:56.126 +08:00 [INF] Executed action method day1.Controllers.TestController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1246.1394ms.
+2026-03-04 16:46:56.127 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-04 16:46:56.129 +08:00 [INF] Executed action day1.Controllers.TestController.Login (day1) in 1273.2497ms
+2026-03-04 16:46:56.130 +08:00 [INF] Executed endpoint 'day1.Controllers.TestController.Login (day1)'
+2026-03-04 16:46:56.131 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Test/login - 200 null application/json; charset=utf-8 1862.4786ms
+2026-03-04 16:47:11.155 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Test/id?id=1 - null null
+2026-03-04 16:47:17.094 +08:00 [INF] Executed DbCommand (14ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [UserRoles] AS [u]
+    WHERE [r0].[Id] = [u].[RoleId] AND [u].[UserId] = @__userid_0)
+2026-03-04 16:47:49.985 +08:00 [INF] Executed DbCommand (20ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [UserRoles] AS [u]
+    WHERE [r0].[Id] = [u].[RoleId] AND [u].[UserId] = @__userid_0)
+2026-03-04 16:49:10.971 +08:00 [INF] Authorization failed. These requirements were not met:
+day1.Domain.Security.PermissionRequirement
+2026-03-04 16:49:10.973 +08:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-03-04 16:49:10.974 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Test/id?id=1 - 403 0 null 119819.1179ms

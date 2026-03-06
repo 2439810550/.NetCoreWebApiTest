@@ -61,5 +61,16 @@ namespace day1.Repositories
         {
             throw new NotImplementedException();
         }
+        /// <summary>
+        /// 获取用户权限列表，通过用户的角色关联到权限表，返回权限名称列表
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <returns></returns>
+        public List<string> GetUserPemissions(long userid)
+        {
+            return _context.RolePermissions.Where(rp => rp.Role.UserRoles.Any(ur => ur.UserId == userid))
+                .Select(rp => rp.Permission.Code)
+                .ToList();
+        }
     }
 }

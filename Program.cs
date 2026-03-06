@@ -16,22 +16,34 @@ using day1.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using day1.DYSdk.DYApi;
 using day1.Models;
+using day1.Domain.Security;
+using Microsoft.AspNetCore.Authorization;
 var builder = WebApplication.CreateBuilder(args);
-///ÅäÖÃ JWT ÈÏÖ¤·şÎñ
-var jwtKey = builder.Configuration["Jwt:Key"] ?? throw new Exception("Jwt:Key missing");
+/// é…ç½® JWT è®¤è¯å¯†é’¥
+var jwtKey = builder.Configuration["Jwt:Key"] ?? throw new Exception("æœªé…ç½® Jwt:Key");
 var key = Encoding.UTF8.GetBytes(jwtKey);
 //var key =Encoding.UTF8.GetBytes("ThisIsMySuperSecretKey1234567890123456");
-///×¢²á UserService ºÍ UserRepository µ½ÒÀÀµ×¢ÈëÈİÆ÷ÖĞ
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("VueCors", policy =>
+    {
+        policy
+        .WithOrigins("http://localhost:5173")
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
+/// æ³¨å†Œ UserService å’Œ UserRepository æœåŠ¡ä¾èµ–æ³¨å…¥
 builder.Services.AddScoped<IUserService, UserService>();
-///ÅäÖÃ Entity Framework Core Ê¹ÓÃ SQL Server Êı¾İ¿â£¬²¢×¢²á AppDbContext µ½ÒÀÀµ×¢ÈëÈİÆ÷ÖĞ
+/// é…ç½® Entity Framework Core ä½¿ç”¨ SQL Server æ•°æ®åº“ï¼Œå¹¶æ³¨å†Œ AppDbContext æœåŠ¡ä¾èµ–æ³¨å…¥
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-///×¢²á UserRepository µ½ÒÀÀµ×¢ÈëÈİÆ÷ÖĞ
+/// æ³¨å†Œ UserRepository æœåŠ¡ä¾èµ–æ³¨å…¥
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ITokenService,TokenService>();
-///ÅäÖÃ FluentValidation£¬×Ô¶¯×¢²á CreateUserDtoValidator
+/// é…ç½® FluentValidationè‡ªåŠ¨æ³¨å†Œ CreateUserDtoValidator
 builder.Services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserDtoValidator>());
-///ÅäÖÃ JWT ÈÏÖ¤·şÎñ£¬ÉèÖÃÄ¬ÈÏÈÏÖ¤·½°¸Îª JWT Bearer£¬²¢ÅäÖÃ JWT Bearer Ñ¡Ïî£¬°üÀ¨ Token ÑéÖ¤²ÎÊı
+/// é…ç½® JWT è®¤è¯æœåŠ¡ï¼Œé»˜è®¤è®¤è¯æ–¹æ¡ˆä¸º JWT Bearerï¼Œä½¿ç”¨ JWT Bearer é€‰é¡¹ï¼Œè¿›è¡Œ Token éªŒè¯é…ç½®
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -48,13 +60,19 @@ builder.Services.AddAuthentication(options =>
         ClockSkew = TimeSpan.Zero
     };
 });
+/// é…ç½®æƒé™ç­–ç•¥ï¼Œä½¿ç”¨ AddPermissionPolicies æ‰©å±•æ–¹æ³•è‡ªåŠ¨æ³¨å†Œæ‰€æœ‰æƒé™ç­–ç•¥
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPermissionPolicies();
+});
+/// æ³¨å†Œ PermissionHandler æœåŠ¡ä¾èµ–æ³¨å…¥ï¼Œç”¨äºæƒé™éªŒè¯ï¼Œç¡®ä¿ä½¿ç”¨è¯¥å¤„ç†å™¨éªŒè¯ç”¨æˆ·æƒé™
+builder.Services.AddScoped<IAuthorizationHandler, PermissionHandler>();
 
-// Add services to the container.
-
+// å‘å®¹å™¨æ·»åŠ æœåŠ¡
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// é…ç½® Swagger/OpenAPI çš„è¯´æ˜ï¼šhttps://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-///ÅäÖÃ Swagger ÒÔÖ§³Ö JWT ÈÏÖ¤
+/// é…ç½® Swagger å¹¶æ”¯æŒ JWT è®¤è¯
 builder.Services.AddSwaggerGen(options =>
 {
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -64,7 +82,7 @@ builder.Services.AddSwaggerGen(options =>
         Scheme = "bearer",
         BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Description = "ÇëÊäÈë Bearer + ¿Õ¸ñ + Token"
+        Description = "è¯·è¾“å…¥ Bearer + ç©ºæ ¼ + Token"
     });
 
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -82,24 +100,24 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 });
-///ÅäÖÃ Serilog ÈÕÖ¾¼ÇÂ¼Æ÷
+/// é…ç½® Serilog æ—¥å¿—è®°å½•å™¨
 builder.Host.UseSerilog((context, config) =>
 {
     config.WriteTo.Console();
     config.WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day);
 });
-///È«¾Ö×¢²á ApiResponseFilter
+/// å…¨å±€æ³¨å†Œ ApiResponseFilter
 builder.Services.AddControllers(options =>
 {
     options.Filters.Add<ApiResponseFilter>();
 });
 builder.Services.AddSingleton<IDateTimeProvider,DateTimeProvider>();
-///ÅäÖÃ ApiBehaviorOptions£¬½ûÓÃÄ¬ÈÏµÄÄ£ĞÍÑéÖ¤´íÎóÏìÓ¦£¬ÒÔ±ãÊ¹ÓÃ×Ô¶¨ÒåµÄ ApiResponseFilter ´¦ÀíÄ£ĞÍÑéÖ¤´íÎó
+/// é…ç½® ApiBehaviorOptionsï¼Œç¦ç”¨é»˜è®¤çš„æ¨¡å‹éªŒè¯å“åº”ï¼Œä»¥ä¾¿ä½¿ç”¨è‡ªå®šä¹‰çš„ ApiResponseFilter å¤„ç†æ¨¡å‹éªŒè¯é”™è¯¯
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
     options.SuppressModelStateInvalidFilter = true;
 });
-///È«¾Ö×¢²á ValidationFilter£¬ÒÔ±ãÔÚÄ£ĞÍÑéÖ¤Ê§°ÜÊ±Å×³ö×Ô¶¨ÒåµÄ BusinessException Òì³£
+/// å…¨å±€æ³¨å†Œ ValidationFilterï¼Œä»¥ä¾¿åœ¨æ¨¡å‹éªŒè¯å¤±è´¥æ—¶æŠ›å‡ºè‡ªå®šä¹‰çš„ BusinessException å¼‚å¸¸
 builder.Services.AddControllers(options =>
 {
     options.Filters.Add<ValidationFilter>();
@@ -111,24 +129,26 @@ builder.Services.AddHttpClient<IDouYinVideoApiService, DouYinVideoApiService>(cl
 });
 builder.Services.AddScoped<DYVideoServer>();
 builder.Services.AddScoped<DBInitializer>();
+builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// é…ç½® HTTP è¯·æ±‚ç®¡é“
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-///È«¾ÖÊ¹ÓÃ×Ô¶¨ÒåÒì³£´¦ÀíÖĞ¼ä¼ş
+/// å…¨å±€ä½¿ç”¨è‡ªå®šä¹‰å¼‚å¸¸å¤„ç†ä¸­é—´ä»¶
 app.UseMiddleware<ExceptionMiddleware>();
-///ÆôÓÃÈÏÖ¤ºÍÊÚÈ¨ÖĞ¼ä¼ş
+app.UseCors("VueCors");
+/// å¯ç”¨è®¤è¯å’Œæˆæƒä¸­é—´ä»¶
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
 
-
+/// åº”ç”¨å¯åŠ¨æ—¶æ‰§è¡Œä¸€æ¬¡åˆå§‹åŒ–ï¼Œè‡ªåŠ¨åˆ›å»ºæ•°æ®åº“ï¼Œç¡®ä¿æ•°æ®åº“ç»“æ„æ­£ç¡®
 using (var scope = app.Services.CreateScope())
 {
    

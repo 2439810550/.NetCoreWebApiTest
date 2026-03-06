@@ -63,7 +63,12 @@ namespace day1.Services
         {
             return _userRepository.GetById(id);
         }
-
+        /// <summary>
+        /// 用户登录，验证用户名和密码，生成 JWT 令牌，并处理账户锁定逻辑
+        /// </summary>
+        /// <param name="createUserDTO"></param>
+        /// <returns></returns>
+        /// <exception cref="BusinessException"></exception>
         public LoginResponseDto Login(DTOs.CreateUserDTO createUserDTO)
         {
            var user= _userRepository.GetByUserName(createUserDTO.UserName);

@@ -7,6 +7,7 @@ using day1.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using day1.Domain.Security;
 
 namespace day1.Controllers
 {
@@ -46,7 +47,7 @@ namespace day1.Controllers
             var user = _userService.CreateUser(createUserDTO);
                 return Ok(user);
         }
-        [Authorize(Roles ="Admin")]
+        [Authorize(Policy = Permissions.User.Read)]
         [HttpGet("id")]
         public IActionResult GetById(long id)
         {

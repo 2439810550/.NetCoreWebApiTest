@@ -12,8 +12,11 @@ namespace day1.Services
         {
             _douYinVideoApiService = douYinVideoApiService;
         }
-
-
+        /// <summary>
+        /// 调用抖音视频去水印接口，返回去水印后的视频链接和相关信息
+        /// </summary>
+        /// <param name="videoUrl"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<DYIRemoveVideoWatermarkDTO>> RemoveWatermarkAsync(string videoUrl)
         {
             var apiResponse = await _douYinVideoApiService.RemoveVideoWatermarkAsync(videoUrl);
