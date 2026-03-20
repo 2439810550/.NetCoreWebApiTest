@@ -7,8 +7,6 @@
 
         public string PassWord { get; set; }
 
-        public string Role { get; set; } = "User";
-
         /// <summary>
         /// 用户创建时间
         /// </summary>
@@ -28,5 +26,12 @@
         /// 账户锁定结束时间，如果当前时间小于该时间，则账户处于锁定状态
         /// </summary>
         public DateTime? LockOutEndTime { get; set; }
+        
+        /// <summary>
+        /// 
+        /// 
+        /// 用户角色关联
+        /// </summary>
+        public ICollection<UserRole> UserRoles { get; set; } = new List<UserRole>();
     }
 }

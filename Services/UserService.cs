@@ -1,4 +1,4 @@
-﻿using day1.Data;
+using day1.Data;
 using day1.Models;
 using day1.Repositories;
 using day1.DTOs;
@@ -19,11 +19,13 @@ namespace day1.Services
         private readonly IUserRepository _userRepository;
         private readonly ITokenService _tokenService;
         private readonly IDateTimeProvider _dateTimeProvider;
-        public UserService(IUserRepository userRepository,ITokenService tokenService,IDateTimeProvider dateTimeProvider)
+        private readonly IRoleAndPermissionRepository _roleAndPermissionRepository;
+        public UserService(IUserRepository userRepository,ITokenService tokenService,IDateTimeProvider dateTimeProvider,IRoleAndPermissionRepository roleAndPermissionRepository)
         {
             _userRepository = userRepository;
             _tokenService = tokenService;
             _dateTimeProvider = dateTimeProvider;
+            _roleAndPermissionRepository = roleAndPermissionRepository;
         }
 
         public List<User> GetAllUsers()
@@ -84,7 +86,7 @@ namespace day1.Services
             }
             user.FailedLoginCount = 0;
             user.LockOutEndTime = null;
-            var roles = _userRepository.GetUserRoles(user.Id);
+            var roles = _roleAndPermissionRepository.GetUserRoles(user.Id);
             var token=_tokenService.CreateAccessToken(user,roles);
             var refreshToken =_tokenService.CreateRefreshToken();
 
@@ -120,7 +122,8 @@ namespace day1.Services
             {
                 throw new BusinessException(Domain.Enum.BusinessErrorCode.UserNotFound,"用户不存在");
             }
-            if (user.Role == "Admin") 
+            var roles = _roleAndPermissionRepository.GetUserRoles(user.Id);
+            if (roles.Contains("Admin")) 
             {
                 throw new BusinessException(Domain.Enum.BusinessErrorCode.NotDeleteAdminUser, "管理员用户不能被删除");
             }

@@ -1,4 +1,4 @@
-﻿using day1.Data;
+using day1.Data;
 using day1.Models;
 using Microsoft.EntityFrameworkCore;
 namespace day1.Repositories
@@ -14,9 +14,14 @@ namespace day1.Repositories
         {
             _context.Users.Add(user);
             _context.SaveChanges();
-            //只允许注册用户角色 1管理员 2用户
-            _context.UserRoles.Add(new UserRole {UserId=user.Id,RoleId=2 }) ;
-            _context.SaveChanges();
+            
+            // 默认分配 User 角色
+            var userRole = _context.Roles.FirstOrDefault(r => r.Name == "User");
+            if (userRole != null)
+            {
+                _context.UserRoles.Add(new UserRole { UserId = user.Id, RoleId = userRole.Id });
+                _context.SaveChanges();
+            }
         }
 
         public User? GetById(long id)
@@ -52,25 +57,11 @@ namespace day1.Repositories
             return _context.Users.FirstOrDefault(u => u.RefreshToken == refreshToken);
         }
 
-        public List<string> GetUserRoles(long userid)
+
+        public User? GetByUserId(long userId)
         {
-            return _context.UserRoles.Where(u=>u.UserId==userid).Select(u => u.Role.Name).ToList();
+            return _context.Users.FirstOrDefault(u => u.Id == userId);
         }
 
-        public List<string> GetByUserId()
-        {
-            throw new NotImplementedException();
-        }
-        /// <summary>
-        /// 获取用户权限列表，通过用户的角色关联到权限表，返回权限名称列表
-        /// </summary>
-        /// <param name="userid"></param>
-        /// <returns></returns>
-        public List<string> GetUserPemissions(long userid)
-        {
-            return _context.RolePermissions.Where(rp => rp.Role.UserRoles.Any(ur => ur.UserId == userid))
-                .Select(rp => rp.Permission.Code)
-                .ToList();
-        }
     }
 }

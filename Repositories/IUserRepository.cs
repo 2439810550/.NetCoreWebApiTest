@@ -1,4 +1,4 @@
-﻿using day1.Models;
+using day1.Models;
 using Microsoft.AspNetCore.Routing.Constraints;
 using Microsoft.EntityFrameworkCore.Update.Internal;
 namespace day1.Repositories
@@ -17,8 +17,6 @@ namespace day1.Repositories
 
         User? GetByRefreshToken(string refreshToken);
 
-        List<string> GetUserRoles(long userid);
-        List<string> GetByUserId();
-        List<string> GetUserPemissions(long userid);
+        User? GetByUserId(long userId);
     }
 }

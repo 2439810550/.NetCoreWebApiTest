@@ -16,6 +16,80 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "day1.Controllers.RoleAndPermissionController",
+    "Method": "AddRolesByUserId",
+    "RelativePath": "api/RoleAndPermission/adduserroles",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "roleid",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "day1.Controllers.RoleAndPermissionController",
+    "Method": "GetUserPermissions",
+    "RelativePath": "api/RoleAndPermission/getpermissions/{userid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "day1.Controllers.RoleAndPermissionController",
+    "Method": "DeleteRolesByUserId",
+    "RelativePath": "api/RoleAndPermission/roles",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "roleid",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "day1.Controllers.RoleAndPermissionController",
+    "Method": "GetUserRoles",
+    "RelativePath": "api/RoleAndPermission/roles/{userid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "day1.Controllers.TestController",
     "Method": "DeleteByUserName",
     "RelativePath": "api/Test/DeleteByUserName",

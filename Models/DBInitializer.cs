@@ -1,4 +1,4 @@
-﻿using day1.Data;
+using day1.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace day1.Models
@@ -62,10 +62,16 @@ namespace day1.Models
         {
             List<Permission> permissions = new List<Permission>
             {
+                // 用户相关权限
                 new Permission { Code = "User.Read",Name="用户读取" },
-                new Permission { Code = "User.Write",Name="用户写入" },
+                new Permission { Code = "User.Create",Name="用户创建" },
+                new Permission { Code = "User.Update",Name="用户修改" },
                 new Permission { Code = "User.Delete",Name="用户删除" },
-                new Permission { Code = "User.Edit",Name="用户修改" }
+                // 订单相关权限
+                new Permission { Code = "Order.Read",Name="订单读取" },
+                new Permission { Code = "Order.Create",Name="订单创建" },
+                new Permission { Code = "Order.Update",Name="订单修改" },
+                new Permission { Code = "Order.Delete",Name="订单删除" }
             };
             var existingPermissions = (await _context.Permissions.Select(p=>p.Code).ToListAsync()).ToHashSet();
             var newPermissions = permissions.Where(p => !existingPermissions.Contains(p.Code)).ToList();

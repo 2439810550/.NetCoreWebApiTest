@@ -17,6 +17,7 @@ namespace day1.Services
         private readonly IConfiguration _configuration;
         private readonly IUserRepository _userRepository;
         private readonly IDateTimeProvider _dateTimeProvider;
+        private readonly IRoleAndPermissionRepository _roleAndPermissionRepository;
 
         public TokenService(IConfiguration configuration,IUserRepository userRepository,IDateTimeProvider dateTimeProvider)
         {
@@ -82,7 +83,7 @@ namespace day1.Services
             {
                 throw new BusinessException(Domain.Enum.BusinessErrorCode.InvalidRefreshToken, "Token不存在或已过期");
             };
-            var roles = _userRepository.GetUserRoles(user.Id);
+            var roles = _roleAndPermissionRepository.GetUserRoles(user.Id);
             var accesstoken = CreateAccessToken(user, roles);
             var newrefreshToken = CreateRefreshToken();
             user.RefreshToken = newrefreshToken;

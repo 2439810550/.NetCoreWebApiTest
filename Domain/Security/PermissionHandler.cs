@@ -7,11 +7,11 @@ namespace day1.Domain.Security
 {
     public class PermissionHandler : AuthorizationHandler<PermissionRequirement>
     {
-        private readonly IUserRepository _userRepository;
         private readonly IHttpContextAccessor _contextAccessor;
-        public PermissionHandler(IUserRepository userRepository, IHttpContextAccessor contextAccessor)
+        private readonly IRoleAndPermissionRepository _roleAndPermissionRepository;
+        public PermissionHandler(IRoleAndPermissionRepository roleAndPermissionRepository, IHttpContextAccessor contextAccessor)
         {
-            _userRepository = userRepository;
+            _roleAndPermissionRepository = roleAndPermissionRepository;
             _contextAccessor = contextAccessor;
         }
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, PermissionRequirement requirement)
@@ -25,7 +25,7 @@ namespace day1.Domain.Security
             var httpcontext = _contextAccessor.HttpContext;
             if (!httpcontext.Items.TryGetValue("UserPerMissions", out var permissionsObj))
             {
-                var permissions = _userRepository.GetUserPemissions(long.Parse(userid));
+                var permissions = _roleAndPermissionRepository.GetUserPemissions(long.Parse(userid));
                 httpcontext.Items["UserPerMissions"] = permissions;
                 permissionsObj = permissions;
             }

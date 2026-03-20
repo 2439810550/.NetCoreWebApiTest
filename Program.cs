@@ -18,6 +18,7 @@ using day1.DYSdk.DYApi;
 using day1.Models;
 using day1.Domain.Security;
 using Microsoft.AspNetCore.Authorization;
+using day1.Services.RoleAndPermission;
 var builder = WebApplication.CreateBuilder(args);
 /// 配置 JWT 认证密钥
 var jwtKey = builder.Configuration["Jwt:Key"] ?? throw new Exception("未配置 Jwt:Key");
@@ -40,7 +41,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 /// 注册 UserRepository 服务依赖注入
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IRoleAndPermissionRepository, RoleAndPermissionRepository>();
 builder.Services.AddScoped<ITokenService,TokenService>();
+builder.Services.AddScoped<IRoleAndPermissionServer, RoleAndPermissionServer>();
 /// 配置 FluentValidation自动注册 CreateUserDtoValidator
 builder.Services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserDtoValidator>());
 /// 配置 JWT 认证服务，默认认证方案为 JWT Bearer，使用 JWT Bearer 选项，进行 Token 验证配置
