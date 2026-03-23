@@ -13,11 +13,11 @@ namespace day1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TestController : ControllerBase
+    public class AuthController : ControllerBase
     {
         private readonly IUserService _userService;
         private readonly ITokenService _tokenService;
-        public TestController(IUserService userService, ITokenService tokenService)
+        public AuthController(IUserService userService, ITokenService tokenService)
         {
             _userService = userService;
             _tokenService = tokenService;

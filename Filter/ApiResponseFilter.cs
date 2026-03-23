@@ -28,7 +28,7 @@ namespace day1.Filter
 
                 if (objectResult.Value is ApiResponse<object>)
                     return;
-                var apiResponse=ApiResponse<object>.SuccessResponse(objectResult.Value);
+                var apiResponse=ApiResponse<object>.SuccessResponse(objectResult.Value,objectResult.StatusCode);
                 context.Result = new ObjectResult(apiResponse)
                 {
                     StatusCode = objectResult.StatusCode

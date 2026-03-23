@@ -1,0 +1,886 @@
+2026-03-23 08:37:13.032 +08:00 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-03-23 08:37:17.739 +08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-03-23 08:37:17.775 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-03-23 08:37:17.841 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-03-23 08:37:17.855 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-03-23 08:37:17.903 +08:00 [INF] Executed DbCommand (27ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-03-23 08:37:17.915 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-03-23 08:37:17.962 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-23 08:37:18.828 +08:00 [INF] Now listening on: http://localhost:5272
+2026-03-23 08:37:18.955 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-23 08:37:18.957 +08:00 [INF] Hosting environment: Development
+2026-03-23 08:37:18.958 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-03-23 08:37:21.257 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-03-23 08:37:21.672 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 454.0086ms
+2026-03-23 08:37:21.697 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-03-23 08:37:21.700 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-23 08:37:21.707 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 7.7316ms
+2026-03-23 08:37:21.769 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 72.0359ms
+2026-03-23 08:37:21.975 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-03-23 08:37:21.986 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 11.7672ms
+2026-03-23 08:37:28.103 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - null null
+2026-03-23 08:37:31.262 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:37:36.542 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - 204 null null 8438.9956ms
+2026-03-23 08:37:36.545 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-03-23 08:37:44.030 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:37:44.095 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:37:44.116 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-03-23 08:37:44.150 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 30.3222ms
+2026-03-23 08:37:44.153 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:37:54.738 +08:00 [ERR] 系统异常
+Microsoft.AspNetCore.Server.Kestrel.Core.BadHttpRequestException: Unexpected end of request content.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1ContentLengthMessageBody.ReadAsyncInternal(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream.ReadAsyncInternal(Memory`1 destination, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Text.Json.Serialization.StreamReadBufferState.ReadAsync(Stream stream, CancellationToken cancellationToken, Boolean fillBuffer)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync[TReadBufferState,TStream](TStream utf8Json, TReadBufferState bufferState, CancellationToken cancellationToken)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsObjectAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter.ReadRequestBodyAsync(InputFormatterContext context, Encoding encoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter.ReadRequestBodyAsync(InputFormatterContext context, Encoding encoding)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at day1.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\1\projectExcel\day1\Middlewares\ExceptionMiddleware.cs:line 26
+2026-03-23 08:38:35.540 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 500 null application/json 58994.628ms
+2026-03-23 08:39:06.106 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - null null
+2026-03-23 08:39:08.422 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:39:10.166 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - 204 null null 4062.3944ms
+2026-03-23 08:39:10.172 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-03-23 08:39:13.590 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:39:13.591 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:39:13.592 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-03-23 08:39:13.690 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-03-23 08:39:16.930 +08:00 [INF] Executed DbCommand (21ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-23 08:39:29.524 +08:00 [INF] Executed DbCommand (26ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 08:39:43.714 +08:00 [INF] Executed DbCommand (23ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-03-23 08:40:39.329 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 85611.0736ms.
+2026-03-23 08:41:02.761 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 08:41:10.708 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 117114.2407ms
+2026-03-23 08:41:10.708 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:41:13.031 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 499 null application/json; charset=utf-8 122858.238ms
+2026-03-23 08:41:25.927 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - null null
+2026-03-23 08:41:27.562 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:41:27.563 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - 204 null null 1635.9291ms
+2026-03-23 08:41:27.570 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-03-23 08:41:29.211 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:41:29.213 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:41:29.214 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-03-23 08:41:29.232 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-03-23 08:41:30.331 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-23 08:41:31.215 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 08:41:31.221 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-03-23 08:41:31.224 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1991.4463ms.
+2026-03-23 08:41:31.225 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 08:41:31.226 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 2011.1142ms
+2026-03-23 08:41:31.227 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:41:31.228 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 200 null application/json; charset=utf-8 3657.9921ms
+2026-03-23 08:41:31.229 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/NaN - null null
+2026-03-23 08:41:31.698 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:41:31.699 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/NaN - 204 null null 469.8377ms
+2026-03-23 08:41:31.701 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/NaN - null null
+2026-03-23 08:41:33.120 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:41:33.154 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:41:33.157 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 08:44:04.731 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 151572.2372ms
+2026-03-23 08:44:04.747 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:44:04.764 +08:00 [WRN] 业务异常
+day1.Domain.BusinessException: The value 'NaN' is not valid.
+   at day1.Filter.ValidationFilter.OnActionExecuting(ActionExecutingContext context) in D:\1\projectExcel\day1\Filter\ValidationFilter.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at day1.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\1\projectExcel\day1\Middlewares\ExceptionMiddleware.cs:line 26
+2026-03-23 08:44:04.774 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/NaN - 499 null application/json; charset=utf-8 153073.2493ms
+2026-03-23 08:44:14.409 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - null null
+2026-03-23 08:44:19.732 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:44:19.733 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - 204 null null 5323.9162ms
+2026-03-23 08:44:19.735 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-03-23 08:44:23.140 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:44:23.141 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:44:23.142 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-03-23 08:44:23.156 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-03-23 08:44:26.553 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-23 08:44:27.529 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 08:44:27.534 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-03-23 08:44:27.535 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4378.335ms.
+2026-03-23 08:44:27.536 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 08:44:27.537 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 4393.5497ms
+2026-03-23 08:44:27.537 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:44:27.538 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 200 null application/json; charset=utf-8 7803.2782ms
+2026-03-23 08:44:54.453 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/undefined - null null
+2026-03-23 08:44:54.460 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:44:54.460 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/undefined - 204 null null 7.6705ms
+2026-03-23 08:44:54.468 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/undefined - null null
+2026-03-23 08:44:54.469 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:44:54.472 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:44:54.473 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 08:44:57.328 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 2854.072ms
+2026-03-23 08:44:57.329 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:44:57.344 +08:00 [WRN] 业务异常
+day1.Domain.BusinessException: The value 'undefined' is not valid.
+   at day1.Filter.ValidationFilter.OnActionExecuting(ActionExecutingContext context) in D:\1\projectExcel\day1\Filter\ValidationFilter.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at day1.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\1\projectExcel\day1\Middlewares\ExceptionMiddleware.cs:line 26
+2026-03-23 08:44:57.348 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/undefined - 400 null application/json; charset=utf-8 2880.514ms
+2026-03-23 08:45:01.376 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - null null
+2026-03-23 08:45:01.378 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:45:01.379 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - 204 null null 2.2207ms
+2026-03-23 08:45:01.380 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-03-23 08:45:01.381 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:45:01.382 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:45:01.382 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-03-23 08:45:01.393 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-03-23 08:45:01.407 +08:00 [INF] Executed DbCommand (13ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-23 08:45:01.543 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 08:45:01.550 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-03-23 08:45:01.551 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 157.5866ms.
+2026-03-23 08:45:01.552 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 08:45:01.553 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 169.6489ms
+2026-03-23 08:45:01.553 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:45:01.554 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 200 null application/json; charset=utf-8 173.7611ms
+2026-03-23 08:45:23.159 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/NaN - null null
+2026-03-23 08:45:23.161 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:45:23.161 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/NaN - 204 null null 2.0392ms
+2026-03-23 08:45:23.163 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/NaN - null null
+2026-03-23 08:45:23.164 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:45:23.168 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:45:23.169 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 08:45:54.721 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 31550.7602ms
+2026-03-23 08:45:54.755 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/undefined - null null
+2026-03-23 08:45:54.757 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:45:54.759 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:45:54.772 +08:00 [WRN] 业务异常
+day1.Domain.BusinessException: The value 'NaN' is not valid.
+   at day1.Filter.ValidationFilter.OnActionExecuting(ActionExecutingContext context) in D:\1\projectExcel\day1\Filter\ValidationFilter.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at day1.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\1\projectExcel\day1\Middlewares\ExceptionMiddleware.cs:line 26
+2026-03-23 08:45:54.773 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/undefined - 204 null null 18.0385ms
+2026-03-23 08:45:54.781 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/NaN - 499 null application/json; charset=utf-8 31618.6871ms
+2026-03-23 08:45:54.782 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/undefined - null null
+2026-03-23 08:45:54.785 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:45:54.786 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:45:54.786 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 08:45:55.416 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 628.2677ms
+2026-03-23 08:45:55.417 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:45:55.433 +08:00 [WRN] 业务异常
+day1.Domain.BusinessException: The value 'undefined' is not valid.
+   at day1.Filter.ValidationFilter.OnActionExecuting(ActionExecutingContext context) in D:\1\projectExcel\day1\Filter\ValidationFilter.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at day1.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\1\projectExcel\day1\Middlewares\ExceptionMiddleware.cs:line 26
+2026-03-23 08:45:55.437 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/undefined - 400 null application/json; charset=utf-8 654.7157ms
+2026-03-23 08:46:02.578 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - null null
+2026-03-23 08:46:02.579 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:46:02.580 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - 204 null null 2.1619ms
+2026-03-23 08:46:02.582 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-03-23 08:46:02.583 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:46:02.584 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:46:02.584 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-03-23 08:46:02.595 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-03-23 08:46:02.683 +08:00 [INF] Executed DbCommand (87ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-23 08:46:02.828 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 08:46:02.842 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-03-23 08:46:02.844 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 248.2535ms.
+2026-03-23 08:46:02.845 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 08:46:02.846 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 261.0039ms
+2026-03-23 08:46:02.847 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:46:02.847 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 200 null application/json; charset=utf-8 265.7808ms
+2026-03-23 08:48:00.344 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/undefined - null null
+2026-03-23 08:48:00.348 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:48:00.348 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/undefined - 204 null null 7.6346ms
+2026-03-23 08:48:00.357 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/undefined - null null
+2026-03-23 08:48:00.359 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:48:00.360 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:48:00.360 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 08:48:02.339 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 1977.5266ms
+2026-03-23 08:48:02.340 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:48:02.357 +08:00 [WRN] 业务异常
+day1.Domain.BusinessException: The value 'undefined' is not valid.
+   at day1.Filter.ValidationFilter.OnActionExecuting(ActionExecutingContext context) in D:\1\projectExcel\day1\Filter\ValidationFilter.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at day1.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\1\projectExcel\day1\Middlewares\ExceptionMiddleware.cs:line 26
+2026-03-23 08:48:02.364 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/undefined - 400 null application/json; charset=utf-8 2006.8997ms
+2026-03-23 08:48:10.240 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - null null
+2026-03-23 08:48:10.241 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:48:10.242 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - 204 null null 2.0049ms
+2026-03-23 08:48:10.248 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-03-23 08:48:10.249 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:48:10.250 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:48:10.250 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-03-23 08:48:10.261 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-03-23 08:48:10.275 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-23 08:48:10.411 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 08:48:10.416 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-03-23 08:48:10.417 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 155.4167ms.
+2026-03-23 08:48:10.418 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 08:48:10.419 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 167.3983ms
+2026-03-23 08:48:10.419 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:48:10.420 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 200 null application/json; charset=utf-8 171.6481ms
+2026-03-23 08:51:16.427 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/undefined - null null
+2026-03-23 08:51:16.435 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:51:16.435 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/undefined - 204 null null 8.945ms
+2026-03-23 08:51:16.441 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/undefined - null null
+2026-03-23 08:51:16.447 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:51:16.448 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:51:16.449 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 08:51:17.929 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 1479.1166ms
+2026-03-23 08:51:17.930 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:51:17.946 +08:00 [WRN] 业务异常
+day1.Domain.BusinessException: The value 'undefined' is not valid.
+   at day1.Filter.ValidationFilter.OnActionExecuting(ActionExecutingContext context) in D:\1\projectExcel\day1\Filter\ValidationFilter.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at day1.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\1\projectExcel\day1\Middlewares\ExceptionMiddleware.cs:line 26
+2026-03-23 08:51:17.953 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/undefined - 400 null application/json; charset=utf-8 1514.7602ms
+2026-03-23 08:51:21.650 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - null null
+2026-03-23 08:51:21.653 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:51:21.653 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - 204 null null 2.9378ms
+2026-03-23 08:51:21.655 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-03-23 08:51:21.656 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:51:21.657 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:51:21.657 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-03-23 08:51:21.675 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-03-23 08:51:21.690 +08:00 [INF] Executed DbCommand (13ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-23 08:51:21.826 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 08:51:21.832 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-03-23 08:51:21.833 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 157.799ms.
+2026-03-23 08:51:21.834 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 08:51:21.835 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 176.8403ms
+2026-03-23 08:51:21.836 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:51:21.836 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 200 null application/json; charset=utf-8 181.7052ms
+2026-03-23 08:52:05.572 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 08:52:05.575 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:52:05.575 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 5.4851ms
+2026-03-23 08:52:05.582 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 08:52:05.584 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:52:05.585 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:52:05.585 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 08:52:05.601 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-03-23 08:52:05.733 +08:00 [INF] Executed DbCommand (39ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 08:52:05.735 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 132.468ms.
+2026-03-23 08:52:05.736 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 08:52:05.745 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 158.632ms
+2026-03-23 08:52:05.746 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:52:05.746 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 164.277ms
+2026-03-23 08:52:27.191 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - null null
+2026-03-23 08:52:27.194 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:52:27.195 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - 204 null null 3.1131ms
+2026-03-23 08:52:27.201 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-03-23 08:52:27.203 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:52:27.203 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:52:27.204 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-03-23 08:52:27.220 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-03-23 08:52:27.235 +08:00 [INF] Executed DbCommand (13ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-23 08:52:27.371 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 08:52:27.376 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-03-23 08:52:27.377 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 156.2382ms.
+2026-03-23 08:52:27.379 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 08:52:27.380 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 174.8788ms
+2026-03-23 08:52:27.380 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:52:27.381 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 200 null application/json; charset=utf-8 179.7963ms
+2026-03-23 08:52:27.386 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 08:52:27.389 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:52:27.390 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 6.7191ms
+2026-03-23 08:52:27.391 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 08:52:27.392 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:52:27.393 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:52:27.395 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 08:52:27.405 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-03-23 08:52:27.413 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 08:52:27.414 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.0501ms.
+2026-03-23 08:52:27.415 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 08:52:27.416 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 19.6834ms
+2026-03-23 08:52:27.416 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:52:27.417 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 25.7782ms
+2026-03-23 08:57:35.336 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 08:57:35.338 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:57:35.339 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 2.666ms
+2026-03-23 08:57:35.341 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 08:57:35.347 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:57:35.348 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:57:35.349 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 08:57:35.364 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-03-23 08:57:35.491 +08:00 [INF] Executed DbCommand (17ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 08:57:35.493 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 128.2668ms.
+2026-03-23 08:57:35.494 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 08:57:35.494 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 144.8062ms
+2026-03-23 08:57:35.495 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:57:35.496 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 154.539ms
+2026-03-23 08:58:11.502 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - null null
+2026-03-23 08:58:11.509 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:58:11.509 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - 204 null null 7.2633ms
+2026-03-23 08:58:11.515 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-03-23 08:58:11.516 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:58:11.517 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:58:11.518 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-03-23 08:58:11.529 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-03-23 08:58:11.543 +08:00 [INF] Executed DbCommand (13ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-23 08:58:11.682 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 08:58:11.687 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-03-23 08:58:11.689 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 158.9201ms.
+2026-03-23 08:58:11.691 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 08:58:11.692 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 173.1231ms
+2026-03-23 08:58:11.693 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:58:11.693 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 200 null application/json; charset=utf-8 177.7673ms
+2026-03-23 08:58:11.695 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 08:58:11.696 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:58:11.696 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 1.4971ms
+2026-03-23 08:58:11.697 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 08:58:11.699 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:58:11.699 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:58:11.700 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 08:58:11.710 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-03-23 08:58:11.717 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 08:58:11.718 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 7.2678ms.
+2026-03-23 08:58:11.719 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 08:58:11.720 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 19.0061ms
+2026-03-23 08:58:11.721 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:58:11.721 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 23.7107ms
+2026-03-23 08:58:19.546 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 08:58:19.547 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:58:19.548 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 1.9939ms
+2026-03-23 08:58:19.550 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 08:58:19.551 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:58:19.552 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:58:19.553 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 08:58:19.564 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-03-23 08:58:19.568 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 08:58:19.569 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.1203ms.
+2026-03-23 08:58:19.570 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 08:58:19.571 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 17.1986ms
+2026-03-23 08:58:19.572 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:58:19.573 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 23.6529ms
+2026-03-23 08:58:37.964 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - null null
+2026-03-23 08:58:37.965 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:58:37.966 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - 204 null null 1.7048ms
+2026-03-23 08:58:37.967 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-03-23 08:58:37.968 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:58:37.969 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:58:37.969 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-03-23 08:58:37.982 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-03-23 08:58:37.986 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-23 08:58:38.117 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 08:58:38.120 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-03-23 08:58:38.121 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 137.9379ms.
+2026-03-23 08:58:38.122 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 08:58:38.123 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 152.5921ms
+2026-03-23 08:58:38.123 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 08:58:38.124 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 200 null application/json; charset=utf-8 156.7718ms
+2026-03-23 08:58:38.125 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 08:58:38.127 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:58:38.127 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 1.5162ms
+2026-03-23 08:58:38.128 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 08:58:38.130 +08:00 [INF] CORS policy execution successful.
+2026-03-23 08:58:38.130 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:58:38.131 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 08:58:38.141 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-03-23 08:58:38.142 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 08:58:38.144 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.2281ms.
+2026-03-23 08:58:38.145 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 08:58:38.146 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 13.8326ms
+2026-03-23 08:58:38.146 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 08:58:38.147 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 18.3418ms
+2026-03-23 09:01:17.217 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:01:17.219 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:01:17.220 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 2.7247ms
+2026-03-23 09:01:17.229 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:01:17.230 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:01:17.232 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:01:17.232 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 09:01:17.248 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-03-23 09:01:17.273 +08:00 [INF] Executed DbCommand (23ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 09:01:17.275 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 26.1771ms.
+2026-03-23 09:01:17.276 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 09:01:17.277 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 43.2614ms
+2026-03-23 09:01:17.278 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:01:17.279 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 50.2002ms
+2026-03-23 09:09:16.340 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:09:16.343 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:09:16.343 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 2.7673ms
+2026-03-23 09:09:16.351 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:09:16.352 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:09:16.353 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:09:16.354 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 09:09:16.368 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-03-23 09:09:16.452 +08:00 [INF] Executed DbCommand (14ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 09:09:16.454 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 85.5449ms.
+2026-03-23 09:09:16.455 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 09:09:16.456 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 100.6912ms
+2026-03-23 09:09:16.457 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:09:16.457 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 106.3563ms
+2026-03-23 09:09:20.547 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - null null
+2026-03-23 09:09:20.548 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:09:20.549 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - 204 null null 1.7952ms
+2026-03-23 09:09:20.553 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-03-23 09:09:20.554 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:09:20.555 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 09:09:20.555 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-03-23 09:09:20.566 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-03-23 09:09:20.569 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-23 09:09:20.704 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 09:09:20.709 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-03-23 09:09:20.711 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 144.1827ms.
+2026-03-23 09:09:20.712 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 09:09:20.713 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 156.5377ms
+2026-03-23 09:09:20.713 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 09:09:20.714 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 200 null application/json; charset=utf-8 161.1025ms
+2026-03-23 09:09:20.715 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:09:20.717 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:09:20.717 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:09:20.718 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 09:09:20.728 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-03-23 09:09:20.730 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 09:09:20.732 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.0898ms.
+2026-03-23 09:09:20.732 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 09:09:20.733 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 14.633ms
+2026-03-23 09:09:20.734 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:09:20.734 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 18.9366ms
+2026-03-23 09:10:08.227 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - null null
+2026-03-23 09:10:08.229 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:10:08.229 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - 204 null null 1.8239ms
+2026-03-23 09:10:08.235 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-03-23 09:10:08.236 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:10:08.237 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 09:10:08.238 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-03-23 09:10:08.249 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-03-23 09:10:08.262 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-03-23 09:10:08.397 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 09:10:08.402 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-03-23 09:10:08.403 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 153.5985ms.
+2026-03-23 09:10:08.404 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 09:10:08.405 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 166.2259ms
+2026-03-23 09:10:08.406 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-03-23 09:10:08.406 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 200 null application/json; charset=utf-8 170.7952ms
+2026-03-23 09:10:08.411 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:10:08.414 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:10:08.414 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 5.807ms
+2026-03-23 09:10:08.416 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:10:08.417 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:10:08.418 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:10:08.418 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 09:10:08.430 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-03-23 09:10:08.436 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 09:10:08.438 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 6.729ms.
+2026-03-23 09:10:08.439 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 09:10:08.439 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 20.1724ms
+2026-03-23 09:10:08.440 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:10:08.440 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 24.9906ms
+2026-03-23 09:10:53.211 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:10:53.218 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:10:53.218 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 7.6676ms
+2026-03-23 09:10:53.227 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:10:53.228 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:10:53.229 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:10:53.229 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 09:10:53.240 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-03-23 09:10:53.242 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 09:10:53.243 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.3222ms.
+2026-03-23 09:10:53.244 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 09:10:53.245 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 14.8421ms
+2026-03-23 09:10:53.246 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:10:53.246 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 19.5743ms
+2026-03-23 09:11:12.232 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:11:12.233 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:11:12.234 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 2.6328ms
+2026-03-23 09:11:12.236 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:11:12.238 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:11:12.239 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:11:12.240 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 09:11:12.256 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-03-23 09:11:12.275 +08:00 [INF] Executed DbCommand (18ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 09:11:12.277 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 20.2084ms.
+2026-03-23 09:11:12.278 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 09:11:12.279 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 33.8163ms
+2026-03-23 09:11:12.279 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:11:12.280 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 43.6074ms
+2026-03-23 09:11:22.193 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:11:22.195 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:11:22.195 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 1.8766ms
+2026-03-23 09:11:22.197 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:11:22.198 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:11:22.199 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:11:22.200 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 09:11:22.226 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-03-23 09:11:22.228 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 09:11:22.229 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.3605ms.
+2026-03-23 09:11:22.230 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 09:11:22.231 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 28.5929ms
+2026-03-23 09:11:22.232 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:11:22.232 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 35.1046ms
+2026-03-23 09:14:12.607 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:14:12.616 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:14:12.616 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 8.8706ms
+2026-03-23 09:14:12.624 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:14:12.625 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:14:12.626 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:14:12.626 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 09:14:12.636 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-03-23 09:14:12.653 +08:00 [INF] Executed DbCommand (15ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 09:14:12.655 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 18.1607ms.
+2026-03-23 09:14:12.656 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 09:14:12.657 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 29.361ms
+2026-03-23 09:14:12.657 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:14:12.658 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 34.3136ms
+2026-03-23 09:14:23.676 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:14:23.677 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:14:23.678 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 1.8482ms
+2026-03-23 09:14:23.680 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:14:23.682 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:14:23.683 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:14:23.683 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 09:14:23.696 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-03-23 09:14:23.698 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 09:14:23.700 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.0209ms.
+2026-03-23 09:14:23.701 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 09:14:23.702 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 17.551ms
+2026-03-23 09:14:23.702 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:14:23.703 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 23.0845ms
+2026-03-23 09:14:34.535 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:14:34.537 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:14:34.538 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 2.532ms
+2026-03-23 09:14:34.539 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-03-23 09:14:34.540 +08:00 [INF] CORS policy execution successful.
+2026-03-23 09:14:34.541 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:14:34.542 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-03-23 09:14:34.551 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-03-23 09:14:34.701 +08:00 [INF] Executed DbCommand (149ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-03-23 09:14:34.704 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 152.8974ms.
+2026-03-23 09:14:34.705 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-23 09:14:34.706 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 163.2187ms
+2026-03-23 09:14:34.707 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-03-23 09:14:34.707 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 168.061ms
