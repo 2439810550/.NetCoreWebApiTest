@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "D:\\1\\projectExcel\\day1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{02F81C18-77E5-423F-A905-272737BA76DC}|day1.csproj|d:\\1\\projectexcel\\day1\\models\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02F81C18-77E5-423F-A905-272737BA76DC}|day1.csproj|solutionrelative:models\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{02F81C18-77E5-423F-A905-272737BA76DC}|day1.csproj|d:\\1\\projectexcel\\day1\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{02F81C18-77E5-423F-A905-272737BA76DC}|day1.csproj|solutionrelative:services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02F81C18-77E5-423F-A905-272737BA76DC}|day1.csproj|d:\\1\\projectexcel\\day1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02F81C18-77E5-423F-A905-272737BA76DC}|day1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{02F81C18-77E5-423F-A905-272737BA76DC}|day1.csproj|d:\\1\\projectexcel\\day1\\filter\\validationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -87,16 +95,8 @@
       "RelativeMoniker": "D:0:0:{02F81C18-77E5-423F-A905-272737BA76DC}|day1.csproj|solutionrelative:projecthelper\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02F81C18-77E5-423F-A905-272737BA76DC}|day1.csproj|d:\\1\\projectexcel\\day1\\models\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02F81C18-77E5-423F-A905-272737BA76DC}|day1.csproj|solutionrelative:models\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{02F81C18-77E5-423F-A905-272737BA76DC}|day1.csproj|d:\\1\\projectexcel\\day1\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{02F81C18-77E5-423F-A905-272737BA76DC}|day1.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{02F81C18-77E5-423F-A905-272737BA76DC}|day1.csproj|d:\\1\\projectexcel\\day1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02F81C18-77E5-423F-A905-272737BA76DC}|day1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{02F81C18-77E5-423F-A905-272737BA76DC}|day1.csproj|d:\\1\\projectexcel\\day1\\services\\roleandpermission\\iroleandpermissionserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -218,7 +218,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -231,58 +231,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "D:\\1\\projectExcel\\day1\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAADgvz8AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T02:54:14.764Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Services\\UserService.cs",
-              "ToolTip": "D:\\1\\projectExcel\\day1\\Services\\UserService.cs",
-              "RelativeToolTip": "Services\\UserService.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAADgv0sAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T03:03:30.95Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ValidationFilter.cs",
-              "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Filter\\ValidationFilter.cs",
-              "RelativeDocumentMoniker": "Filter\\ValidationFilter.cs",
-              "ToolTip": "D:\\1\\projectExcel\\day1\\Filter\\ValidationFilter.cs",
-              "RelativeToolTip": "Filter\\ValidationFilter.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAADwvxYAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T09:02:01.346Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApiResponse.cs",
-              "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Common\\ApiResponse.cs",
-              "RelativeDocumentMoniker": "Common\\ApiResponse.cs",
-              "ToolTip": "D:\\1\\projectExcel\\day1\\Common\\ApiResponse.cs",
-              "RelativeToolTip": "Common\\ApiResponse.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBQAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T07:38:33.651Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "ApiResponseFilter.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Filter\\ApiResponseFilter.cs",
               "RelativeDocumentMoniker": "Filter\\ApiResponseFilter.cs",
@@ -290,25 +238,24 @@
               "RelativeToolTip": "Filter\\ApiResponseFilter.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAewB4AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T07:43:58.086Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-26T07:43:58.086Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TokenService.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Services\\TokenService.cs",
               "RelativeDocumentMoniker": "Services\\TokenService.cs",
               "ToolTip": "D:\\1\\projectExcel\\day1\\Services\\TokenService.cs",
               "RelativeToolTip": "Services\\TokenService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-27T01:00:53.14Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "RoleAndPermissionRepository.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Repositories\\RoleAndPermissionRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\RoleAndPermissionRepository.cs",
@@ -321,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "ExceptionMiddleware.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Middlewares\\ExceptionMiddleware.cs",
               "RelativeDocumentMoniker": "Middlewares\\ExceptionMiddleware.cs",
@@ -334,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "LoginResponseDto.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\DTOs\\LoginResponseDto.cs",
               "RelativeDocumentMoniker": "DTOs\\LoginResponseDto.cs",
@@ -342,12 +289,88 @@
               "RelativeToolTip": "DTOs\\LoginResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T01:21:30.22Z",
+              "WhenOpened": "2026-02-14T01:21:30.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\1\\projectExcel\\day1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAAJ0AAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T03:04:34.613Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
+              "Title": "Permission.cs",
+              "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Models\\Permission.cs",
+              "RelativeDocumentMoniker": "Models\\Permission.cs",
+              "ToolTip": "D:\\1\\projectExcel\\day1\\Models\\Permission.cs",
+              "RelativeToolTip": "Models\\Permission.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T07:02:07.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApiResponse.cs",
+              "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Common\\ApiResponse.cs",
+              "RelativeDocumentMoniker": "Common\\ApiResponse.cs",
+              "ToolTip": "D:\\1\\projectExcel\\day1\\Common\\ApiResponse.cs",
+              "RelativeToolTip": "Common\\ApiResponse.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBQAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T07:38:33.651Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ValidationFilter.cs",
+              "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Filter\\ValidationFilter.cs",
+              "RelativeDocumentMoniker": "Filter\\ValidationFilter.cs",
+              "ToolTip": "D:\\1\\projectExcel\\day1\\Filter\\ValidationFilter.cs",
+              "RelativeToolTip": "Filter\\ValidationFilter.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAADwvxYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T09:02:01.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "D:\\1\\projectExcel\\day1\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAADgv0sAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T03:03:30.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "D:\\1\\projectExcel\\day1\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAADgvz8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T02:54:14.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "DBInitializer.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Models\\DBInitializer.cs",
               "RelativeDocumentMoniker": "Models\\DBInitializer.cs",
@@ -360,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "RoleAndPermissionController.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Controllers\\RoleAndPermissionController.cs",
               "RelativeDocumentMoniker": "Controllers\\RoleAndPermissionController.cs",
@@ -373,7 +396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "BusinessException.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Domain\\BusinessException.cs",
               "RelativeDocumentMoniker": "Domain\\BusinessException.cs",
@@ -385,7 +408,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "BusinessErrorCode.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Domain\\Enum\\BusinessErrorCode.cs",
               "RelativeDocumentMoniker": "Domain\\Enum\\BusinessErrorCode.cs",
@@ -397,7 +420,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "Permissions.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Domain\\Security\\Permissions.cs",
               "RelativeDocumentMoniker": "Domain\\Security\\Permissions.cs",
@@ -409,7 +432,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "PermissionRequirement.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Domain\\Security\\PermissionRequirement.cs",
               "RelativeDocumentMoniker": "Domain\\Security\\PermissionRequirement.cs",
@@ -421,7 +444,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "AuthorizationExtensions.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Domain\\Security\\AuthorizationExtensions.cs",
               "RelativeDocumentMoniker": "Domain\\Security\\AuthorizationExtensions.cs",
@@ -433,7 +456,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "PermissionHandler.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Domain\\Security\\PermissionHandler.cs",
               "RelativeDocumentMoniker": "Domain\\Security\\PermissionHandler.cs",
@@ -446,7 +469,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
@@ -458,7 +481,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "IDouYinVideoApiService.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\DYSdk\\DYApi\\IDouYinVideoApiService.cs",
               "RelativeDocumentMoniker": "DYSdk\\DYApi\\IDouYinVideoApiService.cs",
@@ -471,7 +494,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "DYVideoRemoveWatermarkApiResponse.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\DYSdk\\DYModels\\DYVideoRemoveWatermarkApiResponse.cs",
               "RelativeDocumentMoniker": "DYSdk\\DYModels\\DYVideoRemoveWatermarkApiResponse.cs",
@@ -483,7 +506,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "PasswordHelper.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\ProjectHelper\\PasswordHelper.cs",
               "RelativeDocumentMoniker": "ProjectHelper\\PasswordHelper.cs",
@@ -495,19 +518,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Permission.cs",
-              "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Models\\Permission.cs",
-              "RelativeDocumentMoniker": "Models\\Permission.cs",
-              "ToolTip": "D:\\1\\projectExcel\\day1\\Models\\Permission.cs",
-              "RelativeToolTip": "Models\\Permission.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T07:02:07.634Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
@@ -516,18 +527,6 @@
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABEAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-10T02:53:15.801Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\1\\projectExcel\\day1\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\1\\projectExcel\\day1\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAAJ0AAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T03:04:34.613Z"
             },
             {
               "$type": "Document",

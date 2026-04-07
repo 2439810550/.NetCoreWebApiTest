@@ -1,4 +1,4 @@
-﻿using System.Runtime.CompilerServices;
+﻿﻿using System.Runtime.CompilerServices;
 using day1.Common;
 using day1.Domain.Enum;
 using day1.Domain;

@@ -1,0 +1,129 @@
+2026-04-07 08:18:51.195 +08:00 [INF] Executed DbCommand (139ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-04-07 08:18:51.314 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-04-07 08:18:51.864 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-04-07 08:18:51.961 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-04-07 08:18:51.979 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-04-07 08:18:52.059 +08:00 [INF] Executed DbCommand (47ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-04-07 08:18:52.072 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-04-07 08:18:52.118 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-07 08:18:52.408 +08:00 [INF] Now listening on: http://localhost:5272
+2026-04-07 08:18:52.992 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-07 08:18:52.993 +08:00 [INF] Hosting environment: Development
+2026-04-07 08:18:52.994 +08:00 [INF] Content root path: D:\1\projectExcel\day1
+2026-04-07 08:18:56.154 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger - null null
+2026-04-07 08:18:56.649 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger - 301 0 null 510.5464ms
+2026-04-07 08:18:56.660 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-04-07 08:18:56.792 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 131.8893ms
+2026-04-07 08:18:56.861 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/swagger-ui.css - null null
+2026-04-07 08:18:56.862 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/swagger-ui-bundle.js - null null
+2026-04-07 08:18:56.869 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/swagger-ui-standalone-preset.js - null null
+2026-04-07 08:18:56.881 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-07 08:18:57.035 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-04-07 08:18:57.168 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 287.3808ms
+2026-04-07 08:18:57.254 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-04-07 08:18:57.254 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-04-07 08:18:57.257 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/swagger-ui.css - 200 152034 text/css 396.4823ms
+2026-04-07 08:18:57.258 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 388.9215ms
+2026-04-07 08:18:57.290 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-04-07 08:18:57.291 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 429.3308ms
+2026-04-07 08:18:57.339 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 303.8575ms
+2026-04-07 08:18:57.611 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-04-07 08:18:57.623 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 12.4648ms
+2026-04-07 08:19:21.989 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-04-07 08:19:21.995 +08:00 [INF] CORS policy execution successful.
+2026-04-07 08:19:21.997 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 7.8848ms
+2026-04-07 08:19:22.000 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-04-07 08:19:22.004 +08:00 [INF] CORS policy execution successful.
+2026-04-07 08:19:22.385 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2026/3/23 8:01:15', Current time (UTC): '2026/4/7 0:19:22'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-04-07 08:19:22.412 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2026/3/23 8:01:15', Current time (UTC): '2026/4/7 0:19:22'.
+2026-04-07 08:19:22.420 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2026-04-07 08:19:22.425 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-04-07 08:19:22.427 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 401 0 null 427.2218ms
+2026-04-07 08:19:23.668 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - null null
+2026-04-07 08:19:23.676 +08:00 [INF] CORS policy execution successful.
+2026-04-07 08:19:23.676 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - 204 null null 8.6615ms
+2026-04-07 08:19:23.678 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-04-07 08:19:23.681 +08:00 [INF] CORS policy execution successful.
+2026-04-07 08:19:23.685 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-04-07 08:19:23.705 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-04-07 08:19:24.187 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-04-07 08:19:24.272 +08:00 [INF] Executed DbCommand (55ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-04-07 08:19:24.747 +08:00 [INF] Executed DbCommand (41ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-04-07 08:19:24.946 +08:00 [INF] Executed DbCommand (108ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-04-07 08:19:24.955 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 764.9321ms.
+2026-04-07 08:19:24.960 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-07 08:19:24.973 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 1263.12ms
+2026-04-07 08:19:24.974 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-04-07 08:19:24.976 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 200 null application/json; charset=utf-8 1297.7103ms
+2026-04-07 08:19:24.982 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-04-07 08:19:24.983 +08:00 [INF] CORS policy execution successful.
+2026-04-07 08:19:24.992 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-04-07 08:19:24.995 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-04-07 08:19:25.018 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-04-07 08:19:25.099 +08:00 [INF] Executed DbCommand (23ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-04-07 08:19:25.102 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 82.8972ms.
+2026-04-07 08:19:25.103 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-07 08:19:25.107 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 110.5007ms
+2026-04-07 08:19:25.108 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-04-07 08:19:25.109 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 127.1931ms
+2026-04-07 08:22:01.370 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-04-07 08:22:01.377 +08:00 [INF] CORS policy execution successful.
+2026-04-07 08:22:01.378 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 16.2613ms
+2026-04-07 08:22:01.387 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-04-07 08:22:01.389 +08:00 [INF] CORS policy execution successful.
+2026-04-07 08:22:01.394 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-04-07 08:22:01.395 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-04-07 08:22:01.485 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-04-07 08:22:01.497 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-04-07 08:22:01.499 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 13.4755ms.
+2026-04-07 08:22:01.501 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-07 08:22:01.503 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 106.4716ms
+2026-04-07 08:22:01.505 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-04-07 08:22:01.505 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 118.3063ms
