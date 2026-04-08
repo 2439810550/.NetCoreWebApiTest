@@ -90,6 +90,74 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "day1.Controllers.DishAndOrderController",
+    "Method": "GetDishAll",
+    "RelativePath": "api/DishAndOrder/AddDish",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dishDTO",
+        "Type": "day1.DTOs.Dish.DishDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "day1.Controllers.DishAndOrderController",
+    "Method": "GetDishAll",
+    "RelativePath": "api/DishAndOrder/GetDishAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "day1.Controllers.DishAndOrderController",
+    "Method": "GetPageIndexSizeAsyncDish",
+    "RelativePath": "api/DishAndOrder/GetDishPageIndex",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageindex",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pagesize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "keyword",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "day1.Controllers.DishAndOrderController",
+    "Method": "UpLoadImage",
+    "RelativePath": "api/DishAndOrder/UpLoadImage",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "day1.Controllers.DYVideoController",
     "Method": "RemoveWatermark",
     "RelativePath": "api/DYVideo",

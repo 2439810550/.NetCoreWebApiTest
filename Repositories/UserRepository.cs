@@ -1,4 +1,5 @@
 using day1.Data;
+using day1.DTOs;
 using day1.Models;
 using Microsoft.EntityFrameworkCore;
 namespace day1.Repositories
@@ -10,7 +11,7 @@ namespace day1.Repositories
         {
             _context = context;
         }
-        public void Add(User user)
+        public CreateUserDTO Add(User user)
         {
             _context.Users.Add(user);
             _context.SaveChanges();
@@ -22,6 +23,7 @@ namespace day1.Repositories
                 _context.UserRoles.Add(new UserRole { UserId = user.Id, RoleId = userRole.Id });
                 _context.SaveChanges();
             }
+            return new CreateUserDTO {UserName=user.UserName,PassWord=user.PassWord,CreatTime=user.CreateTime };
         }
 
         public User? GetById(long id)

@@ -33,7 +33,7 @@ namespace day1.Services
             return _userRepository.GetAllUsers();
         }
 
-        public User CreateUser(CreateUserDTO createUserDto)
+        public CreateUserDTO CreateUser(CreateUserDTO createUserDto)
         {
 
             CheckPassword(createUserDto.PassWord); // ✅ 密码校验逻辑
@@ -48,8 +48,7 @@ namespace day1.Services
                 PassWord = PasswordHelper.HashPassword(createUserDto.PassWord),
                 CreateTime =_dateTimeProvider.UtcNow
             };
-            _userRepository.Add(user);  // ✅ 调用 Repository
-            return user;
+            return _userRepository.Add(user);  // ✅ 调用 Repository
         }
 
         private void CheckPassword(string password)

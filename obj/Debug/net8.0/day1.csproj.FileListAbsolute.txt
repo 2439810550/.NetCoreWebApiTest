@@ -172,3 +172,4 @@ D:\1\projectExcel\day1\obj\Debug\net8.0\refint\day1.dll
 D:\1\projectExcel\day1\obj\Debug\net8.0\day1.pdb
 D:\1\projectExcel\day1\obj\Debug\net8.0\day1.genruntimeconfig.cache
 D:\1\projectExcel\day1\obj\Debug\net8.0\ref\day1.dll
+D:\1\projectExcel\day1\bin\Debug\net8.0\day1.staticwebassets.runtime.json

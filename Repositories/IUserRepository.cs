@@ -1,3 +1,4 @@
+using day1.DTOs;
 using day1.Models;
 using Microsoft.AspNetCore.Routing.Constraints;
 using Microsoft.EntityFrameworkCore.Update.Internal;
@@ -5,7 +6,7 @@ namespace day1.Repositories
 {
     public interface IUserRepository
     {
-        void Add(User user);
+        CreateUserDTO Add(User user);
         List<User> GetAllUsers();
         User? GetById(long id);
         bool ExctisUserName(string userName);

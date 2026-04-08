@@ -1,12 +1,125 @@
 {
   "Version": 1,
-  "Hash": "Wv1XbX4Nqiq/4OICWApOcPGohoVdvrmEDFxvPEs/z90=",
+  "Hash": "k/oBlOzLhi5ieXurLlC+EBsnz/hiXf2+YTXtKoFvUhg=",
   "Source": "day1",
   "BasePath": "_content/day1",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "day1\\wwwroot",
+      "Source": "day1",
+      "ContentRoot": "D:\\1\\projectExcel\\day1\\wwwroot\\",
+      "BasePath": "_content/day1",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\1\\projectExcel\\day1\\wwwroot\\uploads\\3279cc6a-12d2-4489-b76c-25374720f05e.jpg",
+      "SourceId": "day1",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\1\\projectExcel\\day1\\wwwroot\\",
+      "BasePath": "_content/day1",
+      "RelativePath": "uploads/3279cc6a-12d2-4489-b76c-25374720f05e#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2xbh449gff",
+      "Integrity": "agUM0wYFB17qOkSUUKwzlN0OI+SjuRrB8CE0AYmroxw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\3279cc6a-12d2-4489-b76c-25374720f05e.jpg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "uploads/3279cc6a-12d2-4489-b76c-25374720f05e.2xbh449gff.jpg",
+      "AssetFile": "D:\\1\\projectExcel\\day1\\wwwroot\\uploads\\3279cc6a-12d2-4489-b76c-25374720f05e.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "128690"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"agUM0wYFB17qOkSUUKwzlN0OI+SjuRrB8CE0AYmroxw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 08 Apr 2026 07:03:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2xbh449gff"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/3279cc6a-12d2-4489-b76c-25374720f05e.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-agUM0wYFB17qOkSUUKwzlN0OI+SjuRrB8CE0AYmroxw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/3279cc6a-12d2-4489-b76c-25374720f05e.jpg",
+      "AssetFile": "D:\\1\\projectExcel\\day1\\wwwroot\\uploads\\3279cc6a-12d2-4489-b76c-25374720f05e.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "128690"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"agUM0wYFB17qOkSUUKwzlN0OI+SjuRrB8CE0AYmroxw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 08 Apr 2026 07:03:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-agUM0wYFB17qOkSUUKwzlN0OI+SjuRrB8CE0AYmroxw="
+        }
+      ]
+    }
+  ]
 }

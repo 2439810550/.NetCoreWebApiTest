@@ -5,6 +5,10 @@ namespace day1.Domain.Security
 {
     public static class AuthorizationExtensions
     {
+        /// <summary>
+        /// 自动注册权限策略，扫描Permissions类中的所有嵌套类型和常量字段，并为每个权限值添加一个对应的授权策略
+        /// </summary>
+        /// <param name="options"></param>
         public static void AddPermissionPolicies(this AuthorizationOptions options)
         {
             // 获取Permissions类的所有嵌套类型

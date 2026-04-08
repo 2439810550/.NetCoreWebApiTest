@@ -19,6 +19,7 @@ using day1.Models;
 using day1.Domain.Security;
 using Microsoft.AspNetCore.Authorization;
 using day1.Services.RoleAndPermission;
+using day1.Services.Dish;
 var builder = WebApplication.CreateBuilder(args);
 /// 配置 JWT 认证密钥
 var jwtKey = builder.Configuration["Jwt:Key"] ?? throw new Exception("未配置 Jwt:Key");
@@ -44,6 +45,8 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRoleAndPermissionRepository, RoleAndPermissionRepository>();
 builder.Services.AddScoped<ITokenService,TokenService>();
 builder.Services.AddScoped<IRoleAndPermissionServer, RoleAndPermissionServer>();
+builder.Services.AddScoped<IDishRepository,DishRepository>();
+builder.Services.AddScoped<IDishServer,DishServer>();
 /// 配置 FluentValidation自动注册 CreateUserDtoValidator
 builder.Services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserDtoValidator>());
 /// 配置 JWT 认证服务，默认认证方案为 JWT Bearer，使用 JWT Bearer 选项，进行 Token 验证配置
@@ -158,5 +161,6 @@ using (var scope = app.Services.CreateScope())
     scope.ServiceProvider.GetRequiredService<DBInitializer>().InitializeAsync().Wait();
 
 }
+app.UseStaticFiles(); // 启用静态文件服务
 app.Run();
 

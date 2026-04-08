@@ -7,7 +7,7 @@ namespace day1.Services
     {
         List<User> GetAllUsers();
 
-        User CreateUser(DTOs.CreateUserDTO createUserDto);
+        CreateUserDTO CreateUser(DTOs.CreateUserDTO createUserDto);
 
         User? GetById(long id);
 

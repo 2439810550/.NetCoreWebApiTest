@@ -28,10 +28,11 @@
         public DateTime? LockOutEndTime { get; set; }
         
         /// <summary>
-        /// 
-        /// 
         /// 用户角色关联
         /// </summary>
         public ICollection<UserRole> UserRoles { get; set; } = new List<UserRole>();
+
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
+        public ICollection<Cart> Carts { get; set; } = new List<Cart>();
     }
 }
