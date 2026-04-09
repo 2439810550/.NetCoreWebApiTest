@@ -58,7 +58,7 @@ namespace day1.Controllers
                 file.CopyTo(stream);
             }
             var imageUrl = $"/uploads/{fileName}";
-            return Ok(new { ImageUrl = imageUrl });
+            return Ok(imageUrl);
         }
     }
 }

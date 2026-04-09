@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "k/oBlOzLhi5ieXurLlC+EBsnz/hiXf2+YTXtKoFvUhg=",
+  "Hash": "oJBPSO44hiyGN2TuTYvjPXvpYM7qEz4XfkA+W1zf+gE=",
   "Source": "day1",
   "BasePath": "_content/day1",
   "Mode": "Default",
@@ -16,6 +16,27 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "D:\\1\\projectExcel\\day1\\wwwroot\\uploads\\2524fbcc-fdef-43d3-8dfc-d0766dad5571.PNG",
+      "SourceId": "day1",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\1\\projectExcel\\day1\\wwwroot\\",
+      "BasePath": "_content/day1",
+      "RelativePath": "uploads/2524fbcc-fdef-43d3-8dfc-d0766dad5571#[.{fingerprint}]?.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "c156lhh421",
+      "Integrity": "AIgSbnvqfe87FxFO2ArezLmR8OlZDBEZ6juHHZkVblk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\2524fbcc-fdef-43d3-8dfc-d0766dad5571.PNG"
+    },
     {
       "Identity": "D:\\1\\projectExcel\\day1\\wwwroot\\uploads\\3279cc6a-12d2-4489-b76c-25374720f05e.jpg",
       "SourceId": "day1",
@@ -39,6 +60,88 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "uploads/2524fbcc-fdef-43d3-8dfc-d0766dad5571.c156lhh421.PNG",
+      "AssetFile": "D:\\1\\projectExcel\\day1\\wwwroot\\uploads\\2524fbcc-fdef-43d3-8dfc-d0766dad5571.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "654010"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AIgSbnvqfe87FxFO2ArezLmR8OlZDBEZ6juHHZkVblk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 09 Apr 2026 00:25:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c156lhh421"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/2524fbcc-fdef-43d3-8dfc-d0766dad5571.PNG"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AIgSbnvqfe87FxFO2ArezLmR8OlZDBEZ6juHHZkVblk="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/2524fbcc-fdef-43d3-8dfc-d0766dad5571.PNG",
+      "AssetFile": "D:\\1\\projectExcel\\day1\\wwwroot\\uploads\\2524fbcc-fdef-43d3-8dfc-d0766dad5571.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "654010"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AIgSbnvqfe87FxFO2ArezLmR8OlZDBEZ6juHHZkVblk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 09 Apr 2026 00:25:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AIgSbnvqfe87FxFO2ArezLmR8OlZDBEZ6juHHZkVblk="
+        }
+      ]
+    },
     {
       "Route": "uploads/3279cc6a-12d2-4489-b76c-25374720f05e.2xbh449gff.jpg",
       "AssetFile": "D:\\1\\projectExcel\\day1\\wwwroot\\uploads\\3279cc6a-12d2-4489-b76c-25374720f05e.jpg",

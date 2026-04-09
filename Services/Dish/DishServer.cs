@@ -23,7 +23,9 @@ namespace day1.Services.Dish
                 Name = dishDTO.Name,
                 Description = dishDTO.Description,
                 Price = dishDTO.Price,
-                ImageUrl = dishDTO.ImageUrl
+                ImageUrl = dishDTO.ImageUrl,
+                CreatedDate=DateTime.UtcNow,
+                UpdatedDate=DateTime.UtcNow
             };
             var result= _dishRepository.AddDish(dish);
             return new DishDTO {ID= result.Id,Name=result.Name,Description=result.Description,Price=result.Price,ImageUrl=result.ImageUrl };
