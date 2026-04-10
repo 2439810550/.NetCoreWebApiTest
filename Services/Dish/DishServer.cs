@@ -47,6 +47,21 @@ namespace day1.Services.Dish
             throw new NotImplementedException();
         }
 
+        public async Task<bool> DeleteDishAsync(long id)
+        {
+            var dish = await _dishRepository.GetByIdAsync(id);
+            if (dish == null) return false;
+
+            //同时删除图片文件（wwwroot/uploads 下的文件）
+            if (!string.IsNullOrEmpty(dish.ImageUrl))
+            {
+                if (File.Exists(dish.ImageUrl)) File.Delete(dish.ImageUrl);
+            }
+
+            await _dishRepository.DeleteAsync(dish);
+            return true;
+        }
+
         public List<DishDTO> GetDishes()
         {
             return _dishRepository.GetDishes().Select(d => new DishDTO
@@ -90,5 +105,7 @@ namespace day1.Services.Dish
             };
 
         }
+
+
     }
 }

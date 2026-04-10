@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\Order\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

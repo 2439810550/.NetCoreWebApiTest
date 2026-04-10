@@ -11,5 +11,7 @@ namespace day1.Services.Dish
         List<DishDTO> AddDishS(List<DishDTO> dishes);
 
         Task<PagedResult<DishDTO>> GetPageDishAsync(int pageindex,int pagesize,string? keyword);
+
+        Task<bool> DeleteDishAsync(long id);
     }
 }

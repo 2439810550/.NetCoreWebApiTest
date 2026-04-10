@@ -20,6 +20,7 @@ using day1.Domain.Security;
 using Microsoft.AspNetCore.Authorization;
 using day1.Services.RoleAndPermission;
 using day1.Services.Dish;
+using Microsoft.Extensions.FileProviders;
 var builder = WebApplication.CreateBuilder(args);
 /// 配置 JWT 认证密钥
 var jwtKey = builder.Configuration["Jwt:Key"] ?? throw new Exception("未配置 Jwt:Key");
@@ -161,6 +162,6 @@ using (var scope = app.Services.CreateScope())
     scope.ServiceProvider.GetRequiredService<DBInitializer>().InitializeAsync().Wait();
 
 }
-app.UseStaticFiles(); // 启用静态文件服务
+app.UseStaticFiles();
 app.Run();
 

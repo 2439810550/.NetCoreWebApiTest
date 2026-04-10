@@ -113,5 +113,13 @@ namespace day1.Repositories
             }
             return queryable;
         }
+
+
+        public async Task<Dish?> GetByIdAsync(long id) => await _context.Dishes.FindAsync(id);
+        public async Task DeleteAsync(Dish dish)
+        {
+            _context.Dishes.Remove(dish);
+            await _context.SaveChangesAsync();
+        }
     }
 }

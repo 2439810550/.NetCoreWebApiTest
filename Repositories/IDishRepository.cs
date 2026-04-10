@@ -31,7 +31,8 @@ namespace day1.Repositories
             CancellationToken cancellationToken = default);
         Task<int> DeleteDishsByIdAsync(params long[] ids);
 
-
+        Task<Dish?> GetByIdAsync(long id);
+        Task DeleteAsync(Dish dish);
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using day1.DTOs.Dish;
+using day1.ProjectHelper;
 using day1.Services.Dish;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -18,7 +19,6 @@ namespace day1.Controllers
             _dishServer = dishServer;
             _webHostEnvironment = webHostEnvironment;
         }
-        [Authorize(Roles = "Admin")]
         [HttpGet("GetDishAll")]
         public IActionResult GetDishAll()
         {
@@ -26,9 +26,9 @@ namespace day1.Controllers
             return Ok(users);
         }
         [HttpPost("GetDishPageIndex")]
-        public async Task<IActionResult> GetPageIndexSizeAsyncDish(int pageindex = 1, int pagesize = 12, string? keyword = null)
+        public async Task<IActionResult> GetPageIndexSizeAsyncDish(PageRequestDto dto)
         {
-            var result = await _dishServer.GetPageDishAsync(pageindex, pagesize, keyword);
+           var result = await _dishServer.GetPageDishAsync(dto.PageIndex, dto.PageSize, dto.KeyWord);
             return Ok(result);
         }
         [Authorize(Roles = "Admin")]
@@ -58,7 +58,19 @@ namespace day1.Controllers
                 file.CopyTo(stream);
             }
             var imageUrl = $"/uploads/{fileName}";
-            return Ok(imageUrl);
+            var fullurl = Request.ToFullUrl(imageUrl);
+            return Ok(fullurl);
+        }
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("DeleteDishAsync")]
+        public async Task<IActionResult> DeletDishAsync(long dishid) 
+        {
+            var result = await _dishServer.DeleteDishAsync(dishid);
+            if (!result)
+            {
+                return NotFound(new { message = "菜品不存在" });
+            }
+            return Ok(new { message = "删除成功" });
         }
     }
 }

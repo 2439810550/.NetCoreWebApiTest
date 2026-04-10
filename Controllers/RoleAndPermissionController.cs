@@ -35,7 +35,6 @@ namespace day1.Controllers
             var roles = _roleAndPermissionServer.GetRoleList(userid);
             return Ok(roles);
         }
-        [Authorize(Roles = "Admin")]
         [HttpGet("getpermissions/{userid}")]
         public IActionResult GetUserPermissions(long userid)
         {
