@@ -49,7 +49,7 @@ namespace day1.Migrations
                     b.HasIndex("UserId", "DishId")
                         .IsUnique();
 
-                    b.ToTable("Cart");
+                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("day1.Models.Dish", b =>
@@ -104,6 +104,9 @@ namespace day1.Migrations
 
                     b.Property<string>("Remark")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<long>("UserId")
                         .HasColumnType("bigint");

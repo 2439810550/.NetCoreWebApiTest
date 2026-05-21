@@ -25,8 +25,8 @@ namespace day1.Filter
         {
             if (context.Result is ObjectResult objectResult)
             {
-
-                if (objectResult.Value is ApiResponse<object>)
+                var type = objectResult.Value?.GetType();
+                if (type != null && type.IsGenericType && type.GetGenericTypeDefinition() == typeof(ApiResponse<>))
                     return;
                 var apiResponse=ApiResponse<object>.SuccessResponse(objectResult.Value,objectResult.StatusCode);
                 context.Result = new ObjectResult(apiResponse)

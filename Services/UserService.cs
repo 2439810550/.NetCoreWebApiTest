@@ -33,10 +33,65 @@ namespace day1.Services
             return _userRepository.GetAllUsers();
         }
 
-        public CreateUserDTO CreateUser(CreateUserDTO createUserDto)
+        public async Task<PagedResult<UserListDto>> GetUsersPagedAsync(int page, int size, string? keyword)
         {
+            var (users, total) = await _userRepository.GetUsersPagedAsync(page, size, keyword);
+            var items = users.Select(u => new UserListDto
+            {
+                Id = u.Id,
+                UserName = u.UserName,
+                CreateTime = u.CreateTime,
+                FailedLoginCount = u.FailedLoginCount,
+                LockOutEndTime = u.LockOutEndTime,
+                Roles = u.UserRoles.Select(ur => ur.Role.Name).ToList()
+            }).ToList();
+            return new PagedResult<UserListDto>
+            {
+                Items = items,
+                TotalCount = total,
+                PageIndex = page,
+                PageSize = size
+            };
+        }
 
-            CheckPassword(createUserDto.PassWord); // ✅ 密码校验逻辑
+        public async Task UpdateUserAsync(long id, UpdateUserDto dto)
+        {
+            var user = _userRepository.GetById(id)
+                ?? throw new BusinessException(Domain.Enum.BusinessErrorCode.UserNotFound, "用户不存在");
+            if (!string.IsNullOrWhiteSpace(dto.UserName) && dto.UserName != user.UserName)
+            {
+                if (_userRepository.ExctisUserName(dto.UserName))
+                    throw new BusinessException(Domain.Enum.BusinessErrorCode.UserAlreadyExists, "用户名已存在");
+                user.UserName = dto.UserName;
+            }
+            // 处理角色更新
+            if (dto.Roles != null)
+            {
+                var existingRoles = _roleAndPermissionRepository.GetUserRoles(id);
+                var allRoles = _roleAndPermissionRepository.GetAllRoles();
+                // 添加新角色
+                foreach (var roleName in dto.Roles.Except(existingRoles))
+                {
+                    var role = allRoles.FirstOrDefault(r => r.Name == roleName);
+                    if (role != null)
+                        _roleAndPermissionRepository.AddRoleByUser(id, role.Id);
+                }
+                // 移除被去掉的角色（但不允许移除最后一个角色，且不可移除 Admin 给别人）
+                foreach (var roleName in existingRoles.Except(dto.Roles))
+                {
+                    if (roleName == "Admin" && existingRoles.Count == 1)
+                        continue; // 保护：不能移除最后一个 Admin 角色
+                    var role = allRoles.FirstOrDefault(r => r.Name == roleName);
+                    if (role != null && existingRoles.Count > 1)
+                        _roleAndPermissionRepository.DeleteRoleByUser(id, role.Id);
+                }
+            }
+            _userRepository.UpdateUser(user);
+        }
+
+        public User CreateUser(CreateUserDTO createUserDto)
+        {
+            CheckPassword(createUserDto.PassWord);
             var exct= _userRepository.ExctisUserName(createUserDto.UserName);
             if (exct)
             {
@@ -48,7 +103,8 @@ namespace day1.Services
                 PassWord = PasswordHelper.HashPassword(createUserDto.PassWord),
                 CreateTime =_dateTimeProvider.UtcNow
             };
-            return _userRepository.Add(user);  // ✅ 调用 Repository
+            _userRepository.Add(user);
+            return user;
         }
 
         private void CheckPassword(string password)
@@ -64,13 +120,8 @@ namespace day1.Services
         {
             return _userRepository.GetById(id);
         }
-        /// <summary>
-        /// 用户登录，验证用户名和密码，生成 JWT 令牌，并处理账户锁定逻辑
-        /// </summary>
-        /// <param name="createUserDTO"></param>
-        /// <returns></returns>
-        /// <exception cref="BusinessException"></exception>
-        public LoginResponseDto Login(DTOs.CreateUserDTO createUserDTO)
+
+        public LoginResponseDto Login(CreateUserDTO createUserDTO)
         {
            var user= _userRepository.GetByUserName(createUserDTO.UserName);
             if (user is null)
@@ -78,7 +129,7 @@ namespace day1.Services
             if (user.LockOutEndTime.HasValue && user.LockOutEndTime > _dateTimeProvider.UtcNow)
                 throw new BusinessException(Domain.Enum.BusinessErrorCode.AccountLocked, $"账户已锁定，请于{user.LockOutEndTime.Value.ToLocalTime()}后再试");
             bool Success = PasswordHelper.VerifyPassword(createUserDTO.PassWord,user.PassWord);
-            if (!Success) 
+            if (!Success)
             {
                 HandleFailedLogin(user);
                 throw new BusinessException(Domain.Enum.BusinessErrorCode.UserNameOrPasswordError, "用户名或密码错误");
@@ -109,7 +160,7 @@ namespace day1.Services
             if (user.FailedLoginCount >= 5)
             {
                 user.LockOutEndTime = _dateTimeProvider.UtcNow.AddMinutes(5);
-                user.FailedLoginCount = 0; // 重置失败计数
+                user.FailedLoginCount = 0;
             }
             _userRepository.UpdateUser(user);
         }
@@ -122,12 +173,26 @@ namespace day1.Services
                 throw new BusinessException(Domain.Enum.BusinessErrorCode.UserNotFound,"用户不存在");
             }
             var roles = _roleAndPermissionRepository.GetUserRoles(user.Id);
-            if (roles.Contains("Admin")) 
+            if (roles.Contains("Admin"))
             {
                 throw new BusinessException(Domain.Enum.BusinessErrorCode.NotDeleteAdminUser, "管理员用户不能被删除");
             }
             _userRepository.DeleteByUserName(username);
         }
 
+        public void DeleteByUserId(int userId)
+        {
+            var user = _userRepository.GetById(userId);
+            if (user == null)
+            {
+                throw new BusinessException(Domain.Enum.BusinessErrorCode.UserNotFound, "用户不存在");
+            }
+            var roles = _roleAndPermissionRepository.GetUserRoles(user.Id);
+            if (roles.Contains("Admin"))
+            {
+                throw new BusinessException(Domain.Enum.BusinessErrorCode.NotDeleteAdminUser, "管理员用户不能被删除");
+            }
+            _userRepository.DeleteByUserName(user.UserName);
+        }
     }
 }

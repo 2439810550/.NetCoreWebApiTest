@@ -33,5 +33,60 @@ namespace day1.Services.RoleAndPermission
         {
             return _roleAndPermissionRepository.GetUserRoles(userid);
         }
+
+        public List<Models.Role> GetAllRoles()
+        {
+            return _roleAndPermissionRepository.GetAllRoles();
+        }
+
+        public List<Models.Permission> GetAllPermissions()
+        {
+            return _roleAndPermissionRepository.GetAllPermissions();
+        }
+
+        public Models.Role AddRole(Models.Role role)
+        {
+            return _roleAndPermissionRepository.AddRole(role);
+        }
+
+        public void UpdateRole(Models.Role role)
+        {
+            _roleAndPermissionRepository.UpdateRole(role);
+        }
+
+        public void DeleteRole(long id)
+        {
+            _roleAndPermissionRepository.DeleteRole(id);
+        }
+
+        public Models.Permission AddPermission(Models.Permission permission)
+        {
+            return _roleAndPermissionRepository.AddPermission(permission);
+        }
+
+        public void UpdatePermission(Models.Permission permission)
+        {
+            _roleAndPermissionRepository.UpdatePermission(permission);
+        }
+
+        public void DeletePermission(long id)
+        {
+            _roleAndPermissionRepository.DeletePermission(id);
+        }
+
+        public List<Models.Permission> GetRolePermissions(long roleId)
+        {
+            return _roleAndPermissionRepository.GetRolePermissions(roleId);
+        }
+
+        public void AssignPermissionToRole(long roleId, long permissionId)
+        {
+            _roleAndPermissionRepository.AssignPermissionToRole(roleId, permissionId);
+        }
+
+        public void RemovePermissionFromRole(long roleId, long permissionId)
+        {
+            _roleAndPermissionRepository.RemovePermissionFromRole(roleId, permissionId);
+        }
     }
 }

@@ -3,7 +3,7 @@
     public class Order_item
     {
         /// <summary>
-        /// 订单明细Id，主键，自增
+        /// 订单明细Id，主键，自增k
         /// </summary>
         public int Id { get; set; }
         public long DishId { get; set; }

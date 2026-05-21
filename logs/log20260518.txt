@@ -1,0 +1,1176 @@
+2026-05-18 16:34:44.428 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-18 16:34:44.474 +08:00 [WRN] No store type was specified for the decimal property 'Order_Price' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-18 16:34:44.475 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Order_item'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-18 16:34:47.340 +08:00 [ERR] An error occurred using the connection to database 'DemoDb' on server '.'.
+2026-05-18 16:34:50.112 +08:00 [ERR] An exception occurred while iterating over the results of a query for context type 'day1.Data.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): 用户 'sa' 登录失败。
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:160ad400-471f-4dad-8e78-aef7570b5a98
+Error Number:18456,State:1,Class:14
+Microsoft.Data.SqlClient.SqlException (0x80131904): 用户 'sa' 登录失败。
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:160ad400-471f-4dad-8e78-aef7570b5a98
+Error Number:18456,State:1,Class:14
+2026-05-18 16:38:10.758 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-18 16:38:10.795 +08:00 [WRN] No store type was specified for the decimal property 'Order_Price' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-18 16:38:10.797 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Order_item'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-18 16:38:11.964 +08:00 [INF] Executed DbCommand (69ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-05-18 16:38:12.002 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-05-18 16:38:12.035 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-05-18 16:38:12.094 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-05-18 16:38:12.106 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-05-18 16:38:12.142 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-05-18 16:38:12.152 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-05-18 16:38:12.187 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-18 16:38:12.402 +08:00 [INF] Now listening on: http://localhost:5272
+2026-05-18 16:38:12.529 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-18 16:38:12.530 +08:00 [INF] Hosting environment: Development
+2026-05-18 16:38:12.530 +08:00 [INF] Content root path: D:\1\projectExcel\qianhou\day1
+2026-05-18 16:38:13.960 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger - null null
+2026-05-18 16:38:14.249 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger - 301 0 null 303.5767ms
+2026-05-18 16:38:14.253 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-05-18 16:38:14.348 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 95.0133ms
+2026-05-18 16:38:14.352 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/swagger-ui.css - null null
+2026-05-18 16:38:14.354 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 16:38:14.353 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/swagger-ui-standalone-preset.js - null null
+2026-05-18 16:38:14.353 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/swagger-ui-bundle.js - null null
+2026-05-18 16:38:14.363 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-05-18 16:38:14.367 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 13.8258ms
+2026-05-18 16:38:14.418 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-05-18 16:38:14.418 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-05-18 16:38:14.421 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 67.5062ms
+2026-05-18 16:38:14.421 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/swagger-ui.css - 200 152034 text/css 68.8777ms
+2026-05-18 16:38:14.445 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-05-18 16:38:14.447 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 93.4274ms
+2026-05-18 16:38:14.453 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 90.8399ms
+2026-05-18 16:38:14.587 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-05-18 16:38:14.602 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.3415ms
+2026-05-18 16:39:08.981 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-18 16:39:09.035 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:09.038 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 56.9896ms
+2026-05-18 16:39:09.041 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-18 16:39:09.046 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:09.686 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10503: Signature validation failed. Token does not have a kid. Keys tried: '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-18 16:39:09.724 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10503: Signature validation failed. Token does not have a kid. Keys tried: '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2026-05-18 16:39:09.729 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-18 16:39:09.753 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-18 16:39:09.903 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-05-18 16:39:10.035 +08:00 [INF] Executed DbCommand (46ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-18 16:39:10.041 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 134.2553ms.
+2026-05-18 16:39:10.046 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:39:10.060 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 302.1966ms
+2026-05-18 16:39:10.061 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-18 16:39:10.064 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 1023.2335ms
+2026-05-18 16:39:10.115 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/qlimage/ql.jpg - null null
+2026-05-18 16:39:10.168 +08:00 [INF] Sending file. Request path: '/qlimage/ql.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\qlimage\ql.jpg'
+2026-05-18 16:39:10.170 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/qlimage/ql.jpg - 200 34918 image/jpeg 55.0332ms
+2026-05-18 16:39:11.901 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - null null
+2026-05-18 16:39:11.902 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-18 16:39:11.906 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:11.906 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - 204 null null 11.6056ms
+2026-05-18 16:39:11.907 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:11.909 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - application/json 42
+2026-05-18 16:39:11.910 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetCart/ - 204 null null 7.8033ms
+2026-05-18 16:39:11.911 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:11.913 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-18 16:39:11.915 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:11.916 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10503: Signature validation failed. Token does not have a kid. Keys tried: '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-18 16:39:11.916 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10503: Signature validation failed. Token does not have a kid. Keys tried: '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-18 16:39:11.920 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10503: Signature validation failed. Token does not have a kid. Keys tried: '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2026-05-18 16:39:11.924 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10503: Signature validation failed. Token does not have a kid. Keys tried: '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2026-05-18 16:39:11.925 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-18 16:39:11.931 +08:00 [INF] Route matched with {action = "GetPageIndexSizeAsyncDish", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPageIndexSizeAsyncDish(day1.DTOs.Dish.PageRequestDto) on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 16:39:11.932 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-18 16:39:11.938 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-18 16:39:11.939 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - 401 0 null 26.0642ms
+2026-05-18 16:39:11.946 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/refresh?refreshToken=9eb9996f-befa-4cfa-9b78-1b4e654cd99a - null null
+2026-05-18 16:39:11.949 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:11.950 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/refresh?refreshToken=9eb9996f-befa-4cfa-9b78-1b4e654cd99a - 204 null null 3.2035ms
+2026-05-18 16:39:11.952 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/refresh?refreshToken=9eb9996f-befa-4cfa-9b78-1b4e654cd99a - null 0
+2026-05-18 16:39:11.996 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:11.996 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) - Validation state: "Valid"
+2026-05-18 16:39:11.997 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10503: Signature validation failed. Token does not have a kid. Keys tried: '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-18 16:39:12.001 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10503: Signature validation failed. Token does not have a kid. Keys tried: '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2026-05-18 16:39:12.002 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.ReFresh (day1)'
+2026-05-18 16:39:12.003 +08:00 [INF] Route matched with {action = "ReFresh", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ReFresh(System.String) on controller day1.Controllers.AuthController (day1).
+2026-05-18 16:39:12.025 +08:00 [INF] Executing action method day1.Controllers.AuthController.ReFresh (day1) - Validation state: "Valid"
+2026-05-18 16:39:12.081 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__refreshToken_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[RefreshToken] = @__refreshToken_0
+2026-05-18 16:39:12.117 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-18 16:39:12.201 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-05-18 16:39:12.209 +08:00 [INF] Executed action method day1.Controllers.AuthController.ReFresh (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 183.1852ms.
+2026-05-18 16:39:12.211 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:39:12.215 +08:00 [INF] Executed action day1.Controllers.AuthController.ReFresh (day1) in 210.886ms
+2026-05-18 16:39:12.216 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.ReFresh (day1)'
+2026-05-18 16:39:12.217 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/refresh?refreshToken=9eb9996f-befa-4cfa-9b78-1b4e654cd99a - 200 null application/json; charset=utf-8 265.0259ms
+2026-05-18 16:39:12.219 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-18 16:39:12.221 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:12.232 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-18 16:39:12.235 +08:00 [INF] Route matched with {action = "GetCart", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCart() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 16:39:12.253 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetCart (day1) - Validation state: "Valid"
+2026-05-18 16:39:12.253 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-18 16:39:12.260 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-18 16:39:12.275 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DishId], [c].[UserId], [c].[AddTime], [c].[Quantity], [d].[Name] AS [DishName], [d].[Price] AS [DishPrice], [d].[ImageUrl]
+FROM [Carts] AS [c]
+INNER JOIN [Dishes] AS [d] ON [c].[DishId] = [d].[Id]
+WHERE [c].[UserId] = @__userid_0
+2026-05-18 16:39:12.275 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id] AS [ID], [d].[Name], [d].[Price], [d].[Description], [d].[ImageUrl]
+FROM [Dishes] AS [d]
+ORDER BY [d].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-05-18 16:39:12.279 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetCart (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 25.7423ms.
+2026-05-18 16:39:12.282 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 284.4722ms.
+2026-05-18 16:39:12.282 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:39:12.283 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:39:12.296 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetCart (day1) in 56.4895ms
+2026-05-18 16:39:12.296 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) in 362.8189ms
+2026-05-18 16:39:12.297 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-18 16:39:12.298 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-18 16:39:12.299 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - 200 null application/json; charset=utf-8 79.1774ms
+2026-05-18 16:39:12.299 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - 200 null application/json; charset=utf-8 390.144ms
+2026-05-18 16:39:12.349 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/e02f8adf-58b4-450f-a037-f912cae6544e.jpg - null null
+2026-05-18 16:39:12.349 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/1cb799c6-e3d3-404f-9998-01d17fc268cf.PNG - null null
+2026-05-18 16:39:12.356 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/38625d78-cac3-4059-b32e-6ae545eb8f2f.jpg - null null
+2026-05-18 16:39:12.350 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/6a6b6480-9536-4286-9303-cb5f06ad4724.jpg - null null
+2026-05-18 16:39:12.378 +08:00 [INF] Sending file. Request path: '/uploads/e02f8adf-58b4-450f-a037-f912cae6544e.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\e02f8adf-58b4-450f-a037-f912cae6544e.jpg'
+2026-05-18 16:39:12.349 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/d5185760-9a98-4989-8478-7a870f52405f.PNG - null null
+2026-05-18 16:39:12.402 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/e02f8adf-58b4-450f-a037-f912cae6544e.jpg - 200 128690 image/jpeg 53.6905ms
+2026-05-18 16:39:12.405 +08:00 [INF] Sending file. Request path: '/uploads/38625d78-cac3-4059-b32e-6ae545eb8f2f.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\38625d78-cac3-4059-b32e-6ae545eb8f2f.jpg'
+2026-05-18 16:39:12.356 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/a6ee47da-82cd-4567-b991-ea96d849eda0.jpg - null null
+2026-05-18 16:39:12.408 +08:00 [INF] Sending file. Request path: '/uploads/6a6b6480-9536-4286-9303-cb5f06ad4724.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\6a6b6480-9536-4286-9303-cb5f06ad4724.jpg'
+2026-05-18 16:39:12.409 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/3a5fdd09-8fe2-49e4-a144-bf8a118d61d7.jpg - null null
+2026-05-18 16:39:12.410 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/38625d78-cac3-4059-b32e-6ae545eb8f2f.jpg - 200 128690 image/jpeg 54.1269ms
+2026-05-18 16:39:12.419 +08:00 [INF] Sending file. Request path: '/uploads/a6ee47da-82cd-4567-b991-ea96d849eda0.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\a6ee47da-82cd-4567-b991-ea96d849eda0.jpg'
+2026-05-18 16:39:12.421 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/7f5a5b21-54d9-4a16-af1d-a7e03f04397d.jpg - null null
+2026-05-18 16:39:12.420 +08:00 [INF] Sending file. Request path: '/uploads/1cb799c6-e3d3-404f-9998-01d17fc268cf.PNG'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\1cb799c6-e3d3-404f-9998-01d17fc268cf.PNG'
+2026-05-18 16:39:12.422 +08:00 [INF] Sending file. Request path: '/uploads/3a5fdd09-8fe2-49e4-a144-bf8a118d61d7.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\3a5fdd09-8fe2-49e4-a144-bf8a118d61d7.jpg'
+2026-05-18 16:39:12.422 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/a6ee47da-82cd-4567-b991-ea96d849eda0.jpg - 200 128690 image/jpeg 65.7526ms
+2026-05-18 16:39:12.426 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/1cb799c6-e3d3-404f-9998-01d17fc268cf.PNG - 200 654010 image/png 77.4775ms
+2026-05-18 16:39:12.427 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/3a5fdd09-8fe2-49e4-a144-bf8a118d61d7.jpg - 200 128690 image/jpeg 18.7718ms
+2026-05-18 16:39:12.414 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/6a6b6480-9536-4286-9303-cb5f06ad4724.jpg - 200 128690 image/jpeg 64.3652ms
+2026-05-18 16:39:12.429 +08:00 [INF] Sending file. Request path: '/uploads/d5185760-9a98-4989-8478-7a870f52405f.PNG'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\d5185760-9a98-4989-8478-7a870f52405f.PNG'
+2026-05-18 16:39:12.429 +08:00 [INF] Sending file. Request path: '/uploads/7f5a5b21-54d9-4a16-af1d-a7e03f04397d.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\7f5a5b21-54d9-4a16-af1d-a7e03f04397d.jpg'
+2026-05-18 16:39:12.430 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/334ed5ee-51d9-400c-be2f-2164219641ab.jpg - null null
+2026-05-18 16:39:12.433 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/dcf7eb1d-f15b-4b4c-8fc4-3bb817f76681.PNG - null null
+2026-05-18 16:39:12.439 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/d5185760-9a98-4989-8478-7a870f52405f.PNG - 200 654010 image/png 89.5018ms
+2026-05-18 16:39:12.445 +08:00 [INF] Sending file. Request path: '/uploads/334ed5ee-51d9-400c-be2f-2164219641ab.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\334ed5ee-51d9-400c-be2f-2164219641ab.jpg'
+2026-05-18 16:39:12.435 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/37a85d11-bff1-476f-863b-4892713182f1.jpg - null null
+2026-05-18 16:39:12.440 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/7f5a5b21-54d9-4a16-af1d-a7e03f04397d.jpg - 200 128690 image/jpeg 18.7484ms
+2026-05-18 16:39:12.449 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/334ed5ee-51d9-400c-be2f-2164219641ab.jpg - 200 128690 image/jpeg 18.9574ms
+2026-05-18 16:39:12.438 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/e463478c-892f-4493-a1a2-5cbf03b4a91e.jpg - null null
+2026-05-18 16:39:12.457 +08:00 [INF] Sending file. Request path: '/uploads/37a85d11-bff1-476f-863b-4892713182f1.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\37a85d11-bff1-476f-863b-4892713182f1.jpg'
+2026-05-18 16:39:12.461 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/37a85d11-bff1-476f-863b-4892713182f1.jpg - 200 128690 image/jpeg 26.4264ms
+2026-05-18 16:39:12.464 +08:00 [INF] Sending file. Request path: '/uploads/e463478c-892f-4493-a1a2-5cbf03b4a91e.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\e463478c-892f-4493-a1a2-5cbf03b4a91e.jpg'
+2026-05-18 16:39:12.466 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/e463478c-892f-4493-a1a2-5cbf03b4a91e.jpg - 200 128690 image/jpeg 28.0049ms
+2026-05-18 16:39:12.467 +08:00 [INF] Sending file. Request path: '/uploads/dcf7eb1d-f15b-4b4c-8fc4-3bb817f76681.PNG'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\dcf7eb1d-f15b-4b4c-8fc4-3bb817f76681.PNG'
+2026-05-18 16:39:12.470 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/dcf7eb1d-f15b-4b4c-8fc4-3bb817f76681.PNG - 200 654010 image/png 37.3373ms
+2026-05-18 16:39:17.649 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - null null
+2026-05-18 16:39:17.652 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:17.652 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - 204 null null 3.2532ms
+2026-05-18 16:39:17.655 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - null null
+2026-05-18 16:39:17.656 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:17.661 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.GetUsersPaged (day1)'
+2026-05-18 16:39:17.664 +08:00 [INF] Route matched with {action = "GetUsersPaged", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersPaged(Int32, Int32, System.String) on controller day1.Controllers.AuthController (day1).
+2026-05-18 16:39:17.688 +08:00 [INF] Executing action method day1.Controllers.AuthController.GetUsersPaged (day1) - Validation state: "Valid"
+2026-05-18 16:39:17.698 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2026-05-18 16:39:17.748 +08:00 [INF] Executed DbCommand (14ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateTime], [t].[FailedLoginCount], [t].[LockOutEndTime], [t].[PassWord], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UserName], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+    FROM [Users] AS [u]
+    ORDER BY [u].[CreateTime] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[UserId], [u0].[RoleId], [r].[Id], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[CreateTime] DESC, [t].[Id], [t0].[UserId], [t0].[RoleId]
+2026-05-18 16:39:23.349 +08:00 [INF] Executed action method day1.Controllers.AuthController.GetUsersPaged (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5659.6328ms.
+2026-05-18 16:39:23.350 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:39:23.359 +08:00 [INF] Executed action day1.Controllers.AuthController.GetUsersPaged (day1) in 5692.453ms
+2026-05-18 16:39:23.360 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.GetUsersPaged (day1)'
+2026-05-18 16:39:23.361 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - 200 null application/json; charset=utf-8 5706.2812ms
+2026-05-18 16:39:45.752 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/roles - null null
+2026-05-18 16:39:45.752 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/permissions - null null
+2026-05-18 16:39:45.761 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:45.762 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:45.763 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/roles - 204 null null 11.0887ms
+2026-05-18 16:39:45.764 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/permissions - 204 null null 11.6027ms
+2026-05-18 16:39:45.772 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/permissions - null null
+2026-05-18 16:39:45.773 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - null null
+2026-05-18 16:39:45.775 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:45.777 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:45.778 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1)'
+2026-05-18 16:39:45.778 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-18 16:39:45.779 +08:00 [INF] Route matched with {action = "GetAllPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllPermissions() on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-18 16:39:45.780 +08:00 [INF] Route matched with {action = "GetAllRoles", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllRoles() on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-18 16:39:45.795 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1) - Validation state: "Valid"
+2026-05-18 16:39:45.807 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) - Validation state: "Valid"
+2026-05-18 16:39:45.822 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-05-18 16:39:45.823 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+2026-05-18 16:39:45.825 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 17.8272ms.
+2026-05-18 16:39:45.826 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 18.1224ms.
+2026-05-18 16:39:45.827 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:39:45.829 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:39:45.839 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1) in 58.0001ms
+2026-05-18 16:39:45.839 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) in 43.0803ms
+2026-05-18 16:39:45.840 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1)'
+2026-05-18 16:39:45.841 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-18 16:39:45.842 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/permissions - 200 null application/json; charset=utf-8 70.575ms
+2026-05-18 16:39:45.843 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - 200 null application/json; charset=utf-8 69.7542ms
+2026-05-18 16:39:59.646 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - null null
+2026-05-18 16:39:59.646 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-18 16:39:59.647 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:59.650 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:59.650 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - 204 null null 4.435ms
+2026-05-18 16:39:59.651 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetCart/ - 204 null null 5.1289ms
+2026-05-18 16:39:59.660 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - application/json 42
+2026-05-18 16:39:59.662 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-18 16:39:59.664 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:59.665 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:39:59.666 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-18 16:39:59.667 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-18 16:39:59.667 +08:00 [INF] Route matched with {action = "GetPageIndexSizeAsyncDish", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPageIndexSizeAsyncDish(day1.DTOs.Dish.PageRequestDto) on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 16:39:59.668 +08:00 [INF] Route matched with {action = "GetCart", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCart() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 16:39:59.683 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetCart (day1) - Validation state: "Valid"
+2026-05-18 16:39:59.695 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) - Validation state: "Valid"
+2026-05-18 16:39:59.711 +08:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-18 16:39:59.712 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DishId], [c].[UserId], [c].[AddTime], [c].[Quantity], [d].[Name] AS [DishName], [d].[Price] AS [DishPrice], [d].[ImageUrl]
+FROM [Carts] AS [c]
+INNER JOIN [Dishes] AS [d] ON [c].[DishId] = [d].[Id]
+WHERE [c].[UserId] = @__userid_0
+2026-05-18 16:39:59.714 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-18 16:39:59.715 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetCart (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 19.9353ms.
+2026-05-18 16:39:59.718 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id] AS [ID], [d].[Name], [d].[Price], [d].[Description], [d].[ImageUrl]
+FROM [Dishes] AS [d]
+ORDER BY [d].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-05-18 16:39:59.718 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:39:59.720 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 22.8659ms.
+2026-05-18 16:39:59.721 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetCart (day1) in 50.2733ms
+2026-05-18 16:39:59.722 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:39:59.723 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-18 16:39:59.724 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) in 54.5421ms
+2026-05-18 16:39:59.725 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - 200 null application/json; charset=utf-8 62.4557ms
+2026-05-18 16:39:59.725 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-18 16:39:59.729 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - 200 null application/json; charset=utf-8 68.8253ms
+2026-05-18 16:40:06.027 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/SearchOrders - null null
+2026-05-18 16:40:06.030 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:06.030 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/SearchOrders - 204 null null 3.6443ms
+2026-05-18 16:40:06.032 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/SearchOrders - application/json 29
+2026-05-18 16:40:06.034 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:06.035 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.SearchOrders (day1)'
+2026-05-18 16:40:06.038 +08:00 [INF] Route matched with {action = "SearchOrders", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchOrders(day1.DTOs.CartAndOrderDto.OrderSearchDto) on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 16:40:06.066 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.SearchOrders (day1) - Validation state: "Valid"
+2026-05-18 16:40:06.088 +08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+2026-05-18 16:40:06.121 +08:00 [INF] Executed DbCommand (15ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Order_No], [t].[OrderCreatTime], [t].[Order_Price], [t].[Remark], [t].[Status], [u].[UserName], [u].[Id], [t0].[DishId], [t0].[DishName], [t0].[Quantity], [t0].[Price], [t0].[ImageUrl], [t0].[Id], [t0].[Id0]
+FROM (
+    SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+    FROM [Orders] AS [o]
+    ORDER BY [o].[OrderCreatTime] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+LEFT JOIN (
+    SELECT [o0].[DishId], [d].[Name] AS [DishName], [o0].[Quantity], [o0].[Price], [d].[ImageUrl], [o0].[Id], [d].[Id] AS [Id0], [o0].[OrderId]
+    FROM [Order_Items] AS [o0]
+    INNER JOIN [Dishes] AS [d] ON [o0].[DishId] = [d].[Id]
+) AS [t0] ON [t].[Id] = [t0].[OrderId]
+ORDER BY [t].[OrderCreatTime] DESC, [t].[Id], [u].[Id], [t0].[Id]
+2026-05-18 16:40:06.127 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.SearchOrders (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 59.3172ms.
+2026-05-18 16:40:06.129 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:40:06.134 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.SearchOrders (day1) in 94.2937ms
+2026-05-18 16:40:06.136 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.SearchOrders (day1)'
+2026-05-18 16:40:06.137 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/SearchOrders - 200 null application/json; charset=utf-8 104.5213ms
+2026-05-18 16:40:06.175 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetOrderStatistics - null null
+2026-05-18 16:40:06.178 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:06.179 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetOrderStatistics - 204 null null 3.5658ms
+2026-05-18 16:40:06.181 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - null null
+2026-05-18 16:40:06.183 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:06.184 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-18 16:40:06.187 +08:00 [INF] Route matched with {action = "GetOrderStatistics", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderStatistics() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 16:40:06.203 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) - Validation state: "Valid"
+2026-05-18 16:40:06.219 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__today_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[OrderCreatTime] >= @__today_0
+2026-05-18 16:40:06.225 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+2026-05-18 16:40:06.239 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 34.6402ms.
+2026-05-18 16:40:06.241 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:40:06.243 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) in 54.5164ms
+2026-05-18 16:40:06.244 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-18 16:40:06.245 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - 200 null application/json; charset=utf-8 64.105ms
+2026-05-18 16:40:27.433 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - null null
+2026-05-18 16:40:27.440 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:27.441 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - 204 null null 7.9065ms
+2026-05-18 16:40:27.452 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-05-18 16:40:27.454 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:27.455 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-05-18 16:40:27.458 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-05-18 16:40:27.583 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-05-18 16:40:27.604 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-05-18 16:40:27.889 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-18 16:40:27.897 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-05-18 16:40:27.900 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 315.8762ms.
+2026-05-18 16:40:27.902 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:40:27.903 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 443.1204ms
+2026-05-18 16:40:27.904 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-05-18 16:40:27.904 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 200 null application/json; charset=utf-8 452.4441ms
+2026-05-18 16:40:27.907 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-18 16:40:27.909 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:27.910 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 2.8237ms
+2026-05-18 16:40:27.920 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-18 16:40:27.921 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:27.922 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-18 16:40:27.923 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-18 16:40:27.938 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-05-18 16:40:27.949 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-18 16:40:27.951 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 12.6492ms.
+2026-05-18 16:40:27.952 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:40:27.953 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 29.4356ms
+2026-05-18 16:40:27.954 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-18 16:40:27.955 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 35.311ms
+2026-05-18 16:40:29.380 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - null null
+2026-05-18 16:40:29.381 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-18 16:40:29.382 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:29.384 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:29.385 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - 204 null null 4.7848ms
+2026-05-18 16:40:29.386 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetCart/ - 204 null null 5.3474ms
+2026-05-18 16:40:29.396 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - application/json 42
+2026-05-18 16:40:29.398 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-18 16:40:29.400 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:29.401 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:29.402 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-18 16:40:29.403 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-18 16:40:29.403 +08:00 [INF] Route matched with {action = "GetPageIndexSizeAsyncDish", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPageIndexSizeAsyncDish(day1.DTOs.Dish.PageRequestDto) on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 16:40:29.404 +08:00 [INF] Route matched with {action = "GetCart", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCart() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 16:40:29.422 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) - Validation state: "Valid"
+2026-05-18 16:40:29.442 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetCart (day1) - Validation state: "Valid"
+2026-05-18 16:40:29.448 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-18 16:40:29.451 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-18 16:40:29.452 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DishId], [c].[UserId], [c].[AddTime], [c].[Quantity], [d].[Name] AS [DishName], [d].[Price] AS [DishPrice], [d].[ImageUrl]
+FROM [Carts] AS [c]
+INNER JOIN [Dishes] AS [d] ON [c].[DishId] = [d].[Id]
+WHERE [c].[UserId] = @__userid_0
+2026-05-18 16:40:29.454 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id] AS [ID], [d].[Name], [d].[Price], [d].[Description], [d].[ImageUrl]
+FROM [Dishes] AS [d]
+ORDER BY [d].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-05-18 16:40:29.455 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetCart (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 10.5897ms.
+2026-05-18 16:40:29.456 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 13.2642ms.
+2026-05-18 16:40:29.457 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:40:29.458 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:40:29.459 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetCart (day1) in 37.4361ms
+2026-05-18 16:40:29.461 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) in 55.318ms
+2026-05-18 16:40:29.462 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-18 16:40:29.463 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-18 16:40:29.463 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - 200 null application/json; charset=utf-8 65.1735ms
+2026-05-18 16:40:29.464 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - 200 null application/json; charset=utf-8 67.9307ms
+2026-05-18 16:40:30.981 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - null null
+2026-05-18 16:40:30.983 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:30.984 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - 204 null null 2.5212ms
+2026-05-18 16:40:30.986 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - null null
+2026-05-18 16:40:30.988 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:30.989 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.GetUsersPaged (day1)'
+2026-05-18 16:40:30.991 +08:00 [INF] Route matched with {action = "GetUsersPaged", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersPaged(Int32, Int32, System.String) on controller day1.Controllers.AuthController (day1).
+2026-05-18 16:40:31.007 +08:00 [INF] Executing action method day1.Controllers.AuthController.GetUsersPaged (day1) - Validation state: "Valid"
+2026-05-18 16:40:31.011 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2026-05-18 16:40:31.025 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateTime], [t].[FailedLoginCount], [t].[LockOutEndTime], [t].[PassWord], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UserName], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+    FROM [Users] AS [u]
+    ORDER BY [u].[CreateTime] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[UserId], [u0].[RoleId], [r].[Id], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[CreateTime] DESC, [t].[Id], [t0].[UserId], [t0].[RoleId]
+2026-05-18 16:40:31.029 +08:00 [INF] Executed action method day1.Controllers.AuthController.GetUsersPaged (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 21.4247ms.
+2026-05-18 16:40:31.031 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:40:31.032 +08:00 [INF] Executed action day1.Controllers.AuthController.GetUsersPaged (day1) in 38.4119ms
+2026-05-18 16:40:31.033 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.GetUsersPaged (day1)'
+2026-05-18 16:40:31.034 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - 200 null application/json; charset=utf-8 47.6289ms
+2026-05-18 16:40:31.755 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/roles - null null
+2026-05-18 16:40:31.755 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/permissions - null null
+2026-05-18 16:40:31.756 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:31.758 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:31.759 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/roles - 204 null null 4.5202ms
+2026-05-18 16:40:31.760 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/permissions - 204 null null 5.0408ms
+2026-05-18 16:40:31.763 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/permissions - null null
+2026-05-18 16:40:31.765 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - null null
+2026-05-18 16:40:31.766 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:31.767 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:31.769 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1)'
+2026-05-18 16:40:31.769 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-18 16:40:31.770 +08:00 [INF] Route matched with {action = "GetAllPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllPermissions() on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-18 16:40:31.770 +08:00 [INF] Route matched with {action = "GetAllRoles", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllRoles() on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-18 16:40:31.785 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1) - Validation state: "Valid"
+2026-05-18 16:40:31.798 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) - Validation state: "Valid"
+2026-05-18 16:40:31.801 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-05-18 16:40:31.801 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+2026-05-18 16:40:31.802 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.9774ms.
+2026-05-18 16:40:31.803 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.4148ms.
+2026-05-18 16:40:31.805 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:40:31.806 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:40:31.807 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1) in 35.3343ms
+2026-05-18 16:40:31.808 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) in 21.5056ms
+2026-05-18 16:40:31.809 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1)'
+2026-05-18 16:40:31.810 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-18 16:40:31.811 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/permissions - 200 null application/json; charset=utf-8 48.4793ms
+2026-05-18 16:40:31.812 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - 200 null application/json; charset=utf-8 47.565ms
+2026-05-18 16:40:32.446 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - application/json 42
+2026-05-18 16:40:32.447 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-18 16:40:32.448 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:32.449 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:32.450 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-18 16:40:32.451 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-18 16:40:32.452 +08:00 [INF] Route matched with {action = "GetPageIndexSizeAsyncDish", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPageIndexSizeAsyncDish(day1.DTOs.Dish.PageRequestDto) on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 16:40:32.453 +08:00 [INF] Route matched with {action = "GetCart", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCart() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 16:40:32.467 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) - Validation state: "Valid"
+2026-05-18 16:40:32.478 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetCart (day1) - Validation state: "Valid"
+2026-05-18 16:40:32.482 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-18 16:40:32.485 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DishId], [c].[UserId], [c].[AddTime], [c].[Quantity], [d].[Name] AS [DishName], [d].[Price] AS [DishPrice], [d].[ImageUrl]
+FROM [Carts] AS [c]
+INNER JOIN [Dishes] AS [d] ON [c].[DishId] = [d].[Id]
+WHERE [c].[UserId] = @__userid_0
+2026-05-18 16:40:32.486 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-18 16:40:32.487 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetCart (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 6.3868ms.
+2026-05-18 16:40:32.489 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:40:32.490 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id] AS [ID], [d].[Name], [d].[Price], [d].[Description], [d].[ImageUrl]
+FROM [Dishes] AS [d]
+ORDER BY [d].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-05-18 16:40:32.490 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetCart (day1) in 22.481ms
+2026-05-18 16:40:32.493 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 13.6116ms.
+2026-05-18 16:40:32.494 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-18 16:40:32.496 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:40:32.497 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - 200 null application/json; charset=utf-8 50.0656ms
+2026-05-18 16:40:32.498 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) in 43.486ms
+2026-05-18 16:40:32.501 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-18 16:40:32.501 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - 200 null application/json; charset=utf-8 55.5383ms
+2026-05-18 16:40:33.815 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/SearchOrders - null null
+2026-05-18 16:40:33.816 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:33.817 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/SearchOrders - 204 null null 2.6644ms
+2026-05-18 16:40:33.819 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/SearchOrders - application/json 29
+2026-05-18 16:40:33.821 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:33.822 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.SearchOrders (day1)'
+2026-05-18 16:40:33.823 +08:00 [INF] Route matched with {action = "SearchOrders", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchOrders(day1.DTOs.CartAndOrderDto.OrderSearchDto) on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 16:40:33.844 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.SearchOrders (day1) - Validation state: "Valid"
+2026-05-18 16:40:33.856 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+2026-05-18 16:40:33.870 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Order_No], [t].[OrderCreatTime], [t].[Order_Price], [t].[Remark], [t].[Status], [u].[UserName], [u].[Id], [t0].[DishId], [t0].[DishName], [t0].[Quantity], [t0].[Price], [t0].[ImageUrl], [t0].[Id], [t0].[Id0]
+FROM (
+    SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+    FROM [Orders] AS [o]
+    ORDER BY [o].[OrderCreatTime] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+LEFT JOIN (
+    SELECT [o0].[DishId], [d].[Name] AS [DishName], [o0].[Quantity], [o0].[Price], [d].[ImageUrl], [o0].[Id], [d].[Id] AS [Id0], [o0].[OrderId]
+    FROM [Order_Items] AS [o0]
+    INNER JOIN [Dishes] AS [d] ON [o0].[DishId] = [d].[Id]
+) AS [t0] ON [t].[Id] = [t0].[OrderId]
+ORDER BY [t].[OrderCreatTime] DESC, [t].[Id], [u].[Id], [t0].[Id]
+2026-05-18 16:40:33.872 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.SearchOrders (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 25.993ms.
+2026-05-18 16:40:33.873 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:40:33.874 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.SearchOrders (day1) in 49.3243ms
+2026-05-18 16:40:33.875 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.SearchOrders (day1)'
+2026-05-18 16:40:33.876 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/SearchOrders - 200 null application/json; charset=utf-8 56.4971ms
+2026-05-18 16:40:33.908 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetOrderStatistics - null null
+2026-05-18 16:40:33.910 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:33.910 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetOrderStatistics - 204 null null 2.4343ms
+2026-05-18 16:40:33.913 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - null null
+2026-05-18 16:40:33.914 +08:00 [INF] CORS policy execution successful.
+2026-05-18 16:40:33.915 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-18 16:40:33.916 +08:00 [INF] Route matched with {action = "GetOrderStatistics", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderStatistics() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 16:40:33.929 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) - Validation state: "Valid"
+2026-05-18 16:40:33.934 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__today_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[OrderCreatTime] >= @__today_0
+2026-05-18 16:40:33.937 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+2026-05-18 16:40:33.939 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.1059ms.
+2026-05-18 16:40:33.940 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 16:40:33.941 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) in 24.1352ms
+2026-05-18 16:40:33.942 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-18 16:40:33.943 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - 200 null application/json; charset=utf-8 30.6563ms
+2026-05-18 17:07:31.904 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-18 17:07:31.958 +08:00 [WRN] No store type was specified for the decimal property 'Order_Price' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-18 17:07:31.959 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Order_item'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-18 17:07:34.537 +08:00 [INF] Executed DbCommand (154ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-05-18 17:07:34.592 +08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-05-18 17:07:34.645 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-05-18 17:07:34.752 +08:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-05-18 17:07:34.767 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-05-18 17:07:34.815 +08:00 [INF] Executed DbCommand (30ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-05-18 17:07:34.829 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-05-18 17:07:34.875 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-18 17:07:35.119 +08:00 [INF] Now listening on: http://localhost:5272
+2026-05-18 17:07:35.200 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-18 17:07:35.201 +08:00 [INF] Hosting environment: Development
+2026-05-18 17:07:35.201 +08:00 [INF] Content root path: D:\1\projectExcel\qianhou\day1
+2026-05-18 17:07:37.424 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-05-18 17:07:37.813 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 400.5634ms
+2026-05-18 17:07:37.818 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-18 17:07:37.818 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-05-18 17:07:37.824 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 5.8699ms
+2026-05-18 17:07:37.905 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 86.2622ms
+2026-05-18 17:07:38.039 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-05-18 17:07:38.066 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 26.8196ms
+2026-05-18 17:08:10.766 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - null null
+2026-05-18 17:08:10.782 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:10.785 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/login - 204 null null 19.7504ms
+2026-05-18 17:08:10.788 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-05-18 17:08:10.791 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:10.917 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-05-18 17:08:10.945 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-05-18 17:08:11.160 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-05-18 17:08:11.213 +08:00 [INF] Executed DbCommand (20ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-05-18 17:08:11.708 +08:00 [INF] Executed DbCommand (62ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-18 17:08:11.881 +08:00 [INF] Executed DbCommand (64ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-05-18 17:08:11.894 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 729.6653ms.
+2026-05-18 17:08:11.902 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:11.920 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 967.6661ms
+2026-05-18 17:08:11.921 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-05-18 17:08:11.926 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 200 null application/json; charset=utf-8 1138.3807ms
+2026-05-18 17:08:11.931 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-18 17:08:11.934 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:11.935 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 204 null null 4.4229ms
+2026-05-18 17:08:11.938 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-18 17:08:11.942 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:12.032 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-18 17:08:12.037 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-18 17:08:12.068 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-05-18 17:08:12.214 +08:00 [INF] Executed DbCommand (69ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-18 17:08:12.217 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 147.7025ms.
+2026-05-18 17:08:12.219 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:12.224 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 185.5716ms
+2026-05-18 17:08:12.225 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-18 17:08:12.226 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 288.5202ms
+2026-05-18 17:08:15.089 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - null null
+2026-05-18 17:08:15.091 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-18 17:08:15.102 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:15.103 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - 204 null null 14.4521ms
+2026-05-18 17:08:15.103 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:15.106 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - application/json 42
+2026-05-18 17:08:15.107 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetCart/ - 204 null null 17.0514ms
+2026-05-18 17:08:15.109 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:15.112 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-18 17:08:15.114 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:15.115 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-18 17:08:15.117 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-18 17:08:15.122 +08:00 [INF] Route matched with {action = "GetCart", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCart() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 17:08:15.122 +08:00 [INF] Route matched with {action = "GetPageIndexSizeAsyncDish", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPageIndexSizeAsyncDish(day1.DTOs.Dish.PageRequestDto) on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 17:08:15.140 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetCart (day1) - Validation state: "Valid"
+2026-05-18 17:08:15.156 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) - Validation state: "Valid"
+2026-05-18 17:08:15.190 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DishId], [c].[UserId], [c].[AddTime], [c].[Quantity], [d].[Name] AS [DishName], [d].[Price] AS [DishPrice], [d].[ImageUrl]
+FROM [Carts] AS [c]
+INNER JOIN [Dishes] AS [d] ON [c].[DishId] = [d].[Id]
+WHERE [c].[UserId] = @__userid_0
+2026-05-18 17:08:15.199 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetCart (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 58.4656ms.
+2026-05-18 17:08:15.203 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:15.218 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetCart (day1) in 94.6923ms
+2026-05-18 17:08:15.220 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-18 17:08:15.222 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - 200 null application/json; charset=utf-8 109.9666ms
+2026-05-18 17:08:15.365 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-18 17:08:15.372 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-18 17:08:15.391 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id] AS [ID], [d].[Name], [d].[Price], [d].[Description], [d].[ImageUrl]
+FROM [Dishes] AS [d]
+ORDER BY [d].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-05-18 17:08:15.394 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 237.2296ms.
+2026-05-18 17:08:15.396 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:15.401 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) in 274.1468ms
+2026-05-18 17:08:15.402 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-18 17:08:15.402 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - 200 null application/json; charset=utf-8 296.2904ms
+2026-05-18 17:08:17.421 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/roles - null null
+2026-05-18 17:08:17.421 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - null null
+2026-05-18 17:08:17.423 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:17.425 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:17.425 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/roles - 204 null null 4.2035ms
+2026-05-18 17:08:17.426 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - 204 null null 4.6854ms
+2026-05-18 17:08:17.428 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - null null
+2026-05-18 17:08:17.430 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - null null
+2026-05-18 17:08:17.432 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:17.434 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:17.437 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.GetUsersPaged (day1)'
+2026-05-18 17:08:17.437 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-18 17:08:17.440 +08:00 [INF] Route matched with {action = "GetAllRoles", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllRoles() on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-18 17:08:17.442 +08:00 [INF] Route matched with {action = "GetUsersPaged", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersPaged(Int32, Int32, System.String) on controller day1.Controllers.AuthController (day1).
+2026-05-18 17:08:17.455 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) - Validation state: "Valid"
+2026-05-18 17:08:17.476 +08:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+2026-05-18 17:08:17.476 +08:00 [INF] Executing action method day1.Controllers.AuthController.GetUsersPaged (day1) - Validation state: "Valid"
+2026-05-18 17:08:17.479 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 22.2953ms.
+2026-05-18 17:08:17.481 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:17.486 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2026-05-18 17:08:17.498 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) in 55.9012ms
+2026-05-18 17:08:17.499 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-18 17:08:17.499 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - 200 null application/json; charset=utf-8 71.3696ms
+2026-05-18 17:08:17.559 +08:00 [INF] Executed DbCommand (29ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateTime], [t].[FailedLoginCount], [t].[LockOutEndTime], [t].[PassWord], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UserName], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+    FROM [Users] AS [u]
+    ORDER BY [u].[CreateTime] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[UserId], [u0].[RoleId], [r].[Id], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[CreateTime] DESC, [t].[Id], [t0].[UserId], [t0].[RoleId]
+2026-05-18 17:08:17.587 +08:00 [INF] Executed action method day1.Controllers.AuthController.GetUsersPaged (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 109.2222ms.
+2026-05-18 17:08:17.589 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:17.597 +08:00 [INF] Executed action day1.Controllers.AuthController.GetUsersPaged (day1) in 141.3554ms
+2026-05-18 17:08:17.598 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.GetUsersPaged (day1)'
+2026-05-18 17:08:17.599 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - 200 null application/json; charset=utf-8 168.3717ms
+2026-05-18 17:08:21.945 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/permissions - null null
+2026-05-18 17:08:21.945 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - null null
+2026-05-18 17:08:21.947 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:21.949 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:21.950 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/permissions - 204 null null 5.5899ms
+2026-05-18 17:08:21.951 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-18 17:08:21.953 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/permissions - null null
+2026-05-18 17:08:21.953 +08:00 [INF] Route matched with {action = "GetAllRoles", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllRoles() on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-18 17:08:21.955 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:21.968 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) - Validation state: "Valid"
+2026-05-18 17:08:21.968 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1)'
+2026-05-18 17:08:21.971 +08:00 [INF] Route matched with {action = "GetAllPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllPermissions() on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-18 17:08:21.972 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+2026-05-18 17:08:21.984 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1) - Validation state: "Valid"
+2026-05-18 17:08:21.985 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 16.3991ms.
+2026-05-18 17:08:21.987 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:21.988 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) in 32.3777ms
+2026-05-18 17:08:21.989 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-18 17:08:21.990 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - 200 null application/json; charset=utf-8 45.615ms
+2026-05-18 17:08:21.994 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-05-18 17:08:22.002 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 16.0773ms.
+2026-05-18 17:08:22.003 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:22.006 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1) in 33.6593ms
+2026-05-18 17:08:22.006 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1)'
+2026-05-18 17:08:22.007 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/permissions - 200 null application/json; charset=utf-8 54.4088ms
+2026-05-18 17:08:32.723 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - null null
+2026-05-18 17:08:32.723 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/roles - null null
+2026-05-18 17:08:32.725 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:32.727 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:32.728 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - 204 null null 4.3673ms
+2026-05-18 17:08:32.729 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/roles - 204 null null 5.0756ms
+2026-05-18 17:08:32.732 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - null null
+2026-05-18 17:08:32.734 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - null null
+2026-05-18 17:08:32.735 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:32.737 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:32.738 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-18 17:08:32.739 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.GetUsersPaged (day1)'
+2026-05-18 17:08:32.739 +08:00 [INF] Route matched with {action = "GetAllRoles", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllRoles() on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-18 17:08:32.740 +08:00 [INF] Route matched with {action = "GetUsersPaged", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersPaged(Int32, Int32, System.String) on controller day1.Controllers.AuthController (day1).
+2026-05-18 17:08:32.755 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) - Validation state: "Valid"
+2026-05-18 17:08:32.802 +08:00 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+2026-05-18 17:08:32.802 +08:00 [INF] Executing action method day1.Controllers.AuthController.GetUsersPaged (day1) - Validation state: "Valid"
+2026-05-18 17:08:32.804 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 47.1854ms.
+2026-05-18 17:08:32.807 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2026-05-18 17:08:32.807 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:32.810 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) in 68.9454ms
+2026-05-18 17:08:32.811 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-18 17:08:32.813 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - 200 null application/json; charset=utf-8 81.1622ms
+2026-05-18 17:08:32.824 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateTime], [t].[FailedLoginCount], [t].[LockOutEndTime], [t].[PassWord], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UserName], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+    FROM [Users] AS [u]
+    ORDER BY [u].[CreateTime] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[UserId], [u0].[RoleId], [r].[Id], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[CreateTime] DESC, [t].[Id], [t0].[UserId], [t0].[RoleId]
+2026-05-18 17:08:32.828 +08:00 [INF] Executed action method day1.Controllers.AuthController.GetUsersPaged (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 23.9585ms.
+2026-05-18 17:08:32.830 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:32.831 +08:00 [INF] Executed action day1.Controllers.AuthController.GetUsersPaged (day1) in 75.5955ms
+2026-05-18 17:08:32.832 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.GetUsersPaged (day1)'
+2026-05-18 17:08:32.833 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - 200 null application/json; charset=utf-8 99.571ms
+2026-05-18 17:08:33.499 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - null null
+2026-05-18 17:08:33.499 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-18 17:08:33.501 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:33.502 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:33.503 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - 204 null null 4.331ms
+2026-05-18 17:08:33.504 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetCart/ - 204 null null 4.882ms
+2026-05-18 17:08:33.507 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - application/json 42
+2026-05-18 17:08:33.508 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-18 17:08:33.510 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:33.512 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:33.513 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-18 17:08:33.514 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-18 17:08:33.514 +08:00 [INF] Route matched with {action = "GetPageIndexSizeAsyncDish", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPageIndexSizeAsyncDish(day1.DTOs.Dish.PageRequestDto) on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 17:08:33.515 +08:00 [INF] Route matched with {action = "GetCart", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCart() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 17:08:33.542 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetCart (day1) - Validation state: "Valid"
+2026-05-18 17:08:33.542 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) - Validation state: "Valid"
+2026-05-18 17:08:33.552 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-18 17:08:33.560 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-18 17:08:33.565 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id] AS [ID], [d].[Name], [d].[Price], [d].[Description], [d].[ImageUrl]
+FROM [Dishes] AS [d]
+ORDER BY [d].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-05-18 17:08:33.566 +08:00 [INF] Executed DbCommand (20ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DishId], [c].[UserId], [c].[AddTime], [c].[Quantity], [d].[Name] AS [DishName], [d].[Price] AS [DishPrice], [d].[ImageUrl]
+FROM [Carts] AS [c]
+INNER JOIN [Dishes] AS [d] ON [c].[DishId] = [d].[Id]
+WHERE [c].[UserId] = @__userid_0
+2026-05-18 17:08:33.568 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 23.9258ms.
+2026-05-18 17:08:33.570 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetCart (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 26.8503ms.
+2026-05-18 17:08:33.571 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:33.572 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:33.574 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) in 57.3026ms
+2026-05-18 17:08:33.575 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetCart (day1) in 57.4441ms
+2026-05-18 17:08:33.576 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-18 17:08:33.577 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-18 17:08:33.579 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - 200 null application/json; charset=utf-8 71.9703ms
+2026-05-18 17:08:33.579 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - 200 null application/json; charset=utf-8 71.0229ms
+2026-05-18 17:08:38.645 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetOrderStatistics - null null
+2026-05-18 17:08:38.648 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:38.649 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetOrderStatistics - 204 null null 3.7493ms
+2026-05-18 17:08:38.652 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - null null
+2026-05-18 17:08:38.655 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:38.656 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-18 17:08:38.660 +08:00 [INF] Route matched with {action = "GetOrderStatistics", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderStatistics() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 17:08:38.676 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) - Validation state: "Valid"
+2026-05-18 17:08:38.698 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[@__today_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[OrderCreatTime] >= @__today_0
+2026-05-18 17:08:38.707 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+2026-05-18 17:08:38.723 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 46.1112ms.
+2026-05-18 17:08:38.725 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:38.727 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) in 64.341ms
+2026-05-18 17:08:38.728 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-18 17:08:38.730 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - 200 null application/json; charset=utf-8 77.74ms
+2026-05-18 17:08:42.999 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-18 17:08:42.999 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - null null
+2026-05-18 17:08:43.001 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:43.003 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:43.005 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetCart/ - 204 null null 5.8726ms
+2026-05-18 17:08:43.006 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - 204 null null 6.6541ms
+2026-05-18 17:08:43.008 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-18 17:08:43.011 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - application/json 42
+2026-05-18 17:08:43.014 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:43.016 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:43.016 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-18 17:08:43.017 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-18 17:08:43.017 +08:00 [INF] Route matched with {action = "GetCart", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCart() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 17:08:43.018 +08:00 [INF] Route matched with {action = "GetPageIndexSizeAsyncDish", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPageIndexSizeAsyncDish(day1.DTOs.Dish.PageRequestDto) on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 17:08:43.033 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetCart (day1) - Validation state: "Valid"
+2026-05-18 17:08:43.047 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) - Validation state: "Valid"
+2026-05-18 17:08:43.052 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-18 17:08:43.052 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DishId], [c].[UserId], [c].[AddTime], [c].[Quantity], [d].[Name] AS [DishName], [d].[Price] AS [DishPrice], [d].[ImageUrl]
+FROM [Carts] AS [c]
+INNER JOIN [Dishes] AS [d] ON [c].[DishId] = [d].[Id]
+WHERE [c].[UserId] = @__userid_0
+2026-05-18 17:08:43.055 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-18 17:08:43.055 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetCart (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.6836ms.
+2026-05-18 17:08:43.058 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:43.059 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetCart (day1) in 39.7208ms
+2026-05-18 17:08:43.059 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id] AS [ID], [d].[Name], [d].[Price], [d].[Description], [d].[ImageUrl]
+FROM [Dishes] AS [d]
+ORDER BY [d].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-05-18 17:08:43.060 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-18 17:08:43.062 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 14.4912ms.
+2026-05-18 17:08:43.063 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - 200 null application/json; charset=utf-8 54.6569ms
+2026-05-18 17:08:43.064 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:43.068 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) in 34.4128ms
+2026-05-18 17:08:43.069 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-18 17:08:43.070 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - 200 null application/json; charset=utf-8 59.3755ms
+2026-05-18 17:08:45.069 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - null null
+2026-05-18 17:08:45.069 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/roles - null null
+2026-05-18 17:08:45.072 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:45.073 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:45.075 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - 204 null null 5.9376ms
+2026-05-18 17:08:45.075 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/roles - 204 null null 6.5094ms
+2026-05-18 17:08:45.079 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - null null
+2026-05-18 17:08:45.082 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - null null
+2026-05-18 17:08:45.085 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:45.086 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:45.087 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-18 17:08:45.087 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.GetUsersPaged (day1)'
+2026-05-18 17:08:45.088 +08:00 [INF] Route matched with {action = "GetAllRoles", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllRoles() on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-18 17:08:45.088 +08:00 [INF] Route matched with {action = "GetUsersPaged", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersPaged(Int32, Int32, System.String) on controller day1.Controllers.AuthController (day1).
+2026-05-18 17:08:45.105 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) - Validation state: "Valid"
+2026-05-18 17:08:45.117 +08:00 [INF] Executing action method day1.Controllers.AuthController.GetUsersPaged (day1) - Validation state: "Valid"
+2026-05-18 17:08:45.120 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+2026-05-18 17:08:45.120 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2026-05-18 17:08:45.122 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.3591ms.
+2026-05-18 17:08:45.125 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:45.126 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) in 36.4134ms
+2026-05-18 17:08:45.127 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-18 17:08:45.128 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - 200 null application/json; charset=utf-8 49.3221ms
+2026-05-18 17:08:45.132 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateTime], [t].[FailedLoginCount], [t].[LockOutEndTime], [t].[PassWord], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UserName], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+    FROM [Users] AS [u]
+    ORDER BY [u].[CreateTime] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[UserId], [u0].[RoleId], [r].[Id], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[CreateTime] DESC, [t].[Id], [t0].[UserId], [t0].[RoleId]
+2026-05-18 17:08:45.135 +08:00 [INF] Executed action method day1.Controllers.AuthController.GetUsersPaged (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 16.4544ms.
+2026-05-18 17:08:45.136 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:45.137 +08:00 [INF] Executed action day1.Controllers.AuthController.GetUsersPaged (day1) in 31.5744ms
+2026-05-18 17:08:45.138 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.GetUsersPaged (day1)'
+2026-05-18 17:08:45.139 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - 200 null application/json; charset=utf-8 57.0089ms
+2026-05-18 17:08:45.538 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/permissions - null null
+2026-05-18 17:08:45.538 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - null null
+2026-05-18 17:08:45.541 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:45.542 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:45.543 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/RoleAndPermission/permissions - 204 null null 5.0356ms
+2026-05-18 17:08:45.544 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-18 17:08:45.547 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/permissions - null null
+2026-05-18 17:08:45.548 +08:00 [INF] Route matched with {action = "GetAllRoles", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllRoles() on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-18 17:08:45.550 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:45.570 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) - Validation state: "Valid"
+2026-05-18 17:08:45.571 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1)'
+2026-05-18 17:08:45.573 +08:00 [INF] Route matched with {action = "GetAllPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllPermissions() on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-18 17:08:45.574 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+2026-05-18 17:08:45.587 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1) - Validation state: "Valid"
+2026-05-18 17:08:45.588 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 16.7077ms.
+2026-05-18 17:08:45.591 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:45.592 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) in 41.2187ms
+2026-05-18 17:08:45.593 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-18 17:08:45.593 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-05-18 17:08:45.594 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - 200 null application/json; charset=utf-8 55.5648ms
+2026-05-18 17:08:45.596 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 6.4993ms.
+2026-05-18 17:08:45.600 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:45.601 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1) in 26.6914ms
+2026-05-18 17:08:45.602 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1)'
+2026-05-18 17:08:45.603 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/permissions - 200 null application/json; charset=utf-8 55.7778ms
+2026-05-18 17:08:46.204 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/SearchOrders - null null
+2026-05-18 17:08:46.206 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:46.206 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/SearchOrders - 204 null null 2.4097ms
+2026-05-18 17:08:46.209 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/SearchOrders - application/json 29
+2026-05-18 17:08:46.211 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:46.212 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.SearchOrders (day1)'
+2026-05-18 17:08:46.215 +08:00 [INF] Route matched with {action = "SearchOrders", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchOrders(day1.DTOs.CartAndOrderDto.OrderSearchDto) on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 17:08:46.251 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.SearchOrders (day1) - Validation state: "Valid"
+2026-05-18 17:08:46.264 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+2026-05-18 17:08:46.306 +08:00 [INF] Executed DbCommand (20ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Order_No], [t].[OrderCreatTime], [t].[Order_Price], [t].[Remark], [t].[Status], [u].[UserName], [u].[Id], [t0].[DishId], [t0].[DishName], [t0].[Quantity], [t0].[Price], [t0].[ImageUrl], [t0].[Id], [t0].[Id0]
+FROM (
+    SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+    FROM [Orders] AS [o]
+    ORDER BY [o].[OrderCreatTime] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+LEFT JOIN (
+    SELECT [o0].[DishId], [d].[Name] AS [DishName], [o0].[Quantity], [o0].[Price], [d].[ImageUrl], [o0].[Id], [d].[Id] AS [Id0], [o0].[OrderId]
+    FROM [Order_Items] AS [o0]
+    INNER JOIN [Dishes] AS [d] ON [o0].[DishId] = [d].[Id]
+) AS [t0] ON [t].[Id] = [t0].[OrderId]
+ORDER BY [t].[OrderCreatTime] DESC, [t].[Id], [u].[Id], [t0].[Id]
+2026-05-18 17:08:46.313 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.SearchOrders (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 60.7371ms.
+2026-05-18 17:08:46.315 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:46.322 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.SearchOrders (day1) in 105.1024ms
+2026-05-18 17:08:46.323 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.SearchOrders (day1)'
+2026-05-18 17:08:46.324 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/SearchOrders - 200 null application/json; charset=utf-8 115.0003ms
+2026-05-18 17:08:46.360 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetOrderStatistics - null null
+2026-05-18 17:08:46.362 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:46.363 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5272/api/DishAndOrder/GetOrderStatistics - 204 null null 3.2355ms
+2026-05-18 17:08:46.366 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - null null
+2026-05-18 17:08:46.367 +08:00 [INF] CORS policy execution successful.
+2026-05-18 17:08:46.368 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-18 17:08:46.369 +08:00 [INF] Route matched with {action = "GetOrderStatistics", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderStatistics() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-18 17:08:46.387 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) - Validation state: "Valid"
+2026-05-18 17:08:46.391 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__today_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[OrderCreatTime] >= @__today_0
+2026-05-18 17:08:46.395 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+2026-05-18 17:08:46.398 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 10.2204ms.
+2026-05-18 17:08:46.400 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-18 17:08:46.402 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) in 30.6256ms
+2026-05-18 17:08:46.403 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-18 17:08:46.403 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - 200 null application/json; charset=utf-8 37.7115ms

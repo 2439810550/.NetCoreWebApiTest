@@ -1,0 +1,1199 @@
+2026-05-20 09:33:49.742 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 09:33:49.795 +08:00 [WRN] No store type was specified for the decimal property 'Order_Price' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 09:33:49.797 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Order_item'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 09:33:51.355 +08:00 [INF] Executed DbCommand (109ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-05-20 09:33:51.404 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-05-20 09:33:51.456 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-05-20 09:33:51.538 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-05-20 09:33:51.562 +08:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-05-20 09:33:51.604 +08:00 [INF] Executed DbCommand (22ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-05-20 09:33:51.615 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-05-20 09:33:51.659 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-20 09:33:51.875 +08:00 [WRN] Overriding address(es) 'http://0.0.0.0:5272'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-05-20 09:33:51.925 +08:00 [INF] Now listening on: http://0.0.0.0:5272
+2026-05-20 09:33:52.003 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-20 09:33:52.004 +08:00 [INF] Hosting environment: Development
+2026-05-20 09:33:52.005 +08:00 [INF] Content root path: D:\1\projectExcel\qianhou\day1
+2026-05-20 09:33:55.871 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-05-20 09:33:56.431 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 573.8655ms
+2026-05-20 09:33:56.455 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-20 09:33:56.458 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-05-20 09:33:56.459 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 4.1914ms
+2026-05-20 09:33:56.569 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 111.0099ms
+2026-05-20 09:33:56.704 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-05-20 09:33:56.727 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.346ms
+2026-05-20 09:35:08.233 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs - null null
+2026-05-20 09:35:08.299 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 09:35:08.324 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 09:35:08.433 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-20 09:35:08.438 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 09:35:08.443 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 09:35:10.663 +08:00 [INF] Received HTTP response headers after 2217.6968ms - 200
+2026-05-20 09:35:10.666 +08:00 [INF] End processing HTTP request after 2228.2032ms - 200
+2026-05-20 09:35:10.678 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2241.726ms.
+2026-05-20 09:35:10.684 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 09:35:10.695 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 2366.8286ms
+2026-05-20 09:35:10.697 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 09:35:10.699 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs - 200 null application/json; charset=utf-8 2465.6964ms
+2026-05-20 09:46:57.037 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 09:46:57.076 +08:00 [WRN] No store type was specified for the decimal property 'Order_Price' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 09:46:57.078 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Order_item'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 09:46:57.882 +08:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-05-20 09:46:57.913 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-05-20 09:46:57.944 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-05-20 09:46:57.997 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-05-20 09:46:58.009 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-05-20 09:46:58.042 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-05-20 09:46:58.053 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-05-20 09:46:58.079 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-20 09:46:58.188 +08:00 [WRN] Overriding address(es) 'http://0.0.0.0:5272'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-05-20 09:46:58.211 +08:00 [INF] Now listening on: http://0.0.0.0:5272
+2026-05-20 09:46:58.280 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-20 09:46:58.282 +08:00 [INF] Hosting environment: Development
+2026-05-20 09:46:58.283 +08:00 [INF] Content root path: D:\1\projectExcel\qianhou\day1
+2026-05-20 09:46:59.197 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-05-20 09:46:59.409 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 219.5041ms
+2026-05-20 09:46:59.410 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-05-20 09:46:59.414 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-20 09:46:59.420 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 5.4749ms
+2026-05-20 09:46:59.458 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 48.1054ms
+2026-05-20 09:46:59.528 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-05-20 09:46:59.549 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.8343ms
+2026-05-20 09:47:12.770 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58%20%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD%20%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4%20%23%20%E9%BC%A0%E9%BC%A0%20%23...%20https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F%20%3A4pm%20wfO%3A%2F%20S%40L.Wm%2008%2F10%20 - null null
+2026-05-20 09:47:12.831 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 09:47:12.851 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 09:47:12.927 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-20 09:50:11.858 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 09:50:11.862 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 09:50:14.253 +08:00 [INF] Received HTTP response headers after 2387.9179ms - 200
+2026-05-20 09:50:14.255 +08:00 [INF] End processing HTTP request after 2398.8489ms - 200
+2026-05-20 09:50:14.268 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 181336.6644ms.
+2026-05-20 09:50:14.274 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 09:50:14.287 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 181431.3938ms
+2026-05-20 09:50:14.288 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 09:50:14.290 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58%20%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD%20%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4%20%23%20%E9%BC%A0%E9%BC%A0%20%23...%20https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F%20%3A4pm%20wfO%3A%2F%20S%40L.Wm%2008%2F10%20 - 200 null application/json; charset=utf-8 181520.4681ms
+2026-05-20 10:39:34.068 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 10:39:34.121 +08:00 [WRN] No store type was specified for the decimal property 'Order_Price' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 10:39:34.123 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Order_item'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 10:39:35.135 +08:00 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-05-20 10:39:35.171 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-05-20 10:39:35.206 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-05-20 10:39:35.266 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-05-20 10:39:35.279 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-05-20 10:39:35.312 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-05-20 10:39:35.321 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-05-20 10:39:35.354 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-20 10:39:35.518 +08:00 [WRN] Overriding address(es) 'http://0.0.0.0:5272'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-05-20 10:39:35.556 +08:00 [INF] Now listening on: http://0.0.0.0:5272
+2026-05-20 10:39:35.630 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-20 10:39:35.631 +08:00 [INF] Hosting environment: Development
+2026-05-20 10:39:35.632 +08:00 [INF] Content root path: D:\1\projectExcel\qianhou\day1
+2026-05-20 10:39:36.289 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-05-20 10:39:36.552 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 272.7932ms
+2026-05-20 10:39:36.557 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-20 10:39:36.561 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-05-20 10:39:36.563 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 5.9165ms
+2026-05-20 10:39:36.594 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.2665ms
+2026-05-20 10:39:36.657 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-05-20 10:39:36.680 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 22.1002ms
+2026-05-20 10:40:02.254 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-20 10:40:02.521 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2026/5/19 9:52:59', Current time (UTC): '2026/5/20 2:40:02'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-20 10:40:02.560 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2026/5/19 9:52:59', Current time (UTC): '2026/5/20 2:40:02'.
+2026-05-20 10:40:02.570 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-20 10:40:02.576 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-20 10:40:02.578 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 401 0 null 323.9791ms
+2026-05-20 10:40:02.595 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/refresh?refreshToken=53dabf94-d385-4089-95de-12188721e976 - null 0
+2026-05-20 10:40:02.601 +08:00 [INF] CORS policy execution successful.
+2026-05-20 10:40:02.604 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2026/5/19 9:52:59', Current time (UTC): '2026/5/20 2:40:02'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-20 10:40:02.608 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2026/5/19 9:52:59', Current time (UTC): '2026/5/20 2:40:02'.
+2026-05-20 10:40:02.611 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.ReFresh (day1)'
+2026-05-20 10:40:02.637 +08:00 [INF] Route matched with {action = "ReFresh", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ReFresh(System.String) on controller day1.Controllers.AuthController (day1).
+2026-05-20 10:40:02.786 +08:00 [INF] Executing action method day1.Controllers.AuthController.ReFresh (day1) - Validation state: "Valid"
+2026-05-20 10:40:02.837 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[@__refreshToken_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[RefreshToken] = @__refreshToken_0
+2026-05-20 10:40:02.922 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-20 10:40:03.006 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-05-20 10:40:03.018 +08:00 [INF] Executed action method day1.Controllers.AuthController.ReFresh (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 227.6468ms.
+2026-05-20 10:40:03.023 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:40:03.039 +08:00 [INF] Executed action day1.Controllers.AuthController.ReFresh (day1) in 396.7519ms
+2026-05-20 10:40:03.041 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.ReFresh (day1)'
+2026-05-20 10:40:03.044 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/refresh?refreshToken=53dabf94-d385-4089-95de-12188721e976 - 200 null application/json; charset=utf-8 449.3021ms
+2026-05-20 10:40:03.048 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-20 10:40:03.065 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-20 10:40:03.068 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-20 10:40:03.093 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-05-20 10:40:03.177 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-20 10:40:03.181 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 85.2488ms.
+2026-05-20 10:40:03.184 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:40:03.189 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 119.0943ms
+2026-05-20 10:40:03.191 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-20 10:40:03.192 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 143.7364ms
+2026-05-20 10:40:03.353 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - null null
+2026-05-20 10:40:03.360 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/qlimage/ql1.jpg - null null
+2026-05-20 10:40:03.362 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-20 10:40:03.384 +08:00 [INF] Route matched with {action = "GetOrderStatistics", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderStatistics() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-20 10:40:03.400 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) - Validation state: "Valid"
+2026-05-20 10:40:03.403 +08:00 [INF] The file /qlimage/ql1.jpg was not modified
+2026-05-20 10:40:03.405 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/qlimage/ql1.jpg - 304 null image/jpeg 44.3883ms
+2026-05-20 10:40:03.522 +08:00 [INF] Executed DbCommand (95ms) [Parameters=[@__today_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[OrderCreatTime] >= @__today_0
+2026-05-20 10:40:03.539 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+2026-05-20 10:40:03.564 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 161.4358ms.
+2026-05-20 10:40:03.568 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:40:03.580 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) in 194.6034ms
+2026-05-20 10:40:03.583 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-20 10:40:03.587 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - 200 null application/json; charset=utf-8 233.9609ms
+2026-05-20 10:40:42.150 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - null null
+2026-05-20 10:40:42.156 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 10:40:42.160 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 10:40:42.189 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-20 10:40:46.599 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 10:40:46.604 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 10:40:48.636 +08:00 [INF] Received HTTP response headers after 2029.3837ms - 200
+2026-05-20 10:40:48.638 +08:00 [INF] End processing HTTP request after 2039.9734ms - 200
+2026-05-20 10:40:48.645 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 6455.0526ms.
+2026-05-20 10:40:48.647 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:40:48.651 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 6489.2044ms
+2026-05-20 10:40:48.652 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 10:40:48.654 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - 200 null application/json; charset=utf-8 6503.4517ms
+2026-05-20 10:40:50.612 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - null null
+2026-05-20 10:40:50.614 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 10:40:50.616 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 10:40:50.631 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-20 10:40:50.632 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 10:40:50.634 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 10:40:53.026 +08:00 [INF] Received HTTP response headers after 2391.4839ms - 200
+2026-05-20 10:40:53.027 +08:00 [INF] End processing HTTP request after 2394.8996ms - 200
+2026-05-20 10:40:53.029 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2396.6183ms.
+2026-05-20 10:40:53.030 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:40:53.031 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 2413.9386ms
+2026-05-20 10:40:53.033 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 10:40:53.034 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - 200 null application/json; charset=utf-8 2422.2054ms
+2026-05-20 10:41:04.579 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs - null null
+2026-05-20 10:41:04.581 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 10:41:04.582 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 10:41:04.600 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-20 10:41:04.602 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 10:41:04.603 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 10:41:06.998 +08:00 [INF] Received HTTP response headers after 2394.0033ms - 200
+2026-05-20 10:41:06.999 +08:00 [INF] End processing HTTP request after 2397.6079ms - 200
+2026-05-20 10:41:07.000 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2398.8366ms.
+2026-05-20 10:41:07.002 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:41:07.003 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 2417.5579ms
+2026-05-20 10:41:07.004 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 10:41:07.005 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs - 200 null application/json; charset=utf-8 2426.4257ms
+2026-05-20 10:48:40.474 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 10:48:40.523 +08:00 [WRN] No store type was specified for the decimal property 'Order_Price' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 10:48:40.525 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Order_item'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 10:48:41.476 +08:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-05-20 10:48:41.513 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-05-20 10:48:41.547 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-05-20 10:48:41.602 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-05-20 10:48:41.614 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-05-20 10:48:41.647 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-05-20 10:48:41.656 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-05-20 10:48:41.689 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-20 10:48:41.836 +08:00 [WRN] Overriding address(es) 'http://0.0.0.0:5272'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-05-20 10:48:41.878 +08:00 [INF] Now listening on: http://0.0.0.0:5272
+2026-05-20 10:48:41.947 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-20 10:48:41.948 +08:00 [INF] Hosting environment: Development
+2026-05-20 10:48:41.949 +08:00 [INF] Content root path: D:\1\projectExcel\qianhou\day1
+2026-05-20 10:48:42.694 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-05-20 10:48:42.962 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 275.5038ms
+2026-05-20 10:48:42.971 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-20 10:48:42.971 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-05-20 10:48:42.975 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 4.797ms
+2026-05-20 10:48:43.011 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.9747ms
+2026-05-20 10:48:43.086 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-05-20 10:48:43.106 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.6907ms
+2026-05-20 10:49:00.297 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-20 10:49:00.448 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-20 10:49:00.473 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-20 10:49:00.572 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-05-20 10:49:00.660 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-20 10:49:00.668 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 91.1386ms.
+2026-05-20 10:49:00.674 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:00.690 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 211.8152ms
+2026-05-20 10:49:00.692 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-20 10:49:00.695 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 398.8146ms
+2026-05-20 10:49:00.728 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - null null
+2026-05-20 10:49:00.738 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-20 10:49:00.744 +08:00 [INF] Route matched with {action = "GetOrderStatistics", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderStatistics() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-20 10:49:00.766 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) - Validation state: "Valid"
+2026-05-20 10:49:00.829 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__today_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[OrderCreatTime] >= @__today_0
+2026-05-20 10:49:00.836 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+2026-05-20 10:49:00.859 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 91.2893ms.
+2026-05-20 10:49:00.863 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:00.873 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) in 126.3059ms
+2026-05-20 10:49:00.875 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-20 10:49:00.877 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - 200 null application/json; charset=utf-8 149.7118ms
+2026-05-20 10:49:02.345 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-20 10:49:02.345 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - application/json 42
+2026-05-20 10:49:02.357 +08:00 [INF] CORS policy execution successful.
+2026-05-20 10:49:02.360 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-20 10:49:02.360 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-20 10:49:02.364 +08:00 [INF] Route matched with {action = "GetCart", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCart() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-20 10:49:02.365 +08:00 [INF] Route matched with {action = "GetPageIndexSizeAsyncDish", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPageIndexSizeAsyncDish(day1.DTOs.Dish.PageRequestDto) on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-20 10:49:02.385 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetCart (day1) - Validation state: "Valid"
+2026-05-20 10:49:02.419 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) - Validation state: "Valid"
+2026-05-20 10:49:02.420 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DishId], [c].[UserId], [c].[AddTime], [c].[Quantity], [d].[Name] AS [DishName], [d].[Price] AS [DishPrice], [d].[ImageUrl]
+FROM [Carts] AS [c]
+INNER JOIN [Dishes] AS [d] ON [c].[DishId] = [d].[Id]
+WHERE [c].[UserId] = @__userid_0
+2026-05-20 10:49:02.425 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetCart (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 39.2729ms.
+2026-05-20 10:49:02.427 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:02.448 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetCart (day1) in 81.113ms
+2026-05-20 10:49:02.449 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-20 10:49:02.451 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - 200 null application/json; charset=utf-8 105.9659ms
+2026-05-20 10:49:02.456 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-20 10:49:02.463 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-20 10:49:02.473 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id] AS [ID], [d].[Name], [d].[Price], [d].[Description], [d].[ImageUrl]
+FROM [Dishes] AS [d]
+ORDER BY [d].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-05-20 10:49:02.476 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 54.7846ms.
+2026-05-20 10:49:02.478 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:02.482 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) in 97.3264ms
+2026-05-20 10:49:02.484 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-20 10:49:02.485 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - 200 null application/json; charset=utf-8 140.0818ms
+2026-05-20 10:49:02.528 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/e02f8adf-58b4-450f-a037-f912cae6544e.jpg - null null
+2026-05-20 10:49:02.528 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/1cb799c6-e3d3-404f-9998-01d17fc268cf.PNG - null null
+2026-05-20 10:49:02.528 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/d5185760-9a98-4989-8478-7a870f52405f.PNG - null null
+2026-05-20 10:49:02.653 +08:00 [INF] Sending file. Request path: '/uploads/e02f8adf-58b4-450f-a037-f912cae6544e.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\e02f8adf-58b4-450f-a037-f912cae6544e.jpg'
+2026-05-20 10:49:02.656 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/e02f8adf-58b4-450f-a037-f912cae6544e.jpg - 200 128690 image/jpeg 128.0119ms
+2026-05-20 10:49:02.658 +08:00 [INF] Sending file. Request path: '/uploads/1cb799c6-e3d3-404f-9998-01d17fc268cf.PNG'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\1cb799c6-e3d3-404f-9998-01d17fc268cf.PNG'
+2026-05-20 10:49:02.659 +08:00 [INF] Sending file. Request path: '/uploads/d5185760-9a98-4989-8478-7a870f52405f.PNG'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\d5185760-9a98-4989-8478-7a870f52405f.PNG'
+2026-05-20 10:49:02.660 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/6a6b6480-9536-4286-9303-cb5f06ad4724.jpg - null null
+2026-05-20 10:49:02.661 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/1cb799c6-e3d3-404f-9998-01d17fc268cf.PNG - 200 654010 image/png 133.3626ms
+2026-05-20 10:49:02.663 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/d5185760-9a98-4989-8478-7a870f52405f.PNG - 200 654010 image/png 134.8424ms
+2026-05-20 10:49:02.670 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/a6ee47da-82cd-4567-b991-ea96d849eda0.jpg - null null
+2026-05-20 10:49:02.670 +08:00 [INF] Sending file. Request path: '/uploads/6a6b6480-9536-4286-9303-cb5f06ad4724.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\6a6b6480-9536-4286-9303-cb5f06ad4724.jpg'
+2026-05-20 10:49:02.679 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/6a6b6480-9536-4286-9303-cb5f06ad4724.jpg - 200 128690 image/jpeg 19.4588ms
+2026-05-20 10:49:02.680 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/38625d78-cac3-4059-b32e-6ae545eb8f2f.jpg - null null
+2026-05-20 10:49:02.680 +08:00 [INF] Sending file. Request path: '/uploads/a6ee47da-82cd-4567-b991-ea96d849eda0.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\a6ee47da-82cd-4567-b991-ea96d849eda0.jpg'
+2026-05-20 10:49:02.684 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/3a5fdd09-8fe2-49e4-a144-bf8a118d61d7.jpg - null null
+2026-05-20 10:49:02.690 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/a6ee47da-82cd-4567-b991-ea96d849eda0.jpg - 200 128690 image/jpeg 20.4491ms
+2026-05-20 10:49:02.692 +08:00 [INF] Sending file. Request path: '/uploads/38625d78-cac3-4059-b32e-6ae545eb8f2f.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\38625d78-cac3-4059-b32e-6ae545eb8f2f.jpg'
+2026-05-20 10:49:02.698 +08:00 [INF] Sending file. Request path: '/uploads/3a5fdd09-8fe2-49e4-a144-bf8a118d61d7.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\3a5fdd09-8fe2-49e4-a144-bf8a118d61d7.jpg'
+2026-05-20 10:49:02.698 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/7f5a5b21-54d9-4a16-af1d-a7e03f04397d.jpg - null null
+2026-05-20 10:49:02.701 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/38625d78-cac3-4059-b32e-6ae545eb8f2f.jpg - 200 128690 image/jpeg 21.0864ms
+2026-05-20 10:49:02.703 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/3a5fdd09-8fe2-49e4-a144-bf8a118d61d7.jpg - 200 128690 image/jpeg 19.1211ms
+2026-05-20 10:49:02.708 +08:00 [INF] Sending file. Request path: '/uploads/7f5a5b21-54d9-4a16-af1d-a7e03f04397d.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\7f5a5b21-54d9-4a16-af1d-a7e03f04397d.jpg'
+2026-05-20 10:49:02.710 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/e463478c-892f-4493-a1a2-5cbf03b4a91e.jpg - null null
+2026-05-20 10:49:02.713 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/334ed5ee-51d9-400c-be2f-2164219641ab.jpg - null null
+2026-05-20 10:49:02.715 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/7f5a5b21-54d9-4a16-af1d-a7e03f04397d.jpg - 200 128690 image/jpeg 16.5196ms
+2026-05-20 10:49:02.721 +08:00 [INF] Sending file. Request path: '/uploads/e463478c-892f-4493-a1a2-5cbf03b4a91e.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\e463478c-892f-4493-a1a2-5cbf03b4a91e.jpg'
+2026-05-20 10:49:02.725 +08:00 [INF] Sending file. Request path: '/uploads/334ed5ee-51d9-400c-be2f-2164219641ab.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\334ed5ee-51d9-400c-be2f-2164219641ab.jpg'
+2026-05-20 10:49:02.725 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/dcf7eb1d-f15b-4b4c-8fc4-3bb817f76681.PNG - null null
+2026-05-20 10:49:02.727 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/e463478c-892f-4493-a1a2-5cbf03b4a91e.jpg - 200 128690 image/jpeg 17.1696ms
+2026-05-20 10:49:02.728 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/334ed5ee-51d9-400c-be2f-2164219641ab.jpg - 200 128690 image/jpeg 14.7162ms
+2026-05-20 10:49:02.735 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/uploads/37a85d11-bff1-476f-863b-4892713182f1.jpg - null null
+2026-05-20 10:49:02.741 +08:00 [INF] Sending file. Request path: '/uploads/dcf7eb1d-f15b-4b4c-8fc4-3bb817f76681.PNG'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\dcf7eb1d-f15b-4b4c-8fc4-3bb817f76681.PNG'
+2026-05-20 10:49:02.744 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/dcf7eb1d-f15b-4b4c-8fc4-3bb817f76681.PNG - 200 654010 image/png 19.0736ms
+2026-05-20 10:49:02.747 +08:00 [INF] Sending file. Request path: '/uploads/37a85d11-bff1-476f-863b-4892713182f1.jpg'. Physical path: 'D:\1\projectExcel\qianhou\day1\wwwroot\uploads\37a85d11-bff1-476f-863b-4892713182f1.jpg'
+2026-05-20 10:49:02.749 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/uploads/37a85d11-bff1-476f-863b-4892713182f1.jpg - 200 128690 image/jpeg 13.3544ms
+2026-05-20 10:49:04.077 +08:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5272/api/DishAndOrder/UpdateToCart?dishid=2&quantity=2 - null 0
+2026-05-20 10:49:04.080 +08:00 [INF] CORS policy execution successful.
+2026-05-20 10:49:04.081 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.UpdateToCart (day1)'
+2026-05-20 10:49:04.085 +08:00 [INF] Route matched with {action = "UpdateToCart", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateToCart(Int64, Int32) on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-20 10:49:04.131 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.UpdateToCart (day1) - Validation state: "Valid"
+2026-05-20 10:49:04.231 +08:00 [INF] Executed DbCommand (79ms) [Parameters=[@__userid_0='?' (DbType = Int64), @__dishid_1='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AddTime], [c].[DishId], [c].[Quantity], [c].[UserId], [d].[Id], [d].[CreatedDate], [d].[Description], [d].[ImageUrl], [d].[Name], [d].[Price], [d].[UpdatedDate]
+FROM [Carts] AS [c]
+INNER JOIN [Dishes] AS [d] ON [c].[DishId] = [d].[Id]
+WHERE [c].[UserId] = @__userid_0 AND [c].[DishId] = @__dishid_1
+2026-05-20 10:49:04.343 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[@p1='?' (DbType = Int64), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Carts] SET [Quantity] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2026-05-20 10:49:04.361 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DishId], [c].[UserId], [c].[AddTime], [c].[Quantity], [d].[Name] AS [DishName], [d].[Price] AS [DishPrice], [d].[ImageUrl]
+FROM [Carts] AS [c]
+INNER JOIN [Dishes] AS [d] ON [c].[DishId] = [d].[Id]
+WHERE [c].[UserId] = @__userid_0
+2026-05-20 10:49:04.363 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.UpdateToCart (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 230.082ms.
+2026-05-20 10:49:04.365 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:04.367 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.UpdateToCart (day1) in 280.2127ms
+2026-05-20 10:49:04.368 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.UpdateToCart (day1)'
+2026-05-20 10:49:04.369 +08:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5272/api/DishAndOrder/UpdateToCart?dishid=2&quantity=2 - 200 null application/json; charset=utf-8 292.0599ms
+2026-05-20 10:49:04.922 +08:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5272/api/DishAndOrder/UpdateToCart?dishid=2&quantity=3 - null 0
+2026-05-20 10:49:04.925 +08:00 [INF] CORS policy execution successful.
+2026-05-20 10:49:04.926 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.UpdateToCart (day1)'
+2026-05-20 10:49:04.927 +08:00 [INF] Route matched with {action = "UpdateToCart", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateToCart(Int64, Int32) on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-20 10:49:04.943 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.UpdateToCart (day1) - Validation state: "Valid"
+2026-05-20 10:49:04.981 +08:00 [INF] Executed DbCommand (35ms) [Parameters=[@__userid_0='?' (DbType = Int64), @__dishid_1='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AddTime], [c].[DishId], [c].[Quantity], [c].[UserId], [d].[Id], [d].[CreatedDate], [d].[Description], [d].[ImageUrl], [d].[Name], [d].[Price], [d].[UpdatedDate]
+FROM [Carts] AS [c]
+INNER JOIN [Dishes] AS [d] ON [c].[DishId] = [d].[Id]
+WHERE [c].[UserId] = @__userid_0 AND [c].[DishId] = @__dishid_1
+2026-05-20 10:49:04.988 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Int64), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Carts] SET [Quantity] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2026-05-20 10:49:04.992 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DishId], [c].[UserId], [c].[AddTime], [c].[Quantity], [d].[Name] AS [DishName], [d].[Price] AS [DishPrice], [d].[ImageUrl]
+FROM [Carts] AS [c]
+INNER JOIN [Dishes] AS [d] ON [c].[DishId] = [d].[Id]
+WHERE [c].[UserId] = @__userid_0
+2026-05-20 10:49:04.995 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.UpdateToCart (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 49.9705ms.
+2026-05-20 10:49:04.996 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:04.997 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.UpdateToCart (day1) in 68.3492ms
+2026-05-20 10:49:04.998 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.UpdateToCart (day1)'
+2026-05-20 10:49:05.000 +08:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5272/api/DishAndOrder/UpdateToCart?dishid=2&quantity=3 - 200 null application/json; charset=utf-8 77.4845ms
+2026-05-20 10:49:06.996 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/PlaceOrder - application/json 2
+2026-05-20 10:49:06.998 +08:00 [INF] CORS policy execution successful.
+2026-05-20 10:49:06.999 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.PlaceOrder (day1)'
+2026-05-20 10:49:07.003 +08:00 [INF] Route matched with {action = "PlaceOrder", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PlaceOrder(day1.DTOs.CartAndOrderDto.PlaceOrderDto) on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-20 10:49:07.022 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.PlaceOrder (day1) - Validation state: "Valid"
+2026-05-20 10:49:07.063 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddTime], [c].[DishId], [c].[Quantity], [c].[UserId], [d].[Id], [d].[CreatedDate], [d].[Description], [d].[ImageUrl], [d].[Name], [d].[Price], [d].[UpdatedDate]
+FROM [Carts] AS [c]
+INNER JOIN [Dishes] AS [d] ON [c].[DishId] = [d].[Id]
+WHERE [c].[UserId] = @__userid_0
+2026-05-20 10:49:07.131 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM [c]
+FROM [Carts] AS [c]
+WHERE [c].[UserId] = @__userid_0
+2026-05-20 10:49:07.235 +08:00 [INF] Executed DbCommand (59ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 450), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([OrderCreatTime], [Order_No], [Order_Price], [Remark], [Status], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-05-20 10:49:07.289 +08:00 [INF] Executed DbCommand (40ms) [Parameters=[@p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Order_Items] ([DishId], [OrderId], [Price], [Quantity])
+OUTPUT INSERTED.[Id]
+VALUES (@p6, @p7, @p8, @p9);
+2026-05-20 10:49:07.340 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[Order_No], [o].[OrderCreatTime], [o].[Order_Price], [o].[Remark], [o].[Status], [t].[DishId], [t].[DishName], [t].[Quantity], [t].[Price], [t].[ImageUrl], [t].[Id], [t].[Id0]
+FROM [Orders] AS [o]
+LEFT JOIN (
+    SELECT [o0].[DishId], [d].[Name] AS [DishName], [o0].[Quantity], [o0].[Price], [d].[ImageUrl], [o0].[Id], [d].[Id] AS [Id0], [o0].[OrderId]
+    FROM [Order_Items] AS [o0]
+    INNER JOIN [Dishes] AS [d] ON [o0].[DishId] = [d].[Id]
+) AS [t] ON [o].[Id] = [t].[OrderId]
+WHERE [o].[UserId] = @__userid_0
+ORDER BY [o].[OrderCreatTime] DESC, [o].[Id], [t].[Id]
+2026-05-20 10:49:07.347 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.PlaceOrder (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 324.2415ms.
+2026-05-20 10:49:07.349 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:07.356 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.PlaceOrder (day1) in 351.7093ms
+2026-05-20 10:49:07.358 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.PlaceOrder (day1)'
+2026-05-20 10:49:07.359 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/PlaceOrder - 200 null application/json; charset=utf-8 363.2115ms
+2026-05-20 10:49:07.365 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-20 10:49:07.367 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-20 10:49:07.368 +08:00 [INF] Route matched with {action = "GetCart", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCart() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-20 10:49:07.388 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetCart (day1) - Validation state: "Valid"
+2026-05-20 10:49:07.395 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DishId], [c].[UserId], [c].[AddTime], [c].[Quantity], [d].[Name] AS [DishName], [d].[Price] AS [DishPrice], [d].[ImageUrl]
+FROM [Carts] AS [c]
+INNER JOIN [Dishes] AS [d] ON [c].[DishId] = [d].[Id]
+WHERE [c].[UserId] = @__userid_0
+2026-05-20 10:49:07.398 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetCart (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.4994ms.
+2026-05-20 10:49:07.400 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:07.402 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetCart (day1) in 30.9869ms
+2026-05-20 10:49:07.403 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-20 10:49:07.404 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - 200 null application/json; charset=utf-8 39.4074ms
+2026-05-20 10:49:08.817 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - null null
+2026-05-20 10:49:08.817 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - null null
+2026-05-20 10:49:08.820 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.GetUsersPaged (day1)'
+2026-05-20 10:49:08.823 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-20 10:49:08.824 +08:00 [INF] Route matched with {action = "GetAllRoles", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllRoles() on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-20 10:49:08.825 +08:00 [INF] Route matched with {action = "GetUsersPaged", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersPaged(Int32, Int32, System.String) on controller day1.Controllers.AuthController (day1).
+2026-05-20 10:49:08.840 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) - Validation state: "Valid"
+2026-05-20 10:49:08.855 +08:00 [INF] Executing action method day1.Controllers.AuthController.GetUsersPaged (day1) - Validation state: "Valid"
+2026-05-20 10:49:08.870 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+2026-05-20 10:49:08.873 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 17.4804ms.
+2026-05-20 10:49:08.874 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:08.884 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) in 57.6975ms
+2026-05-20 10:49:08.886 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-20 10:49:08.887 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - 200 null application/json; charset=utf-8 69.5579ms
+2026-05-20 10:49:11.708 +08:00 [INF] Executed DbCommand (2,696ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2026-05-20 10:49:11.747 +08:00 [INF] Executed DbCommand (22ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateTime], [t].[FailedLoginCount], [t].[LockOutEndTime], [t].[PassWord], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UserName], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+    FROM [Users] AS [u]
+    ORDER BY [u].[CreateTime] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[UserId], [u0].[RoleId], [r].[Id], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[CreateTime] DESC, [t].[Id], [t0].[UserId], [t0].[RoleId]
+2026-05-20 10:49:11.774 +08:00 [INF] Executed action method day1.Controllers.AuthController.GetUsersPaged (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2917.4314ms.
+2026-05-20 10:49:11.775 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:11.779 +08:00 [INF] Executed action day1.Controllers.AuthController.GetUsersPaged (day1) in 2938.0373ms
+2026-05-20 10:49:11.780 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.GetUsersPaged (day1)'
+2026-05-20 10:49:11.781 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - 200 null application/json; charset=utf-8 2964.4274ms
+2026-05-20 10:49:13.505 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - null null
+2026-05-20 10:49:13.505 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/permissions - null null
+2026-05-20 10:49:13.507 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-20 10:49:13.509 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1)'
+2026-05-20 10:49:13.510 +08:00 [INF] Route matched with {action = "GetAllRoles", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllRoles() on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-20 10:49:13.512 +08:00 [INF] Route matched with {action = "GetAllPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllPermissions() on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-20 10:49:13.590 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) - Validation state: "Valid"
+2026-05-20 10:49:13.604 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1) - Validation state: "Valid"
+2026-05-20 10:49:13.617 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-05-20 10:49:13.618 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+2026-05-20 10:49:13.620 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 13.3541ms.
+2026-05-20 10:49:13.622 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 16.8832ms.
+2026-05-20 10:49:13.623 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:13.625 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:13.627 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1) in 36.1493ms
+2026-05-20 10:49:13.627 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) in 113.6837ms
+2026-05-20 10:49:13.628 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetAllPermissions (day1)'
+2026-05-20 10:49:13.630 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-20 10:49:13.631 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/permissions - 200 null application/json; charset=utf-8 125.7966ms
+2026-05-20 10:49:13.632 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - 200 null application/json; charset=utf-8 127.0597ms
+2026-05-20 10:49:16.475 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/SearchOrders - application/json 29
+2026-05-20 10:49:16.477 +08:00 [INF] CORS policy execution successful.
+2026-05-20 10:49:16.478 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.SearchOrders (day1)'
+2026-05-20 10:49:16.481 +08:00 [INF] Route matched with {action = "SearchOrders", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchOrders(day1.DTOs.CartAndOrderDto.OrderSearchDto) on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-20 10:49:16.522 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.SearchOrders (day1) - Validation state: "Valid"
+2026-05-20 10:49:16.532 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+2026-05-20 10:49:16.556 +08:00 [INF] Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Order_No], [t].[OrderCreatTime], [t].[Order_Price], [t].[Remark], [t].[Status], [u].[UserName], [u].[Id], [t0].[DishId], [t0].[DishName], [t0].[Quantity], [t0].[Price], [t0].[ImageUrl], [t0].[Id], [t0].[Id0]
+FROM (
+    SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+    FROM [Orders] AS [o]
+    ORDER BY [o].[OrderCreatTime] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+LEFT JOIN (
+    SELECT [o0].[DishId], [d].[Name] AS [DishName], [o0].[Quantity], [o0].[Price], [d].[ImageUrl], [o0].[Id], [d].[Id] AS [Id0], [o0].[OrderId]
+    FROM [Order_Items] AS [o0]
+    INNER JOIN [Dishes] AS [d] ON [o0].[DishId] = [d].[Id]
+) AS [t0] ON [t].[Id] = [t0].[OrderId]
+ORDER BY [t].[OrderCreatTime] DESC, [t].[Id], [u].[Id], [t0].[Id]
+2026-05-20 10:49:16.561 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.SearchOrders (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 37.4136ms.
+2026-05-20 10:49:16.563 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:16.565 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.SearchOrders (day1) in 82.0503ms
+2026-05-20 10:49:16.567 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.SearchOrders (day1)'
+2026-05-20 10:49:16.568 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/SearchOrders - 200 null application/json; charset=utf-8 93.2139ms
+2026-05-20 10:49:16.645 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - null null
+2026-05-20 10:49:16.648 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-20 10:49:16.648 +08:00 [INF] Route matched with {action = "GetOrderStatistics", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderStatistics() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-20 10:49:16.670 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) - Validation state: "Valid"
+2026-05-20 10:49:16.675 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__today_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[OrderCreatTime] >= @__today_0
+2026-05-20 10:49:16.679 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+2026-05-20 10:49:16.681 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 9.947ms.
+2026-05-20 10:49:16.688 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:16.690 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) in 39.1014ms
+2026-05-20 10:49:16.692 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-20 10:49:16.694 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - 200 null application/json; charset=utf-8 49.2552ms
+2026-05-20 10:49:19.480 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - null null
+2026-05-20 10:49:19.480 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - null null
+2026-05-20 10:49:19.483 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-20 10:49:19.486 +08:00 [INF] Route matched with {action = "GetAllRoles", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllRoles() on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-20 10:49:19.486 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.GetUsersPaged (day1)'
+2026-05-20 10:49:19.503 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) - Validation state: "Valid"
+2026-05-20 10:49:19.504 +08:00 [INF] Route matched with {action = "GetUsersPaged", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersPaged(Int32, Int32, System.String) on controller day1.Controllers.AuthController (day1).
+2026-05-20 10:49:19.507 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+2026-05-20 10:49:19.526 +08:00 [INF] Executing action method day1.Controllers.AuthController.GetUsersPaged (day1) - Validation state: "Valid"
+2026-05-20 10:49:19.528 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 22.6457ms.
+2026-05-20 10:49:19.531 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2026-05-20 10:49:19.531 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:19.535 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) in 47.1526ms
+2026-05-20 10:49:19.536 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-20 10:49:19.536 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - 200 null application/json; charset=utf-8 56.5064ms
+2026-05-20 10:49:19.541 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateTime], [t].[FailedLoginCount], [t].[LockOutEndTime], [t].[PassWord], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UserName], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+    FROM [Users] AS [u]
+    ORDER BY [u].[CreateTime] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[UserId], [u0].[RoleId], [r].[Id], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[CreateTime] DESC, [t].[Id], [t0].[UserId], [t0].[RoleId]
+2026-05-20 10:49:19.545 +08:00 [INF] Executed action method day1.Controllers.AuthController.GetUsersPaged (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 16.4804ms.
+2026-05-20 10:49:19.546 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:19.547 +08:00 [INF] Executed action day1.Controllers.AuthController.GetUsersPaged (day1) in 40.7496ms
+2026-05-20 10:49:19.548 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.GetUsersPaged (day1)'
+2026-05-20 10:49:19.550 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - 200 null application/json; charset=utf-8 69.5335ms
+2026-05-20 10:49:29.791 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - null null
+2026-05-20 10:49:29.794 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 10:49:29.797 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 10:49:29.825 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-20 10:49:29.837 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 10:49:29.842 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 10:49:31.427 +08:00 [INF] Received HTTP response headers after 1582.687ms - 200
+2026-05-20 10:49:31.429 +08:00 [INF] End processing HTTP request after 1593.57ms - 200
+2026-05-20 10:49:31.436 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1609.6203ms.
+2026-05-20 10:49:31.437 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:31.441 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 1642.7719ms
+2026-05-20 10:49:31.442 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 10:49:31.443 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - 200 null application/json; charset=utf-8 1652.8227ms
+2026-05-20 10:49:39.682 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - null null
+2026-05-20 10:49:39.686 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 10:49:39.687 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 10:49:39.702 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-20 10:49:39.704 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 10:49:39.705 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 10:49:41.344 +08:00 [INF] Received HTTP response headers after 1638.1358ms - 200
+2026-05-20 10:49:41.345 +08:00 [INF] End processing HTTP request after 1641.3666ms - 200
+2026-05-20 10:49:41.346 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1643.0766ms.
+2026-05-20 10:49:41.348 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:41.349 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 1660.4225ms
+2026-05-20 10:49:41.350 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 10:49:41.351 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - 200 null application/json; charset=utf-8 1668.8817ms
+2026-05-20 10:49:55.621 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58%20%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD%20%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4%20%23%20%E9%BC%A0%E9%BC%A0%20%23...%20https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F%20%3A4pm%20wfO%3A%2F%20S%40L.Wm%2008%2F10%20 - null null
+2026-05-20 10:49:55.627 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 10:49:55.631 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 10:49:55.656 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-20 10:49:55.657 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 10:49:55.658 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 10:49:57.728 +08:00 [INF] Received HTTP response headers after 2068.7862ms - 200
+2026-05-20 10:49:57.729 +08:00 [INF] End processing HTTP request after 2072.1562ms - 200
+2026-05-20 10:49:57.730 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2073.3671ms.
+2026-05-20 10:49:57.732 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:49:57.733 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 2095.6895ms
+2026-05-20 10:49:57.735 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 10:49:57.735 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58%20%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD%20%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4%20%23%20%E9%BC%A0%E9%BC%A0%20%23...%20https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F%20%3A4pm%20wfO%3A%2F%20S%40L.Wm%2008%2F10%20 - 200 null application/json; charset=utf-8 2114.2873ms
+2026-05-20 10:51:02.591 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - null null
+2026-05-20 10:51:02.596 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 10:51:02.597 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 10:51:02.632 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-20 10:51:02.633 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 10:51:02.635 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 10:51:04.677 +08:00 [INF] Received HTTP response headers after 2041.0141ms - 200
+2026-05-20 10:51:04.679 +08:00 [INF] End processing HTTP request after 2045.4833ms - 200
+2026-05-20 10:51:04.680 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2046.7958ms.
+2026-05-20 10:51:04.681 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:51:04.682 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 2081.316ms
+2026-05-20 10:51:04.684 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 10:51:04.685 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - 200 null application/json; charset=utf-8 2093.6179ms
+2026-05-20 10:51:15.351 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - null null
+2026-05-20 10:51:15.353 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 10:51:15.354 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 10:51:15.372 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-20 10:51:15.377 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 10:51:15.378 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 10:51:17.072 +08:00 [INF] Received HTTP response headers after 1692.9379ms - 200
+2026-05-20 10:51:17.074 +08:00 [INF] End processing HTTP request after 1696.9801ms - 200
+2026-05-20 10:51:17.075 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1698.1558ms.
+2026-05-20 10:51:17.076 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 10:51:17.077 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 1721.194ms
+2026-05-20 10:51:17.078 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 10:51:17.080 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - 200 null application/json; charset=utf-8 1729.0643ms
+2026-05-20 11:09:30.974 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 11:09:31.026 +08:00 [WRN] No store type was specified for the decimal property 'Order_Price' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 11:09:31.028 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Order_item'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 11:09:32.013 +08:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-05-20 11:09:32.043 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-05-20 11:09:32.074 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-05-20 11:09:32.127 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-05-20 11:09:32.139 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-05-20 11:09:32.196 +08:00 [INF] Executed DbCommand (40ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-05-20 11:09:32.208 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-05-20 11:09:32.244 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-20 11:09:32.394 +08:00 [WRN] Overriding address(es) 'http://0.0.0.0:5272'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-05-20 11:09:32.427 +08:00 [INF] Now listening on: http://0.0.0.0:5272
+2026-05-20 11:09:32.498 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-20 11:09:32.500 +08:00 [INF] Hosting environment: Development
+2026-05-20 11:09:32.501 +08:00 [INF] Content root path: D:\1\projectExcel\qianhou\day1
+2026-05-20 11:09:33.035 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-05-20 11:09:33.292 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 265.0588ms
+2026-05-20 11:09:33.300 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-20 11:09:33.300 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-05-20 11:09:33.305 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 4.7641ms
+2026-05-20 11:09:33.353 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.6682ms
+2026-05-20 11:09:33.452 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-05-20 11:09:33.472 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.2407ms
+2026-05-20 11:09:49.065 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Auth/user - null null
+2026-05-20 11:09:49.138 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2026-05-20 11:09:49.142 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-20 11:09:49.144 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Auth/user - 401 0 null 79.1438ms
+2026-05-20 11:10:20.041 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 98
+2026-05-20 11:10:20.049 +08:00 [INF] CORS policy execution failed.
+2026-05-20 11:10:20.050 +08:00 [INF] Request origin http://localhost:5272 does not have permission to access the resource.
+2026-05-20 11:10:20.056 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-05-20 11:10:20.078 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-05-20 11:10:20.205 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-05-20 11:10:20.253 +08:00 [INF] Executed DbCommand (17ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-05-20 11:10:20.670 +08:00 [INF] Executed DbCommand (32ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-20 11:10:20.774 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-05-20 11:10:20.785 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 576.4674ms.
+2026-05-20 11:11:47.590 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 11:11:47.602 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 87519.2973ms
+2026-05-20 11:11:47.604 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-05-20 11:11:47.607 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 200 null application/json; charset=utf-8 87565.948ms
+2026-05-20 11:12:06.183 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58%20%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD%20%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4%20%23%20%E9%BC%A0%E9%BC%A0%20%23...%20https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F%20%3A4pm%20wfO%3A%2F%20S%40L.Wm%2008%2F10%20 - null null
+2026-05-20 11:12:06.187 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 11:12:06.202 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 11:12:06.232 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-20 11:12:06.245 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 11:12:06.248 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 11:12:08.404 +08:00 [INF] Received HTTP response headers after 2152.4497ms - 200
+2026-05-20 11:12:08.406 +08:00 [INF] End processing HTTP request after 2162.4929ms - 200
+2026-05-20 11:12:08.413 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2179.4559ms.
+2026-05-20 11:12:40.053 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 11:12:40.059 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 33854.4542ms
+2026-05-20 11:12:40.060 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 11:12:40.062 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58%20%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD%20%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4%20%23%20%E9%BC%A0%E9%BC%A0%20%23...%20https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F%20%3A4pm%20wfO%3A%2F%20S%40L.Wm%2008%2F10%20 - 200 null application/json; charset=utf-8 33878.7633ms
+2026-05-20 11:13:03.961 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-20 11:13:04.040 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2026/5/20 3:10:02', Current time (UTC): '2026/5/20 3:13:04'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-20 11:13:04.076 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2026/5/20 3:10:02', Current time (UTC): '2026/5/20 3:13:04'.
+2026-05-20 11:13:04.079 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-20 11:13:04.082 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-20 11:13:04.083 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 401 0 null 122.2683ms
+2026-05-20 11:13:04.092 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/refresh?refreshToken=31715a35-7539-4312-a8aa-029c52543897 - null 0
+2026-05-20 11:13:04.095 +08:00 [INF] CORS policy execution successful.
+2026-05-20 11:13:04.097 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2026/5/20 3:10:02', Current time (UTC): '2026/5/20 3:13:04'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-20 11:13:04.100 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2026/5/20 3:10:02', Current time (UTC): '2026/5/20 3:13:04'.
+2026-05-20 11:13:04.101 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.ReFresh (day1)'
+2026-05-20 11:13:04.103 +08:00 [INF] Route matched with {action = "ReFresh", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ReFresh(System.String) on controller day1.Controllers.AuthController (day1).
+2026-05-20 11:13:04.121 +08:00 [INF] Executing action method day1.Controllers.AuthController.ReFresh (day1) - Validation state: "Valid"
+2026-05-20 11:13:04.561 +08:00 [INF] Executed DbCommand (384ms) [Parameters=[@__refreshToken_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[RefreshToken] = @__refreshToken_0
+2026-05-20 11:13:20.958 +08:00 [INF] Executed action day1.Controllers.AuthController.ReFresh (day1) in 16852.7578ms
+2026-05-20 11:13:20.960 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.ReFresh (day1)'
+2026-05-20 11:13:20.983 +08:00 [WRN] 业务异常
+day1.Domain.BusinessException: Token不存在或已过期
+   at day1.Services.TokenService.RefreshToken(String refreshToken) in D:\1\projectExcel\qianhou\day1\Services\TokenService.cs:line 85
+   at day1.Controllers.AuthController.ReFresh(String refreshtoken) in D:\1\projectExcel\qianhou\day1\Controllers\AuthController.cs:line 85
+   at lambda_method199(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at day1.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\1\projectExcel\qianhou\day1\Middlewares\ExceptionMiddleware.cs:line 26
+2026-05-20 11:13:21.002 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/refresh?refreshToken=31715a35-7539-4312-a8aa-029c52543897 - 400 null application/json; charset=utf-8 16909.3116ms
+2026-05-20 11:13:21.015 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-20 11:13:21.021 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-20 11:13:21.022 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-20 11:13:21.023 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 401 0 null 7.7993ms
+2026-05-20 11:13:26.777 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/login - application/json 46
+2026-05-20 11:13:26.779 +08:00 [INF] CORS policy execution successful.
+2026-05-20 11:13:26.780 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-05-20 11:13:26.781 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(day1.DTOs.CreateUserDTO) on controller day1.Controllers.AuthController (day1).
+2026-05-20 11:13:26.802 +08:00 [INF] Executing action method day1.Controllers.AuthController.Login (day1) - Validation state: "Valid"
+2026-05-20 11:13:34.417 +08:00 [INF] Executed DbCommand (7,610ms) [Parameters=[@__UserName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__UserName_0
+2026-05-20 11:13:34.557 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-20 11:13:34.565 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-05-20 11:13:34.567 +08:00 [INF] Executed action method day1.Controllers.AuthController.Login (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 7763.7411ms.
+2026-05-20 11:13:34.569 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 11:13:34.570 +08:00 [INF] Executed action day1.Controllers.AuthController.Login (day1) in 7787.361ms
+2026-05-20 11:13:34.571 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.Login (day1)'
+2026-05-20 11:13:34.572 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/login - 200 null application/json; charset=utf-8 7795.4508ms
+2026-05-20 11:13:34.578 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-20 11:13:34.587 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-20 11:13:34.589 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-20 11:13:34.603 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-05-20 11:13:34.626 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-20 11:13:34.629 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 24.5308ms.
+2026-05-20 11:13:34.630 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 11:13:34.634 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 43.7085ms
+2026-05-20 11:13:34.635 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-20 11:13:34.637 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 58.6208ms
+2026-05-20 11:13:43.305 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - application/json 42
+2026-05-20 11:13:43.307 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - null null
+2026-05-20 11:13:43.310 +08:00 [INF] CORS policy execution successful.
+2026-05-20 11:13:43.312 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-20 11:13:43.314 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-20 11:13:43.317 +08:00 [INF] Route matched with {action = "GetPageIndexSizeAsyncDish", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPageIndexSizeAsyncDish(day1.DTOs.Dish.PageRequestDto) on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-20 11:13:43.317 +08:00 [INF] Route matched with {action = "GetCart", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCart() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-20 11:13:43.335 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetCart (day1) - Validation state: "Valid"
+2026-05-20 11:13:43.348 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) - Validation state: "Valid"
+2026-05-20 11:13:43.495 +08:00 [INF] Executed DbCommand (131ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DishId], [c].[UserId], [c].[AddTime], [c].[Quantity], [d].[Name] AS [DishName], [d].[Price] AS [DishPrice], [d].[ImageUrl]
+FROM [Carts] AS [c]
+INNER JOIN [Dishes] AS [d] ON [c].[DishId] = [d].[Id]
+WHERE [c].[UserId] = @__userid_0
+2026-05-20 11:13:43.499 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetCart (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 149.1765ms.
+2026-05-20 11:13:43.500 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 11:13:43.517 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetCart (day1) in 196.5119ms
+2026-05-20 11:13:43.519 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetCart (day1)'
+2026-05-20 11:13:43.520 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetCart/ - 200 null application/json; charset=utf-8 213.6158ms
+2026-05-20 11:13:43.657 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-20 11:13:43.663 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Dishes] AS [d]
+2026-05-20 11:13:43.672 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id] AS [ID], [d].[Name], [d].[Price], [d].[Description], [d].[ImageUrl]
+FROM [Dishes] AS [d]
+ORDER BY [d].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-05-20 11:13:43.677 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 325.1883ms.
+2026-05-20 11:13:43.678 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 11:13:43.682 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1) in 363.2063ms
+2026-05-20 11:13:43.684 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetPageIndexSizeAsyncDish (day1)'
+2026-05-20 11:13:43.685 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/DishAndOrder/GetDishPageIndex/ - 200 null application/json; charset=utf-8 379.84ms
+2026-05-20 11:13:47.259 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - null null
+2026-05-20 11:13:47.262 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 11:13:47.263 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 11:13:47.278 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-20 11:13:47.280 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 11:13:47.281 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 11:13:49.388 +08:00 [INF] Received HTTP response headers after 2105.8087ms - 200
+2026-05-20 11:13:49.389 +08:00 [INF] End processing HTTP request after 2109.24ms - 200
+2026-05-20 11:13:49.391 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2111.2036ms.
+2026-05-20 11:13:49.392 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 11:13:49.393 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 2128.755ms
+2026-05-20 11:13:49.395 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 11:13:49.396 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - 200 null application/json; charset=utf-8 2136.2401ms
+2026-05-20 11:15:46.578 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-20 11:15:46.583 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-20 11:15:46.585 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-20 11:15:46.604 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-05-20 11:15:46.625 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-20 11:15:46.629 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 23.4188ms.
+2026-05-20 11:15:46.630 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 11:15:46.631 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 45.1679ms
+2026-05-20 11:15:46.633 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-20 11:15:46.634 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 57.3427ms
+2026-05-20 11:18:40.453 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-20 11:18:40.458 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-20 11:18:40.459 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-20 11:18:40.475 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-05-20 11:18:40.492 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-20 11:18:40.494 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 18.7972ms.
+2026-05-20 11:18:40.496 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 11:18:40.497 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 36.426ms
+2026-05-20 11:18:40.498 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-20 11:18:40.499 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 46.6701ms
+2026-05-20 11:18:47.970 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-20 11:18:47.973 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-20 11:18:47.974 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-20 11:18:47.989 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-05-20 11:18:47.993 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-20 11:18:47.995 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.4037ms.
+2026-05-20 11:18:47.997 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 11:18:47.998 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 22.0798ms
+2026-05-20 11:18:47.999 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-20 11:18:48.001 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 30.2475ms
+2026-05-20 11:18:48.033 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - null null
+2026-05-20 11:18:48.036 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-20 11:18:48.039 +08:00 [INF] Route matched with {action = "GetOrderStatistics", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderStatistics() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-20 11:18:48.056 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) - Validation state: "Valid"
+2026-05-20 11:18:48.074 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[@__today_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[OrderCreatTime] >= @__today_0
+2026-05-20 11:18:48.116 +08:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+2026-05-20 11:18:48.120 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 62.3705ms.
+2026-05-20 11:18:48.123 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 11:18:48.125 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) in 84.2249ms
+2026-05-20 11:18:48.126 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-20 11:18:48.127 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - 200 null application/json; charset=utf-8 94.9813ms
+2026-05-20 11:19:49.735 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - null null
+2026-05-20 11:19:49.740 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 11:19:49.741 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 11:19:49.758 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-20 11:19:49.759 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 11:19:49.760 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 11:19:52.286 +08:00 [INF] Received HTTP response headers after 2525.0722ms - 200
+2026-05-20 11:19:52.288 +08:00 [INF] End processing HTTP request after 2528.3698ms - 200
+2026-05-20 11:19:52.289 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2529.7062ms.
+2026-05-20 11:19:52.290 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 11:19:52.291 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 2549.176ms
+2026-05-20 11:19:52.293 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 11:19:52.294 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - 200 null application/json; charset=utf-8 2562.477ms
+2026-05-20 11:20:41.187 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - null null
+2026-05-20 11:20:41.195 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 11:20:41.196 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 11:20:41.212 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-20 11:20:41.213 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 11:20:41.214 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 11:20:44.755 +08:00 [INF] Received HTTP response headers after 3539.713ms - 200
+2026-05-20 11:20:44.756 +08:00 [INF] End processing HTTP request after 3543.2771ms - 200
+2026-05-20 11:20:44.758 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3545.0671ms.
+2026-05-20 11:20:44.759 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 11:20:44.761 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 3563.4296ms
+2026-05-20 11:20:44.762 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 11:20:44.763 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - 200 null application/json; charset=utf-8 3576.3725ms
+2026-05-20 11:29:09.193 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 11:29:09.237 +08:00 [WRN] No store type was specified for the decimal property 'Order_Price' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 11:29:09.239 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Order_item'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-20 11:29:10.296 +08:00 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-05-20 11:29:10.348 +08:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-05-20 11:29:10.398 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-05-20 11:29:10.559 +08:00 [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-05-20 11:29:15.712 +08:00 [INF] Executed DbCommand (5,142ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-05-20 11:29:15.766 +08:00 [INF] Executed DbCommand (36ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-05-20 11:29:15.779 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-05-20 11:29:15.815 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-20 11:29:16.030 +08:00 [WRN] Overriding address(es) 'http://0.0.0.0:5272'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-05-20 11:29:16.106 +08:00 [INF] Now listening on: http://0.0.0.0:5272
+2026-05-20 11:29:16.189 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-20 11:29:16.190 +08:00 [INF] Hosting environment: Development
+2026-05-20 11:29:16.191 +08:00 [INF] Content root path: D:\1\projectExcel\qianhou\day1
+2026-05-20 11:29:17.570 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-05-20 11:29:18.045 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 488.2192ms
+2026-05-20 11:29:18.066 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-05-20 11:29:18.073 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-20 11:29:18.087 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 14.2024ms
+2026-05-20 11:29:18.128 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 61.8889ms
+2026-05-20 11:29:18.205 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-05-20 11:29:18.225 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.5412ms
+2026-05-20 11:30:04.912 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-20 11:30:05.227 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-20 11:30:05.261 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-20 11:30:05.377 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-05-20 11:30:05.656 +08:00 [INF] Executed DbCommand (194ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-20 11:30:05.665 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 282.8406ms.
+2026-05-20 11:30:05.674 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 11:30:05.690 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 423.4893ms
+2026-05-20 11:30:05.691 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-20 11:30:05.695 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 783.8717ms
+2026-05-20 11:30:05.741 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - null null
+2026-05-20 11:30:05.749 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-20 11:30:05.754 +08:00 [INF] Route matched with {action = "GetOrderStatistics", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderStatistics() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-20 11:30:05.772 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) - Validation state: "Valid"
+2026-05-20 11:30:05.848 +08:00 [INF] Executed DbCommand (21ms) [Parameters=[@__today_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[OrderCreatTime] >= @__today_0
+2026-05-20 11:30:05.880 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+2026-05-20 11:30:05.887 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 113.3761ms.
+2026-05-20 11:30:05.889 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 11:30:05.898 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) in 141.9207ms
+2026-05-20 11:30:05.900 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-20 11:30:05.903 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - 200 null application/json; charset=utf-8 162.5743ms
+2026-05-20 11:30:06.798 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - null null
+2026-05-20 11:30:06.799 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - null null
+2026-05-20 11:30:06.815 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-20 11:30:06.815 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.GetUsersPaged (day1)'
+2026-05-20 11:30:06.818 +08:00 [INF] Route matched with {action = "GetAllRoles", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllRoles() on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-20 11:30:06.823 +08:00 [INF] Route matched with {action = "GetUsersPaged", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersPaged(Int32, Int32, System.String) on controller day1.Controllers.AuthController (day1).
+2026-05-20 11:30:06.838 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) - Validation state: "Valid"
+2026-05-20 11:30:06.867 +08:00 [INF] Executing action method day1.Controllers.AuthController.GetUsersPaged (day1) - Validation state: "Valid"
+2026-05-20 11:30:06.867 +08:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+2026-05-20 11:30:06.871 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetAllRoles (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 29.0375ms.
+2026-05-20 11:30:06.873 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 11:30:06.897 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetAllRoles (day1) in 76.3044ms
+2026-05-20 11:30:06.899 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetAllRoles (day1)'
+2026-05-20 11:30:06.901 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/roles - 200 null application/json; charset=utf-8 102.8872ms
+2026-05-20 11:30:06.922 +08:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2026-05-20 11:30:06.997 +08:00 [INF] Executed DbCommand (32ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateTime], [t].[FailedLoginCount], [t].[LockOutEndTime], [t].[PassWord], [t].[RefreshToken], [t].[RefreshTokenExpiryTime], [t].[UserName], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+    FROM [Users] AS [u]
+    ORDER BY [u].[CreateTime] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[UserId], [u0].[RoleId], [r].[Id], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[CreateTime] DESC, [t].[Id], [t0].[UserId], [t0].[RoleId]
+2026-05-20 11:30:07.047 +08:00 [INF] Executed action method day1.Controllers.AuthController.GetUsersPaged (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 178.1384ms.
+2026-05-20 11:30:07.048 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-20 11:30:07.055 +08:00 [INF] Executed action day1.Controllers.AuthController.GetUsersPaged (day1) in 214.7926ms
+2026-05-20 11:30:07.057 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.GetUsersPaged (day1)'
+2026-05-20 11:30:07.058 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/Auth/users?page=1&size=10&keyword= - 200 null application/json; charset=utf-8 259.9747ms
+2026-05-20 11:30:24.971 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - null null
+2026-05-20 11:30:24.974 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 11:30:24.978 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 11:30:25.010 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-20 11:30:25.022 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 11:30:25.027 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-20 11:30:27.372 +08:00 [INF] Received HTTP response headers after 2341.694ms - 200
+2026-05-20 11:30:27.374 +08:00 [INF] End processing HTTP request after 2352.3706ms - 200
+2026-05-20 11:30:27.381 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2369.2799ms.
+2026-05-20 11:30:27.382 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 11:30:27.388 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 2406.6727ms
+2026-05-20 11:30:27.389 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-20 11:30:27.390 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - 200 null application/json; charset=utf-8 2418.8171ms
+2026-05-20 11:30:27.429 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Faweme.snssdk.com%2Faweme%2Fv1%2Fplay%2F%3Fvideo_id%3Dv0d00fg10000d85frpvog65mdg12mnv0%26line%3D0 - null null
+2026-05-20 11:30:27.431 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-20 11:30:27.435 +08:00 [INF] Route matched with {action = "ProxyVideo", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task ProxyVideo(System.String, System.Threading.CancellationToken) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 11:30:27.455 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.ProxyVideo (day1) - Validation state: "Valid"
+2026-05-20 11:30:27.459 +08:00 [INF] Start processing HTTP request GET https://aweme.snssdk.com/aweme/v1/play/?video_id=v0d00fg10000d85frpvog65mdg12mnv0&line=0
+2026-05-20 11:30:27.460 +08:00 [INF] Sending HTTP request GET https://aweme.snssdk.com/aweme/v1/play/?video_id=v0d00fg10000d85frpvog65mdg12mnv0&line=0
+2026-05-20 11:30:27.779 +08:00 [INF] Received HTTP response headers after 317.3277ms - 200
+2026-05-20 11:30:27.780 +08:00 [INF] End processing HTTP request after 321.4173ms - 200
+2026-05-20 11:30:28.675 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.ProxyVideo (day1), returned result Microsoft.AspNetCore.Mvc.EmptyResult in 1218.1483ms.
+2026-05-20 11:30:28.678 +08:00 [INF] Executed action day1.Controllers.DYVideoController.ProxyVideo (day1) in 1240.5358ms
+2026-05-20 11:30:28.679 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-20 11:30:28.680 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Faweme.snssdk.com%2Faweme%2Fv1%2Fplay%2F%3Fvideo_id%3Dv0d00fg10000d85frpvog65mdg12mnv0%26line%3D0 - 200 5021845 video/mp4 1251.5815ms
+2026-05-20 11:31:00.961 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Fv5-dy-o-abtest.zjcdn.com%2F443ca3248870cc3f82a2c4d41b41f887%2F6a0d390b%2Fvideo%2Ftos%2Fcn%2Ftos-cn-ve-15%2Fo0gvAn8f9qEBANAgBRDVW3Fvl3lCgAsQ2BfJIA%2F%3Fa%3D1128%26ch%3D0%26cr%3D0%26dr%3D0%26cd%3D0%257C0%257C0%257C0%26cv%3D1%26br%3D960%26bt%3D960%26cs%3D0%26ds%3D3%26ft%3DfC4KJb-rPMv2NvjHQ_lfyh7usoUrJgnaglcjp%26mime_type%3Dvideo_mp4%26qs%3D0%26rc%3DaDY2aDpkMzU4ZzY6aDplO0BpM3E1anA5cnNpOzMzNGkzM0AxNWNhYGFhNWExYV9fYzVeYSNzai5hMmRzbzJhLS1kLWFzcw%253D%253D%26btag%3D80010e00098000%26cquery%3D100y%26dy_q%3D1779247827%26feature_id%3Df5241e7604dff1d9d6c943fd20bd51a2%26l%3D20260520113027074E9DE490E997424AF6%26pwid%3D1%26req_cdn_type%3D- - null null
+2026-05-20 11:31:00.964 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-20 11:31:00.965 +08:00 [INF] Route matched with {action = "ProxyVideo", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task ProxyVideo(System.String, System.Threading.CancellationToken) on controller day1.Controllers.DYVideoController (day1).
+2026-05-20 11:31:00.983 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.ProxyVideo (day1) - Validation state: "Valid"
+2026-05-20 11:31:00.985 +08:00 [INF] Start processing HTTP request GET https://v5-dy-o-abtest.zjcdn.com/443ca3248870cc3f82a2c4d41b41f887/6a0d390b/video/tos/cn/tos-cn-ve-15/o0gvAn8f9qEBANAgBRDVW3Fvl3lCgAsQ2BfJIA/?a=1128&ch=0&cr=0&dr=0&cd=0%7C0%7C0%7C0&cv=1&br=960&bt=960&cs=0&ds=3&ft=fC4KJb-rPMv2NvjHQ_lfyh7usoUrJgnaglcjp&mime_type=video_mp4&qs=0&rc=aDY2aDpkMzU4ZzY6aDplO0BpM3E1anA5cnNpOzMzNGkzM0AxNWNhYGFhNWExYV9fYzVeYSNzai5hMmRzbzJhLS1kLWFzcw==&btag=80010e00098000&cquery=100y&dy_q=1779247827&feature_id=f5241e7604dff1d9d6c943fd20bd51a2&l=20260520113027074E9DE490E997424AF6&pwid=1&req_cdn_type=-
+2026-05-20 11:31:00.998 +08:00 [INF] Sending HTTP request GET https://v5-dy-o-abtest.zjcdn.com/443ca3248870cc3f82a2c4d41b41f887/6a0d390b/video/tos/cn/tos-cn-ve-15/o0gvAn8f9qEBANAgBRDVW3Fvl3lCgAsQ2BfJIA/?a=1128&ch=0&cr=0&dr=0&cd=0%7C0%7C0%7C0&cv=1&br=960&bt=960&cs=0&ds=3&ft=fC4KJb-rPMv2NvjHQ_lfyh7usoUrJgnaglcjp&mime_type=video_mp4&qs=0&rc=aDY2aDpkMzU4ZzY6aDplO0BpM3E1anA5cnNpOzMzNGkzM0AxNWNhYGFhNWExYV9fYzVeYSNzai5hMmRzbzJhLS1kLWFzcw==&btag=80010e00098000&cquery=100y&dy_q=1779247827&feature_id=f5241e7604dff1d9d6c943fd20bd51a2&l=20260520113027074E9DE490E997424AF6&pwid=1&req_cdn_type=-
+2026-05-20 11:31:02.036 +08:00 [INF] Received HTTP response headers after 1036.5829ms - 200
+2026-05-20 11:31:02.037 +08:00 [INF] End processing HTTP request after 1052.1832ms - 200
+2026-05-20 11:31:03.786 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.ProxyVideo (day1), returned result Microsoft.AspNetCore.Mvc.EmptyResult in 2802.1305ms.
+2026-05-20 11:31:03.788 +08:00 [INF] Executed action day1.Controllers.DYVideoController.ProxyVideo (day1) in 2821.5016ms
+2026-05-20 11:31:03.790 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-20 11:31:03.791 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Fv5-dy-o-abtest.zjcdn.com%2F443ca3248870cc3f82a2c4d41b41f887%2F6a0d390b%2Fvideo%2Ftos%2Fcn%2Ftos-cn-ve-15%2Fo0gvAn8f9qEBANAgBRDVW3Fvl3lCgAsQ2BfJIA%2F%3Fa%3D1128%26ch%3D0%26cr%3D0%26dr%3D0%26cd%3D0%257C0%257C0%257C0%26cv%3D1%26br%3D960%26bt%3D960%26cs%3D0%26ds%3D3%26ft%3DfC4KJb-rPMv2NvjHQ_lfyh7usoUrJgnaglcjp%26mime_type%3Dvideo_mp4%26qs%3D0%26rc%3DaDY2aDpkMzU4ZzY6aDplO0BpM3E1anA5cnNpOzMzNGkzM0AxNWNhYGFhNWExYV9fYzVeYSNzai5hMmRzbzJhLS1kLWFzcw%253D%253D%26btag%3D80010e00098000%26cquery%3D100y%26dy_q%3D1779247827%26feature_id%3Df5241e7604dff1d9d6c943fd20bd51a2%26l%3D20260520113027074E9DE490E997424AF6%26pwid%3D1%26req_cdn_type%3D- - 200 5021845 video/mp4 2829.6837ms

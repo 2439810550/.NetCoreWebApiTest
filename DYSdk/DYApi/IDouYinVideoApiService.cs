@@ -7,6 +7,12 @@ namespace day1.DYSdk.DYApi
     {
         Task<DYVideoRemoveWatermarkApiResponse> RemoveVideoWatermarkAsync(string videoUrl);
     }
+
+    public interface IMediaParserService
+    {
+        Task<MediaParserResponse> ParseAsync(string text);
+    }
+
     public class DouYinVideoApiService : IDouYinVideoApiService
     {
         private readonly HttpClient _httpClient;
@@ -22,22 +28,52 @@ namespace day1.DYSdk.DYApi
                 var response = await _httpClient.GetAsync(requestUrl);
                 response.EnsureSuccessStatusCode();
                 var content = await response.Content.ReadAsStringAsync();
-                //return System.Text.Json.JsonSerializer.Deserialize<DYVideoRemoveWatermarkApiResponse>(content);
                 return JsonSerializer.Deserialize<DYVideoRemoveWatermarkApiResponse>(content, new JsonSerializerOptions
                 {
-                    PropertyNameCaseInsensitive = true//反序列化时是否忽略属性名的大小写（默认 false）。
+                    PropertyNameCaseInsensitive = true
                 });
             }
             catch (HttpRequestException ex)
             {
-                // 记录日志（可选）
                 return new DYVideoRemoveWatermarkApiResponse { Code = -1, Message = $"网络请求失败: {ex.Message}" };
             }
             catch (System.Text.Json.JsonException ex)
             {
                 return new DYVideoRemoveWatermarkApiResponse { Code = -1, Message = $"数据解析失败: {ex.Message}" };
             }
-            
+
+        }
+    }
+
+    public class MediaParserService : IMediaParserService
+    {
+        private readonly HttpClient _httpClient;
+        public MediaParserService(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
+        public async Task<MediaParserResponse> ParseAsync(string text)
+        {
+            var payload = JsonSerializer.Serialize(new { text });
+            try
+            {
+                var response = await _httpClient.PostAsync("/api/parse",
+                    new StringContent(payload, System.Text.Encoding.UTF8, "application/json"));
+                response.EnsureSuccessStatusCode();
+                var content = await response.Content.ReadAsStringAsync();
+                return JsonSerializer.Deserialize<MediaParserResponse>(content, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+            }
+            catch (HttpRequestException ex)
+            {
+                return new MediaParserResponse { Retcode = -1, Retdesc = $"请求失败: {ex.Message}" };
+            }
+            catch (JsonException ex)
+            {
+                return new MediaParserResponse { Retcode = -1, Retdesc = $"解析失败: {ex.Message}" };
+            }
         }
     }
 }

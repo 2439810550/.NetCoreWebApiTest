@@ -1,0 +1,582 @@
+2026-05-21 09:43:43.823 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-21 09:43:43.879 +08:00 [WRN] No store type was specified for the decimal property 'Order_Price' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-21 09:43:43.883 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Order_item'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-21 09:43:45.530 +08:00 [INF] Executed DbCommand (101ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-05-21 09:43:45.576 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-05-21 09:43:45.613 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-05-21 09:43:45.676 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-05-21 09:43:45.691 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-05-21 09:43:45.750 +08:00 [INF] Executed DbCommand (40ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-05-21 09:43:45.761 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-05-21 09:43:45.803 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-21 09:43:45.982 +08:00 [WRN] Overriding address(es) 'http://0.0.0.0:5272'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-05-21 09:43:46.028 +08:00 [INF] Now listening on: http://0.0.0.0:5272
+2026-05-21 09:43:46.118 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-21 09:43:46.119 +08:00 [INF] Hosting environment: Development
+2026-05-21 09:43:46.120 +08:00 [INF] Content root path: D:\1\projectExcel\qianhou\day1
+2026-05-21 09:43:46.934 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-05-21 09:43:47.321 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 394.8735ms
+2026-05-21 09:43:47.363 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-05-21 09:43:47.365 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-21 09:43:47.372 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 5.8032ms
+2026-05-21 09:43:47.432 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 68.5281ms
+2026-05-21 09:43:47.530 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-05-21 09:43:47.554 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 24.4346ms
+2026-05-21 09:43:59.100 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - null null
+2026-05-21 09:43:59.257 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2026/5/20 3:43:34', Current time (UTC): '2026/5/21 1:43:59'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-21 09:43:59.306 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2026/5/20 3:43:34', Current time (UTC): '2026/5/21 1:43:59'.
+2026-05-21 09:43:59.309 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 09:43:59.332 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 09:43:59.453 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-21 09:43:59.467 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-21 09:43:59.471 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-21 09:44:03.524 +08:00 [INF] Received HTTP response headers after 4049.8876ms - 200
+2026-05-21 09:44:03.526 +08:00 [INF] End processing HTTP request after 4060.5408ms - 200
+2026-05-21 09:44:03.539 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4080.8551ms.
+2026-05-21 09:44:03.546 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 09:44:03.556 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 4219.7713ms
+2026-05-21 09:44:03.558 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 09:44:03.562 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - 200 null application/json; charset=utf-8 4462.2905ms
+2026-05-21 09:44:03.612 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Faweme.snssdk.com%2Faweme%2Fv1%2Fplay%2F%3Fvideo_id%3Dv0d00fg10000d85frpvog65mdg12mnv0%26line%3D0 - null null
+2026-05-21 09:44:03.617 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-21 09:44:03.622 +08:00 [INF] Route matched with {action = "ProxyVideo", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task ProxyVideo(System.String, System.Threading.CancellationToken) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 09:44:03.650 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.ProxyVideo (day1) - Validation state: "Valid"
+2026-05-21 09:44:07.944 +08:00 [INF] Start processing HTTP request GET https://aweme.snssdk.com/aweme/v1/play/?video_id=v0d00fg10000d85frpvog65mdg12mnv0&line=0
+2026-05-21 09:44:07.946 +08:00 [INF] Sending HTTP request GET https://aweme.snssdk.com/aweme/v1/play/?video_id=v0d00fg10000d85frpvog65mdg12mnv0&line=0
+2026-05-21 09:44:08.386 +08:00 [INF] Received HTTP response headers after 439.7182ms - 200
+2026-05-21 09:44:08.388 +08:00 [INF] End processing HTTP request after 443.7149ms - 200
+2026-05-21 09:44:09.646 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.ProxyVideo (day1), returned result Microsoft.AspNetCore.Mvc.EmptyResult in 5994.6543ms.
+2026-05-21 09:44:09.648 +08:00 [INF] Executed action day1.Controllers.DYVideoController.ProxyVideo (day1) in 6024.2132ms
+2026-05-21 09:44:09.649 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-21 09:44:09.650 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Faweme.snssdk.com%2Faweme%2Fv1%2Fplay%2F%3Fvideo_id%3Dv0d00fg10000d85frpvog65mdg12mnv0%26line%3D0 - 200 5021845 video/mp4 6038.4362ms
+2026-05-21 10:36:46.715 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-21 10:36:46.757 +08:00 [WRN] No store type was specified for the decimal property 'Order_Price' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-21 10:36:46.759 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Order_item'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-21 10:36:47.839 +08:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-05-21 10:36:47.872 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-05-21 10:36:47.905 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-05-21 10:36:47.962 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-05-21 10:36:47.976 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-05-21 10:36:48.011 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-05-21 10:36:48.020 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-05-21 10:36:48.051 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-21 10:36:48.192 +08:00 [WRN] Overriding address(es) 'http://0.0.0.0:5272'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-05-21 10:36:48.234 +08:00 [INF] Now listening on: http://0.0.0.0:5272
+2026-05-21 10:36:48.323 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-21 10:36:48.324 +08:00 [INF] Hosting environment: Development
+2026-05-21 10:36:48.326 +08:00 [INF] Content root path: D:\1\projectExcel\qianhou\day1
+2026-05-21 10:36:49.304 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-05-21 10:36:49.615 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 320.059ms
+2026-05-21 10:36:49.678 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-21 10:36:49.681 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/_vs/browserLink - null null
+2026-05-21 10:36:49.683 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 4.7531ms
+2026-05-21 10:36:49.737 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/_vs/browserLink - 200 null text/javascript; charset=UTF-8 56.2843ms
+2026-05-21 10:36:49.803 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-05-21 10:36:49.824 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.2254ms
+2026-05-21 10:37:44.026 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=9.74%20%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E5%A4%A9%E6%B0%94%E6%99%B4%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BB%96%E5%92%8B%E4%BA%86%23%20%E5%B0%8F%E9%BB%84%E7%8B%97%20%20https%3A%2F%2Fv.douyin.com%2FCuBGCxDT2_4%2F%20q%40R.xf%20%3A3pm%20srR%3A%2F%2012%2F01%20 - null null
+2026-05-21 10:37:44.121 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:37:44.145 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 10:37:44.296 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-21 10:37:44.308 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FCuBGCxDT2_4
+2026-05-21 10:37:44.312 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FCuBGCxDT2_4
+2026-05-21 10:37:47.671 +08:00 [INF] Received HTTP response headers after 3356.5068ms - 200
+2026-05-21 10:37:47.673 +08:00 [INF] End processing HTTP request after 3366.8502ms - 200
+2026-05-21 10:37:47.764 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3464.2774ms.
+2026-05-21 10:37:47.770 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 10:37:47.780 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 3629.243ms
+2026-05-21 10:37:47.781 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:37:47.783 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=9.74%20%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E5%A4%A9%E6%B0%94%E6%99%B4%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BB%96%E5%92%8B%E4%BA%86%23%20%E5%B0%8F%E9%BB%84%E7%8B%97%20%20https%3A%2F%2Fv.douyin.com%2FCuBGCxDT2_4%2F%20q%40R.xf%20%3A3pm%20srR%3A%2F%2012%2F01%20 - 200 null application/json; charset=utf-8 3757.0231ms
+2026-05-21 10:38:04.087 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=9.74%20%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E5%A4%A9%E6%B0%94%E6%99%B4%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BB%96%E5%92%8B%E4%BA%86%23%20%E5%B0%8F%E9%BB%84%E7%8B%97%20%20https%3A%2F%2Fv.douyin.com%2FCuBGCxDT2_4%2F%20q%40R.xf%20%3A3pm%20srR%3A%2F%2012%2F01%20 - null null
+2026-05-21 10:38:04.098 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-21 10:38:04.104 +08:00 [INF] Route matched with {action = "ProxyVideo", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task ProxyVideo(System.String, System.Threading.CancellationToken) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 10:38:04.132 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.ProxyVideo (day1) - Validation state: "Valid"
+2026-05-21 10:38:04.175 +08:00 [INF] Executed action day1.Controllers.DYVideoController.ProxyVideo (day1) in 68.0753ms
+2026-05-21 10:38:04.178 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-21 10:38:04.201 +08:00 [ERR] 系统异常
+System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at day1.Controllers.DYVideoController.ProxyVideo(String url, CancellationToken cancellationToken) in D:\1\projectExcel\qianhou\day1\Controllers\DYVideoController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at day1.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\1\projectExcel\qianhou\day1\Middlewares\ExceptionMiddleware.cs:line 26
+2026-05-21 10:38:04.256 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=9.74%20%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E5%A4%A9%E6%B0%94%E6%99%B4%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BB%96%E5%92%8B%E4%BA%86%23%20%E5%B0%8F%E9%BB%84%E7%8B%97%20%20https%3A%2F%2Fv.douyin.com%2FCuBGCxDT2_4%2F%20q%40R.xf%20%3A3pm%20srR%3A%2F%2012%2F01%20 - 500 null application/json 169.711ms
+2026-05-21 10:38:16.484 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-21 10:38:16.552 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2026/5/20 3:43:34', Current time (UTC): '2026/5/21 2:38:16'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-21 10:38:16.555 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2026/5/20 3:43:34', Current time (UTC): '2026/5/21 2:38:16'.
+2026-05-21 10:38:16.563 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-21 10:38:16.569 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-21 10:38:16.571 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 401 0 null 87.2037ms
+2026-05-21 10:38:16.577 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5272/api/Auth/refresh?refreshToken=0e9c74fd-566f-4e64-8078-3b29f566bf88 - null 0
+2026-05-21 10:38:16.582 +08:00 [INF] CORS policy execution successful.
+2026-05-21 10:38:16.584 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2026/5/20 3:43:34', Current time (UTC): '2026/5/21 2:38:16'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-21 10:38:16.586 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2026/5/20 3:43:34', Current time (UTC): '2026/5/21 2:38:16'.
+2026-05-21 10:38:16.588 +08:00 [INF] Executing endpoint 'day1.Controllers.AuthController.ReFresh (day1)'
+2026-05-21 10:38:16.590 +08:00 [INF] Route matched with {action = "ReFresh", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ReFresh(System.String) on controller day1.Controllers.AuthController (day1).
+2026-05-21 10:38:16.626 +08:00 [INF] Executing action method day1.Controllers.AuthController.ReFresh (day1) - Validation state: "Valid"
+2026-05-21 10:38:16.699 +08:00 [INF] Executed DbCommand (43ms) [Parameters=[@__refreshToken_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreateTime], [u].[FailedLoginCount], [u].[LockOutEndTime], [u].[PassWord], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[RefreshToken] = @__refreshToken_0
+2026-05-21 10:38:16.830 +08:00 [INF] Executed DbCommand (54ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-21 10:38:16.948 +08:00 [INF] Executed DbCommand (51ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CreateTime] = @p0, [FailedLoginCount] = @p1, [LockOutEndTime] = @p2, [PassWord] = @p3, [RefreshToken] = @p4, [RefreshTokenExpiryTime] = @p5, [UserName] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2026-05-21 10:38:16.956 +08:00 [INF] Executed action method day1.Controllers.AuthController.ReFresh (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 328.0445ms.
+2026-05-21 10:38:16.958 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-21 10:38:16.966 +08:00 [INF] Executed action day1.Controllers.AuthController.ReFresh (day1) in 373.3921ms
+2026-05-21 10:38:16.967 +08:00 [INF] Executed endpoint 'day1.Controllers.AuthController.ReFresh (day1)'
+2026-05-21 10:38:16.970 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5272/api/Auth/refresh?refreshToken=0e9c74fd-566f-4e64-8078-3b29f566bf88 - 200 null application/json; charset=utf-8 393.3663ms
+2026-05-21 10:38:16.972 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - null null
+2026-05-21 10:38:16.985 +08:00 [INF] Executing endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-21 10:38:16.987 +08:00 [INF] Route matched with {action = "GetUserPermissions", controller = "RoleAndPermission"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUserPermissions(Int64) on controller day1.Controllers.RoleAndPermissionController (day1).
+2026-05-21 10:38:17.005 +08:00 [INF] Executing action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) - Validation state: "Valid"
+2026-05-21 10:38:17.112 +08:00 [INF] Executed DbCommand (43ms) [Parameters=[@__userid_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [p].[Code]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+INNER JOIN [RolePermissions] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Permissions] AS [p] ON [r0].[PermissionId] = [p].[Id]
+WHERE [u].[UserId] = @__userid_0
+2026-05-21 10:38:17.115 +08:00 [INF] Executed action method day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 108.6695ms.
+2026-05-21 10:38:17.116 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-21 10:38:17.120 +08:00 [INF] Executed action day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1) in 131.7583ms
+2026-05-21 10:38:17.122 +08:00 [INF] Executed endpoint 'day1.Controllers.RoleAndPermissionController.GetUserPermissions (day1)'
+2026-05-21 10:38:17.123 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/RoleAndPermission/getpermissions/3 - 200 null application/json; charset=utf-8 151.2421ms
+2026-05-21 10:38:17.154 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - null null
+2026-05-21 10:38:17.155 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/qlimage/ql1.jpg - null null
+2026-05-21 10:38:17.170 +08:00 [INF] Executing endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-21 10:38:17.173 +08:00 [INF] Route matched with {action = "GetOrderStatistics", controller = "DishAndOrder"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderStatistics() on controller day1.Controllers.DishAndOrderController (day1).
+2026-05-21 10:38:17.190 +08:00 [INF] Executing action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) - Validation state: "Valid"
+2026-05-21 10:38:17.202 +08:00 [INF] The file /qlimage/ql1.jpg was not modified
+2026-05-21 10:38:17.204 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/qlimage/ql1.jpg - 304 null image/jpeg 50.2064ms
+2026-05-21 10:38:17.221 +08:00 [INF] Executed DbCommand (17ms) [Parameters=[@__today_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[OrderCreatTime] >= @__today_0
+2026-05-21 10:38:17.229 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[OrderCreatTime], [o].[Order_No], [o].[Order_Price], [o].[Remark], [o].[Status], [o].[UserId]
+FROM [Orders] AS [o]
+2026-05-21 10:38:17.248 +08:00 [INF] Executed action method day1.Controllers.DishAndOrderController.GetOrderStatistics (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 51.5752ms.
+2026-05-21 10:38:17.250 +08:00 [INF] Executing ObjectResult, writing value of type 'day1.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-21 10:38:17.260 +08:00 [INF] Executed action day1.Controllers.DishAndOrderController.GetOrderStatistics (day1) in 84.9752ms
+2026-05-21 10:38:17.261 +08:00 [INF] Executed endpoint 'day1.Controllers.DishAndOrderController.GetOrderStatistics (day1)'
+2026-05-21 10:38:17.263 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DishAndOrder/GetOrderStatistics - 200 null application/json; charset=utf-8 109.113ms
+2026-05-21 10:38:20.401 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=9.74+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E5%A4%A9%E6%B0%94%E6%99%B4%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BB%96%E5%92%8B%E4%BA%86%23+%E5%B0%8F%E9%BB%84%E7%8B%97++https:%2F%2Fv.douyin.com%2FCuBGCxDT2_4%2F+q%40R.xf+:3pm+srR:%2F+12%2F01 - null null
+2026-05-21 10:38:20.404 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:38:20.405 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 10:38:20.421 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-21 10:38:20.422 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FCuBGCxDT2_4
+2026-05-21 10:38:20.423 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FCuBGCxDT2_4
+2026-05-21 10:38:21.822 +08:00 [INF] Received HTTP response headers after 1397.116ms - 200
+2026-05-21 10:38:21.823 +08:00 [INF] End processing HTTP request after 1400.2531ms - 200
+2026-05-21 10:38:21.852 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1429.5445ms.
+2026-05-21 10:38:21.854 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 10:38:21.855 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 1448.0118ms
+2026-05-21 10:38:21.856 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:38:21.857 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=9.74+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E5%A4%A9%E6%B0%94%E6%99%B4%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BB%96%E5%92%8B%E4%BA%86%23+%E5%B0%8F%E9%BB%84%E7%8B%97++https:%2F%2Fv.douyin.com%2FCuBGCxDT2_4%2F+q%40R.xf+:3pm+srR:%2F+12%2F01 - 200 null application/json; charset=utf-8 1455.5624ms
+2026-05-21 10:39:50.112 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=9.74+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E5%A4%A9%E6%B0%94%E6%99%B4%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BB%96%E5%92%8B%E4%BA%86%23+%E5%B0%8F%E9%BB%84%E7%8B%97++https:%2F%2Fv.douyin.com%2FCuBGCxDT2_4%2F+q%40R.xf+:3pm+srR:%2F+12%2F01 - null null
+2026-05-21 10:39:50.116 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:39:50.117 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 10:39:50.134 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-21 10:40:07.008 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FCuBGCxDT2_4
+2026-05-21 10:40:07.009 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FCuBGCxDT2_4
+2026-05-21 10:40:08.671 +08:00 [INF] Received HTTP response headers after 1660.7964ms - 200
+2026-05-21 10:40:08.673 +08:00 [INF] End processing HTTP request after 1665.1496ms - 200
+2026-05-21 10:40:28.583 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 38447.4526ms.
+2026-05-21 10:40:28.595 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 10:40:28.599 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 38480.296ms
+2026-05-21 10:40:28.600 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:40:28.601 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=9.74+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E5%A4%A9%E6%B0%94%E6%99%B4%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BB%96%E5%92%8B%E4%BA%86%23+%E5%B0%8F%E9%BB%84%E7%8B%97++https:%2F%2Fv.douyin.com%2FCuBGCxDT2_4%2F+q%40R.xf+:3pm+srR:%2F+12%2F01 - 499 null application/json; charset=utf-8 38489.0754ms
+2026-05-21 10:40:32.398 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=https:%2F%2Fv.douyin.com%2FCuBGCxDT2_4 - null null
+2026-05-21 10:40:32.401 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:40:32.402 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 10:40:32.418 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-21 10:40:33.521 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FCuBGCxDT2_4
+2026-05-21 10:40:33.523 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FCuBGCxDT2_4
+2026-05-21 10:40:34.141 +08:00 [INF] Received HTTP response headers after 616.6643ms - 200
+2026-05-21 10:40:34.142 +08:00 [INF] End processing HTTP request after 620.9658ms - 200
+2026-05-21 10:40:34.202 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1783.5229ms.
+2026-05-21 10:40:34.204 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 10:40:34.206 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 1802.299ms
+2026-05-21 10:40:34.207 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:40:34.208 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=https:%2F%2Fv.douyin.com%2FCuBGCxDT2_4 - 200 null application/json; charset=utf-8 1809.9541ms
+2026-05-21 10:40:48.564 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - null null
+2026-05-21 10:40:48.566 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:40:48.567 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 10:40:48.584 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-21 10:40:49.721 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-21 10:40:49.723 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FkUZPCZK8sXs
+2026-05-21 10:40:51.614 +08:00 [INF] Received HTTP response headers after 1888.8972ms - 200
+2026-05-21 10:40:51.615 +08:00 [INF] End processing HTTP request after 1893.199ms - 200
+2026-05-21 10:40:51.619 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3033.1173ms.
+2026-05-21 10:40:51.620 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 10:40:51.623 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 3054.1648ms
+2026-05-21 10:40:51.624 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:40:51.626 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E6%9A%97%E5%8C%BA%E6%BC%AB%E5%BD%B1%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BD%A0%E8%AF%B4%E4%BD%A0%E6%9C%89%E7%82%B9%E9%9A%BE%E8%BF%BD+%E2%9D%A4%E8%BF%BD%E4%B8%8A%E6%88%91%E5%91%BD%E9%83%BD%E7%BB%99%E4%BD%A0%E5%93%A6%E2%9D%A4+%23+%E9%BC%A0%E9%BC%A0+%23...+https:%2F%2Fv.douyin.com%2FkUZPCZK8sXs%2F+:4pm+wfO:%2F+S%40L.Wm+08%2F10 - 200 null application/json; charset=utf-8 3062.1079ms
+2026-05-21 10:40:51.690 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Faweme.snssdk.com%2Faweme%2Fv1%2Fplay%2F%3Fvideo_id%3Dv0d00fg10000d85frpvog65mdg12mnv0%26line%3D0 - null null
+2026-05-21 10:40:51.693 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-21 10:40:51.694 +08:00 [INF] Route matched with {action = "ProxyVideo", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task ProxyVideo(System.String, System.Threading.CancellationToken) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 10:40:51.710 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.ProxyVideo (day1) - Validation state: "Valid"
+2026-05-21 10:40:51.712 +08:00 [INF] Start processing HTTP request GET https://aweme.snssdk.com/aweme/v1/play/?video_id=v0d00fg10000d85frpvog65mdg12mnv0&line=0
+2026-05-21 10:40:51.713 +08:00 [INF] Sending HTTP request GET https://aweme.snssdk.com/aweme/v1/play/?video_id=v0d00fg10000d85frpvog65mdg12mnv0&line=0
+2026-05-21 10:40:52.084 +08:00 [INF] Received HTTP response headers after 370.3517ms - 200
+2026-05-21 10:40:52.086 +08:00 [INF] End processing HTTP request after 374.0519ms - 200
+2026-05-21 10:40:53.456 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.ProxyVideo (day1), returned result Microsoft.AspNetCore.Mvc.EmptyResult in 1744.9589ms.
+2026-05-21 10:40:53.458 +08:00 [INF] Executed action day1.Controllers.DYVideoController.ProxyVideo (day1) in 1761.7732ms
+2026-05-21 10:40:53.459 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-21 10:40:53.460 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Faweme.snssdk.com%2Faweme%2Fv1%2Fplay%2F%3Fvideo_id%3Dv0d00fg10000d85frpvog65mdg12mnv0%26line%3D0 - 200 5021845 video/mp4 1770.5377ms
+2026-05-21 10:42:16.813 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=4.10+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E7%88%B1%E7%8E%A9%E9%B8%A3%E6%BD%AE%E8%AF%97%E9%9B%A8%E6%95%B0%E7%A0%81%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E7%BA%A2%E9%AD%949Pro%E4%B8%8Droot%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E6%B0%B8%E5%8A%ABPC%E7%AB%AF%E7%AA%81%E7%A0%B4110...+https:%2F%2Fv.douyin.com%2FACWvYGpW9Uk%2F+O%40K.jP+:6pm+goq:%2F+10%2F30 - null null
+2026-05-21 10:42:16.817 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:42:16.817 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 10:42:16.836 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-21 10:42:17.991 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FACWvYGpW9Uk
+2026-05-21 10:42:17.994 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FACWvYGpW9Uk
+2026-05-21 10:42:19.313 +08:00 [INF] Received HTTP response headers after 1317.9008ms - 200
+2026-05-21 10:42:19.314 +08:00 [INF] End processing HTTP request after 1323.02ms - 200
+2026-05-21 10:42:19.315 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2478.0016ms.
+2026-05-21 10:42:19.317 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 10:42:19.318 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 2497.0342ms
+2026-05-21 10:42:19.319 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:42:19.321 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=4.10+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E7%88%B1%E7%8E%A9%E9%B8%A3%E6%BD%AE%E8%AF%97%E9%9B%A8%E6%95%B0%E7%A0%81%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E7%BA%A2%E9%AD%949Pro%E4%B8%8Droot%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E6%B0%B8%E5%8A%ABPC%E7%AB%AF%E7%AA%81%E7%A0%B4110...+https:%2F%2Fv.douyin.com%2FACWvYGpW9Uk%2F+O%40K.jP+:6pm+goq:%2F+10%2F30 - 200 null application/json; charset=utf-8 2507.6915ms
+2026-05-21 10:42:19.342 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Faweme.snssdk.com%2Faweme%2Fv1%2Fplay%2F%3Fvideo_id%3Dv2700fgi0000d86q4c7og65tpg6khh80%26line%3D0 - null null
+2026-05-21 10:42:19.344 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-21 10:42:19.346 +08:00 [INF] Route matched with {action = "ProxyVideo", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task ProxyVideo(System.String, System.Threading.CancellationToken) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 10:42:19.361 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.ProxyVideo (day1) - Validation state: "Valid"
+2026-05-21 10:42:19.362 +08:00 [INF] Start processing HTTP request GET https://aweme.snssdk.com/aweme/v1/play/?video_id=v2700fgi0000d86q4c7og65tpg6khh80&line=0
+2026-05-21 10:42:19.363 +08:00 [INF] Sending HTTP request GET https://aweme.snssdk.com/aweme/v1/play/?video_id=v2700fgi0000d86q4c7og65tpg6khh80&line=0
+2026-05-21 10:42:20.851 +08:00 [INF] Received HTTP response headers after 1486.9093ms - 200
+2026-05-21 10:42:20.853 +08:00 [INF] End processing HTTP request after 1490.2846ms - 200
+2026-05-21 10:42:21.060 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.ProxyVideo (day1), returned result Microsoft.AspNetCore.Mvc.EmptyResult in 1697.52ms.
+2026-05-21 10:42:21.062 +08:00 [INF] Executed action day1.Controllers.DYVideoController.ProxyVideo (day1) in 1714.4524ms
+2026-05-21 10:42:21.063 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-21 10:42:21.064 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Faweme.snssdk.com%2Faweme%2Fv1%2Fplay%2F%3Fvideo_id%3Dv2700fgi0000d86q4c7og65tpg6khh80%26line%3D0 - 200 1938394 video/mp4 1721.9055ms
+2026-05-21 10:42:42.516 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=9.74+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E5%A4%A9%E6%B0%94%E6%99%B4%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BB%96%E5%92%8B%E4%BA%86%23+%E5%B0%8F%E9%BB%84%E7%8B%97++https:%2F%2Fv.douyin.com%2FCuBGCxDT2_4%2F+q%40R.xf+:3pm+srR:%2F+12%2F01 - null null
+2026-05-21 10:42:42.520 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:42:42.520 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 10:42:42.538 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-21 10:42:43.674 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FCuBGCxDT2_4
+2026-05-21 10:42:43.676 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FCuBGCxDT2_4
+2026-05-21 10:42:44.880 +08:00 [INF] Received HTTP response headers after 1202.7027ms - 200
+2026-05-21 10:42:44.881 +08:00 [INF] End processing HTTP request after 1207.0525ms - 200
+2026-05-21 10:42:44.915 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2375.6284ms.
+2026-05-21 10:42:44.917 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 10:42:44.919 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 2396.1189ms
+2026-05-21 10:42:44.920 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:42:44.922 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=9.74+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E5%A4%A9%E6%B0%94%E6%99%B4%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BB%96%E5%92%8B%E4%BA%86%23+%E5%B0%8F%E9%BB%84%E7%8B%97++https:%2F%2Fv.douyin.com%2FCuBGCxDT2_4%2F+q%40R.xf+:3pm+srR:%2F+12%2F01 - 200 null application/json; charset=utf-8 2405.8134ms
+2026-05-21 10:43:42.606 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=https:%2F%2Fv.douyin.com%2FCuBGCxDT2_4 - null null
+2026-05-21 10:43:42.611 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:43:42.612 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 10:43:42.628 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-21 10:43:43.562 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FCuBGCxDT2_4
+2026-05-21 10:43:43.564 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FCuBGCxDT2_4
+2026-05-21 10:43:45.212 +08:00 [INF] Received HTTP response headers after 1646.7989ms - 200
+2026-05-21 10:43:45.213 +08:00 [INF] End processing HTTP request after 1650.7058ms - 200
+2026-05-21 10:43:45.241 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2612.0382ms.
+2026-05-21 10:43:45.244 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 10:43:45.245 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 2630.6239ms
+2026-05-21 10:43:45.246 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:43:45.247 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=https:%2F%2Fv.douyin.com%2FCuBGCxDT2_4 - 200 null application/json; charset=utf-8 2640.6333ms
+2026-05-21 10:44:22.090 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=9.74+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E5%A4%A9%E6%B0%94%E6%99%B4%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BB%96%E5%92%8B%E4%BA%86%23+%E5%B0%8F%E9%BB%84%E7%8B%97++https:%2F%2Fv.douyin.com%2F9rn5gEQVImQ%2F+q%40R.xf+:3pm+srR:%2F+12%2F01 - null null
+2026-05-21 10:44:22.095 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:44:22.096 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 10:44:22.117 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-21 10:44:23.065 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2F9rn5gEQVImQ
+2026-05-21 10:44:23.067 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2F9rn5gEQVImQ
+2026-05-21 10:44:25.097 +08:00 [INF] Received HTTP response headers after 2028.7364ms - 200
+2026-05-21 10:44:25.099 +08:00 [INF] End processing HTTP request after 2033.8515ms - 200
+2026-05-21 10:44:25.130 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3010.9479ms.
+2026-05-21 10:44:25.131 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 10:44:25.133 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 3035.5807ms
+2026-05-21 10:44:25.134 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:44:25.135 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=9.74+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E5%A4%A9%E6%B0%94%E6%99%B4%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%BB%96%E5%92%8B%E4%BA%86%23+%E5%B0%8F%E9%BB%84%E7%8B%97++https:%2F%2Fv.douyin.com%2F9rn5gEQVImQ%2F+q%40R.xf+:3pm+srR:%2F+12%2F01 - 200 null application/json; charset=utf-8 3045.611ms
+2026-05-21 10:46:23.331 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=7.41+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E9%9D%92%E8%9B%99%E6%97%85%E8%A1%8C%E5%AE%B6%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%B8%80%E7%9B%B4%E4%BC%9A%E7%9B%98%E6%A0%B8%E6%A1%83%E7%9A%84%E5%A8%83%23+%E6%A1%83%E6%A0%B8%E9%9B%95%E5%88%BB+%23+%E6%A1%83%E6%A0%B8+%23+%E7%9B%98%E6%A0%B8%E6%A1%83...+https:%2F%2Fv.douyin.com%2FVqRNbsyHxyQ%2F+:8pm+08%2F29+nda:%2F+d%40N.WZ - null null
+2026-05-21 10:46:23.339 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:46:23.340 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 10:46:23.356 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-21 10:46:24.345 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FVqRNbsyHxyQ
+2026-05-21 10:46:24.348 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FVqRNbsyHxyQ
+2026-05-21 10:46:25.667 +08:00 [INF] Received HTTP response headers after 1318.1366ms - 200
+2026-05-21 10:46:25.668 +08:00 [INF] End processing HTTP request after 1322.4242ms - 200
+2026-05-21 10:46:25.669 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2311.466ms.
+2026-05-21 10:46:25.670 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 10:46:25.672 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 2329.8619ms
+2026-05-21 10:46:25.673 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 10:46:25.674 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=7.41+%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%EF%BC%8C%E7%9C%8B%E7%9C%8B%E3%80%90%E9%9D%92%E8%9B%99%E6%97%85%E8%A1%8C%E5%AE%B6%E7%9A%84%E4%BD%9C%E5%93%81%E3%80%91%E4%B8%80%E7%9B%B4%E4%BC%9A%E7%9B%98%E6%A0%B8%E6%A1%83%E7%9A%84%E5%A8%83%23+%E6%A1%83%E6%A0%B8%E9%9B%95%E5%88%BB+%23+%E6%A1%83%E6%A0%B8+%23+%E7%9B%98%E6%A0%B8%E6%A1%83...+https:%2F%2Fv.douyin.com%2FVqRNbsyHxyQ%2F+:8pm+08%2F29+nda:%2F+d%40N.WZ - 200 null application/json; charset=utf-8 2342.6993ms
+2026-05-21 10:46:25.683 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Faweme.snssdk.com%2Faweme%2Fv1%2Fplay%2F%3Fvideo_id%3Dv0300fg10000d83ujsiljht6bmq0ertg%26line%3D0 - null null
+2026-05-21 10:46:25.688 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-21 10:46:25.689 +08:00 [INF] Route matched with {action = "ProxyVideo", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task ProxyVideo(System.String, System.Threading.CancellationToken) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 10:46:25.710 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.ProxyVideo (day1) - Validation state: "Valid"
+2026-05-21 10:46:25.713 +08:00 [INF] Start processing HTTP request GET https://aweme.snssdk.com/aweme/v1/play/?video_id=v0300fg10000d83ujsiljht6bmq0ertg&line=0
+2026-05-21 10:46:25.715 +08:00 [INF] Sending HTTP request GET https://aweme.snssdk.com/aweme/v1/play/?video_id=v0300fg10000d83ujsiljht6bmq0ertg&line=0
+2026-05-21 10:46:26.625 +08:00 [INF] Received HTTP response headers after 908.6454ms - 200
+2026-05-21 10:46:26.627 +08:00 [INF] End processing HTTP request after 914.0666ms - 200
+2026-05-21 10:46:27.442 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.ProxyVideo (day1), returned result Microsoft.AspNetCore.Mvc.EmptyResult in 1729.3098ms.
+2026-05-21 10:46:27.444 +08:00 [INF] Executed action day1.Controllers.DYVideoController.ProxyVideo (day1) in 1753.9288ms
+2026-05-21 10:46:27.445 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-21 10:46:27.446 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Faweme.snssdk.com%2Faweme%2Fv1%2Fplay%2F%3Fvideo_id%3Dv0300fg10000d83ujsiljht6bmq0ertg%26line%3D0 - 200 1111966 video/mp4 1762.693ms
+2026-05-21 10:51:12.185 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Fv5-dy-o-abtest.zjcdn.com%2F04f90358aed27a7ca4f688ccea8dafbc%2F6a0e8016%2Fvideo%2Ftos%2Fcn%2Ftos-cn-ve-15%2FokbhHAHEfDQ3QsEq0BeKABgib6BDT7IX9B4mA5%2F%3Fa%3D1128%26ch%3D0%26cr%3D0%26dr%3D0%26cd%3D0%257C0%257C0%257C0%26cv%3D1%26br%3D1290%26bt%3D1290%26cs%3D0%26ds%3D3%26ft%3D.I4tgTerPMv2NvjHQsEFyh7usoUrJgnaglcjp%26mime_type%3Dvideo_mp4%26qs%3D0%26rc%3DaTVoOTpoNTY6PDUzaWg7OEBpanUzcDlrb3Z4OzMzNGkzM0AuLjEzLTEwXmAxYDQwX2IzYSNxYm5fcWdmZzBhLS1kLTBzcw%253D%253D%26btag%3D80010e00088000%26cquery%3D100y%26dy_q%3D1779331584%26feature_id%3Df5241e7604dff1d9d6c943fd20bd51a2%26l%3D20260521104624A5CD862A20F35289418D%26pwid%3D1%26req_cdn_type%3D- - null null
+2026-05-21 10:51:12.196 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-21 10:51:12.197 +08:00 [INF] Route matched with {action = "ProxyVideo", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task ProxyVideo(System.String, System.Threading.CancellationToken) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 10:51:12.339 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.ProxyVideo (day1) - Validation state: "Valid"
+2026-05-21 10:51:12.342 +08:00 [INF] Start processing HTTP request GET https://v5-dy-o-abtest.zjcdn.com/04f90358aed27a7ca4f688ccea8dafbc/6a0e8016/video/tos/cn/tos-cn-ve-15/okbhHAHEfDQ3QsEq0BeKABgib6BDT7IX9B4mA5/?a=1128&ch=0&cr=0&dr=0&cd=0%7C0%7C0%7C0&cv=1&br=1290&bt=1290&cs=0&ds=3&ft=.I4tgTerPMv2NvjHQsEFyh7usoUrJgnaglcjp&mime_type=video_mp4&qs=0&rc=aTVoOTpoNTY6PDUzaWg7OEBpanUzcDlrb3Z4OzMzNGkzM0AuLjEzLTEwXmAxYDQwX2IzYSNxYm5fcWdmZzBhLS1kLTBzcw==&btag=80010e00088000&cquery=100y&dy_q=1779331584&feature_id=f5241e7604dff1d9d6c943fd20bd51a2&l=20260521104624A5CD862A20F35289418D&pwid=1&req_cdn_type=-
+2026-05-21 10:51:12.344 +08:00 [INF] Sending HTTP request GET https://v5-dy-o-abtest.zjcdn.com/04f90358aed27a7ca4f688ccea8dafbc/6a0e8016/video/tos/cn/tos-cn-ve-15/okbhHAHEfDQ3QsEq0BeKABgib6BDT7IX9B4mA5/?a=1128&ch=0&cr=0&dr=0&cd=0%7C0%7C0%7C0&cv=1&br=1290&bt=1290&cs=0&ds=3&ft=.I4tgTerPMv2NvjHQsEFyh7usoUrJgnaglcjp&mime_type=video_mp4&qs=0&rc=aTVoOTpoNTY6PDUzaWg7OEBpanUzcDlrb3Z4OzMzNGkzM0AuLjEzLTEwXmAxYDQwX2IzYSNxYm5fcWdmZzBhLS1kLTBzcw==&btag=80010e00088000&cquery=100y&dy_q=1779331584&feature_id=f5241e7604dff1d9d6c943fd20bd51a2&l=20260521104624A5CD862A20F35289418D&pwid=1&req_cdn_type=-
+2026-05-21 10:51:13.755 +08:00 [INF] Received HTTP response headers after 1410.1648ms - 200
+2026-05-21 10:51:13.757 +08:00 [INF] End processing HTTP request after 1414.66ms - 200
+2026-05-21 10:51:15.057 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.ProxyVideo (day1), returned result Microsoft.AspNetCore.Mvc.EmptyResult in 2716.8251ms.
+2026-05-21 10:51:15.061 +08:00 [INF] Executed action day1.Controllers.DYVideoController.ProxyVideo (day1) in 2860.3535ms
+2026-05-21 10:51:15.062 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-21 10:51:15.063 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Fv5-dy-o-abtest.zjcdn.com%2F04f90358aed27a7ca4f688ccea8dafbc%2F6a0e8016%2Fvideo%2Ftos%2Fcn%2Ftos-cn-ve-15%2FokbhHAHEfDQ3QsEq0BeKABgib6BDT7IX9B4mA5%2F%3Fa%3D1128%26ch%3D0%26cr%3D0%26dr%3D0%26cd%3D0%257C0%257C0%257C0%26cv%3D1%26br%3D1290%26bt%3D1290%26cs%3D0%26ds%3D3%26ft%3D.I4tgTerPMv2NvjHQsEFyh7usoUrJgnaglcjp%26mime_type%3Dvideo_mp4%26qs%3D0%26rc%3DaTVoOTpoNTY6PDUzaWg7OEBpanUzcDlrb3Z4OzMzNGkzM0AuLjEzLTEwXmAxYDQwX2IzYSNxYm5fcWdmZzBhLS1kLTBzcw%253D%253D%26btag%3D80010e00088000%26cquery%3D100y%26dy_q%3D1779331584%26feature_id%3Df5241e7604dff1d9d6c943fd20bd51a2%26l%3D20260521104624A5CD862A20F35289418D%26pwid%3D1%26req_cdn_type%3D- - 200 1111966 video/mp4 2877.9892ms
+2026-05-21 11:01:25.130 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=413023197811264524 - null null
+2026-05-21 11:01:25.139 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 11:01:25.141 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 11:01:25.158 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-21 11:01:27.090 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=413023197811264524
+2026-05-21 11:01:27.091 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=413023197811264524
+2026-05-21 11:01:27.442 +08:00 [INF] Received HTTP response headers after 349.7642ms - 200
+2026-05-21 11:01:27.444 +08:00 [INF] End processing HTTP request after 353.9557ms - 200
+2026-05-21 11:01:27.475 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2315.6528ms.
+2026-05-21 11:01:27.477 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 11:01:27.478 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 2333.9557ms
+2026-05-21 11:01:27.479 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 11:01:27.480 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=413023197811264524 - 200 null application/json; charset=utf-8 2350.0678ms
+2026-05-21 11:01:53.232 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=5.17+%E6%88%91*+%23+%E6%97%A5%E5%B8%B8%E5%88%86%E4%BA%AB+%23+%E6%9F%B4%E7%8A%AC%E6%97%A5%E5%B8%B8+%23+%E5%80%92%E7%AB%8B%E5%B0%8F%E7%8B%97++https:%2F%2Fv.douyin.com%2FP1TCuHfulAM%2F+%E5%A4%8D%E5%88%B6%E6%AD%A4%E9%93%BE%E6%8E%A5%EF%BC%8C%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%9B%B4%E6%8E%A5%E8%A7%82%E7%9C%8B%E8%A7%86%E9%A2%91%EF%BC%81+WZm:%2F+:7pm+a%40N.JV+08%2F07 - null null
+2026-05-21 11:01:53.235 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 11:01:53.237 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 11:01:53.252 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-21 11:01:59.361 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FP1TCuHfulAM
+2026-05-21 11:01:59.367 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FP1TCuHfulAM
+2026-05-21 11:02:00.684 +08:00 [INF] Received HTTP response headers after 1316.263ms - 200
+2026-05-21 11:02:00.685 +08:00 [INF] End processing HTTP request after 1324.1243ms - 200
+2026-05-21 11:02:00.686 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 7432.6522ms.
+2026-05-21 11:02:00.688 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 11:02:00.691 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 7452.5338ms
+2026-05-21 11:02:00.692 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 11:02:00.693 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=5.17+%E6%88%91*+%23+%E6%97%A5%E5%B8%B8%E5%88%86%E4%BA%AB+%23+%E6%9F%B4%E7%8A%AC%E6%97%A5%E5%B8%B8+%23+%E5%80%92%E7%AB%8B%E5%B0%8F%E7%8B%97++https:%2F%2Fv.douyin.com%2FP1TCuHfulAM%2F+%E5%A4%8D%E5%88%B6%E6%AD%A4%E9%93%BE%E6%8E%A5%EF%BC%8C%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%9B%B4%E6%8E%A5%E8%A7%82%E7%9C%8B%E8%A7%86%E9%A2%91%EF%BC%81+WZm:%2F+:7pm+a%40N.JV+08%2F07 - 200 null application/json; charset=utf-8 7460.5995ms
+2026-05-21 11:02:00.704 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Faweme.snssdk.com%2Faweme%2Fv1%2Fplay%2F%3Fvideo_id%3Dv0300fg10000d843477og65qrdbolvhg%26line%3D0 - null null
+2026-05-21 11:02:00.706 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-21 11:02:00.707 +08:00 [INF] Route matched with {action = "ProxyVideo", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task ProxyVideo(System.String, System.Threading.CancellationToken) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 11:02:00.725 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.ProxyVideo (day1) - Validation state: "Valid"
+2026-05-21 11:02:00.726 +08:00 [INF] Start processing HTTP request GET https://aweme.snssdk.com/aweme/v1/play/?video_id=v0300fg10000d843477og65qrdbolvhg&line=0
+2026-05-21 11:02:00.727 +08:00 [INF] Sending HTTP request GET https://aweme.snssdk.com/aweme/v1/play/?video_id=v0300fg10000d843477og65qrdbolvhg&line=0
+2026-05-21 11:02:01.037 +08:00 [INF] Received HTTP response headers after 308.7366ms - 200
+2026-05-21 11:02:01.039 +08:00 [INF] End processing HTTP request after 312.3152ms - 200
+2026-05-21 11:02:01.124 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.ProxyVideo (day1), returned result Microsoft.AspNetCore.Mvc.EmptyResult in 398.3037ms.
+2026-05-21 11:02:01.126 +08:00 [INF] Executed action day1.Controllers.DYVideoController.ProxyVideo (day1) in 418.0017ms
+2026-05-21 11:02:01.127 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-21 11:02:01.128 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Faweme.snssdk.com%2Faweme%2Fv1%2Fplay%2F%3Fvideo_id%3Dv0300fg10000d843477og65qrdbolvhg%26line%3D0 - 200 1309385 video/mp4 424.5685ms
+2026-05-21 11:14:00.085 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=5.17+%E6%88%91*+%23+%E6%97%A5%E5%B8%B8%E5%88%86%E4%BA%AB+%23+%E6%9F%B4%E7%8A%AC%E6%97%A5%E5%B8%B8+%23+%E5%80%92%E7%AB%8B%E5%B0%8F%E7%8B%97++https:%2F%2Fv.douyin.com%2FP1TCuHfulAM%2F+%E5%A4%8D%E5%88%B6%E6%AD%A4%E9%93%BE%E6%8E%A5%EF%BC%8C%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%9B%B4%E6%8E%A5%E8%A7%82%E7%9C%8B%E8%A7%86%E9%A2%91%EF%BC%81+WZm:%2F+:7pm+a%40N.JV+08%2F07 - null null
+2026-05-21 11:14:00.090 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 11:14:00.092 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 11:14:00.113 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-21 11:14:00.115 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FP1TCuHfulAM
+2026-05-21 11:14:00.117 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FP1TCuHfulAM
+2026-05-21 11:14:13.035 +08:00 [INF] Received HTTP response headers after 12917.7117ms - 200
+2026-05-21 11:14:13.036 +08:00 [INF] End processing HTTP request after 12921.6109ms - 200
+2026-05-21 11:14:13.067 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 12952.2667ms.
+2026-05-21 11:14:13.069 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 11:14:13.071 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 12977.7898ms
+2026-05-21 11:14:13.072 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 11:14:13.074 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=5.17+%E6%88%91*+%23+%E6%97%A5%E5%B8%B8%E5%88%86%E4%BA%AB+%23+%E6%9F%B4%E7%8A%AC%E6%97%A5%E5%B8%B8+%23+%E5%80%92%E7%AB%8B%E5%B0%8F%E7%8B%97++https:%2F%2Fv.douyin.com%2FP1TCuHfulAM%2F+%E5%A4%8D%E5%88%B6%E6%AD%A4%E9%93%BE%E6%8E%A5%EF%BC%8C%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%9B%B4%E6%8E%A5%E8%A7%82%E7%9C%8B%E8%A7%86%E9%A2%91%EF%BC%81+WZm:%2F+:7pm+a%40N.JV+08%2F07 - 200 null application/json; charset=utf-8 12988.915ms
+2026-05-21 11:14:44.595 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=5.17+%E6%88%91*+%23+%E6%97%A5%E5%B8%B8%E5%88%86%E4%BA%AB+%23+%E6%9F%B4%E7%8A%AC%E6%97%A5%E5%B8%B8+%23+%E5%80%92%E7%AB%8B%E5%B0%8F%E7%8B%97++https:%2F%2Fv.douyin.com%2FP1TCuHfulAM%2F+%E5%A4%8D%E5%88%B6%E6%AD%A4%E9%93%BE%E6%8E%A5%EF%BC%8C%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%9B%B4%E6%8E%A5%E8%A7%82%E7%9C%8B%E8%A7%86%E9%A2%91%EF%BC%81+WZm:%2F+:7pm+a%40N.JV+08%2F07 - null null
+2026-05-21 11:14:44.598 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 11:14:44.599 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 11:14:44.614 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.RemoveWatermark (day1) - Validation state: "Valid"
+2026-05-21 11:14:44.615 +08:00 [INF] Start processing HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FP1TCuHfulAM
+2026-05-21 11:14:44.617 +08:00 [INF] Sending HTTP request GET https://api.xinyew.cn/api/douyinjx?url=https%3A%2F%2Fv.douyin.com%2FP1TCuHfulAM
+2026-05-21 11:14:46.912 +08:00 [INF] Received HTTP response headers after 2292.9989ms - 200
+2026-05-21 11:14:46.913 +08:00 [INF] End processing HTTP request after 2297.7554ms - 200
+2026-05-21 11:14:46.914 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.RemoveWatermark (day1), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2299.3138ms.
+2026-05-21 11:14:46.917 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 11:14:46.918 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 2317.4221ms
+2026-05-21 11:14:46.919 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 11:14:46.920 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=5.17+%E6%88%91*+%23+%E6%97%A5%E5%B8%B8%E5%88%86%E4%BA%AB+%23+%E6%9F%B4%E7%8A%AC%E6%97%A5%E5%B8%B8+%23+%E5%80%92%E7%AB%8B%E5%B0%8F%E7%8B%97++https:%2F%2Fv.douyin.com%2FP1TCuHfulAM%2F+%E5%A4%8D%E5%88%B6%E6%AD%A4%E9%93%BE%E6%8E%A5%EF%BC%8C%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%9B%B4%E6%8E%A5%E8%A7%82%E7%9C%8B%E8%A7%86%E9%A2%91%EF%BC%81+WZm:%2F+:7pm+a%40N.JV+08%2F07 - 200 null application/json; charset=utf-8 2324.9183ms
+2026-05-21 11:14:46.934 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Faweme.snssdk.com%2Faweme%2Fv1%2Fplay%2F%3Fvideo_id%3Dv0300fg10000d843477og65qrdbolvhg%26line%3D0 - null null
+2026-05-21 11:14:46.936 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-21 11:14:46.937 +08:00 [INF] Route matched with {action = "ProxyVideo", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task ProxyVideo(System.String, System.Threading.CancellationToken) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 11:14:46.952 +08:00 [INF] Executing action method day1.Controllers.DYVideoController.ProxyVideo (day1) - Validation state: "Valid"
+2026-05-21 11:14:46.953 +08:00 [INF] Start processing HTTP request GET https://aweme.snssdk.com/aweme/v1/play/?video_id=v0300fg10000d843477og65qrdbolvhg&line=0
+2026-05-21 11:14:46.954 +08:00 [INF] Sending HTTP request GET https://aweme.snssdk.com/aweme/v1/play/?video_id=v0300fg10000d843477og65qrdbolvhg&line=0
+2026-05-21 11:14:47.279 +08:00 [INF] Received HTTP response headers after 324.3753ms - 200
+2026-05-21 11:14:47.280 +08:00 [INF] End processing HTTP request after 327.5104ms - 200
+2026-05-21 11:14:47.384 +08:00 [INF] Executed action method day1.Controllers.DYVideoController.ProxyVideo (day1), returned result Microsoft.AspNetCore.Mvc.EmptyResult in 431.259ms.
+2026-05-21 11:14:47.386 +08:00 [INF] Executed action day1.Controllers.DYVideoController.ProxyVideo (day1) in 446.7628ms
+2026-05-21 11:14:47.387 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.ProxyVideo (day1)'
+2026-05-21 11:14:47.388 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo/proxy?url=https%3A%2F%2Faweme.snssdk.com%2Faweme%2Fv1%2Fplay%2F%3Fvideo_id%3Dv0300fg10000d843477og65qrdbolvhg%26line%3D0 - 200 1309385 video/mp4 454.0982ms
+2026-05-21 15:53:54.386 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-21 15:53:54.416 +08:00 [WRN] No store type was specified for the decimal property 'Order_Price' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-21 15:53:54.417 +08:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Order_item'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-21 15:53:55.266 +08:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2026-05-21 15:53:55.294 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Code]
+FROM [Permissions] AS [p]
+2026-05-21 15:53:55.322 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Code], [p].[Name]
+FROM [Permissions] AS [p]
+2026-05-21 15:53:55.376 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'Admin'
+2026-05-21 15:53:55.387 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Name]
+FROM [Roles] AS [r]
+WHERE [r].[Name] = N'User'
+2026-05-21 15:53:55.414 +08:00 [INF] Executed DbCommand (13ms) [Parameters=[@__adminRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__adminRole_Id_0
+2026-05-21 15:53:55.422 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userRole_Id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[PermissionId]
+FROM [RolePermissions] AS [r]
+WHERE [r].[RoleId] = @__userRole_Id_0
+2026-05-21 15:53:55.439 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-21 15:53:55.517 +08:00 [WRN] Overriding address(es) 'http://localhost:5272'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-05-21 15:53:55.526 +08:00 [INF] Now listening on: http://0.0.0.0:5272
+2026-05-21 15:53:55.526 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-21 15:53:55.526 +08:00 [INF] Hosting environment: Development
+2026-05-21 15:53:55.526 +08:00 [INF] Content root path: D:\1\projectExcel\qianhou\day1
+2026-05-21 15:54:11.858 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl= - null null
+2026-05-21 15:54:11.921 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 15:54:11.936 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 15:54:11.968 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 30.5557ms
+2026-05-21 15:54:11.970 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 15:54:11.970 +08:00 [WRN] 业务异常
+day1.Domain.BusinessException: The videoUrl field is required.
+   at day1.Filter.ValidationFilter.OnActionExecuting(ActionExecutingContext context) in D:\1\projectExcel\qianhou\day1\Filter\ValidationFilter.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at day1.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\1\projectExcel\qianhou\day1\Middlewares\ExceptionMiddleware.cs:line 26
+2026-05-21 15:54:12.036 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl= - 400 null application/json; charset=utf-8 179.2703ms
+2026-05-21 15:54:46.293 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=https://v.douyin.com/CuBGCxDT2_4/ - null null
+2026-05-21 15:54:46.297 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 15:54:46.297 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 15:54:46.321 +08:00 [INF] Start processing HTTP request POST http://localhost:8051/api/parse
+2026-05-21 15:54:46.325 +08:00 [INF] Sending HTTP request POST http://localhost:8051/api/parse
+2026-05-21 15:54:49.090 +08:00 [INF] Received HTTP response headers after 2763.1499ms - 200
+2026-05-21 15:54:49.090 +08:00 [INF] End processing HTTP request after 2770.2085ms - 200
+2026-05-21 15:54:49.101 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 15:54:49.105 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 2806.9515ms
+2026-05-21 15:54:49.105 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 15:54:49.107 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=https://v.douyin.com/CuBGCxDT2_4/ - 200 null application/json; charset=utf-8 2813.2424ms
+2026-05-21 15:54:49.357 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=9.74%20%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%20https://v.douyin.com/CuBGCxDT2_4/%20q@R.xf%20:3pm%20srR:/%2012/01 - null null
+2026-05-21 15:54:49.359 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 15:54:49.360 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 15:54:49.363 +08:00 [INF] Start processing HTTP request POST http://localhost:8051/api/parse
+2026-05-21 15:54:49.363 +08:00 [INF] Sending HTTP request POST http://localhost:8051/api/parse
+2026-05-21 15:54:53.980 +08:00 [INF] Received HTTP response headers after 4616.6596ms - 200
+2026-05-21 15:54:53.980 +08:00 [INF] End processing HTTP request after 4617.1973ms - 200
+2026-05-21 15:54:53.982 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 15:54:53.982 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 4622.6571ms
+2026-05-21 15:54:53.982 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 15:54:53.983 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=9.74%20%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%20https://v.douyin.com/CuBGCxDT2_4/%20q@R.xf%20:3pm%20srR:/%2012/01 - 200 null application/json; charset=utf-8 4625.8356ms
+2026-05-21 15:55:14.260 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58%20%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%20https://v.douyin.com/kUZPCZK8sXs/%20:4pm%20wfO:/%20S@L.Wm%2008/10 - null null
+2026-05-21 15:55:14.260 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 15:55:14.260 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 15:55:14.261 +08:00 [INF] Start processing HTTP request POST http://localhost:8051/api/parse
+2026-05-21 15:55:14.261 +08:00 [INF] Sending HTTP request POST http://localhost:8051/api/parse
+2026-05-21 15:55:17.245 +08:00 [INF] Received HTTP response headers after 2983.7098ms - 200
+2026-05-21 15:55:17.245 +08:00 [INF] End processing HTTP request after 2984.0362ms - 200
+2026-05-21 15:55:17.246 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 15:55:17.246 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 2985.3675ms
+2026-05-21 15:55:17.246 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 15:55:17.246 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=0.58%20%E5%A4%8D%E5%88%B6%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%20https://v.douyin.com/kUZPCZK8sXs/%20:4pm%20wfO:/%20S@L.Wm%2008/10 - 200 null application/json; charset=utf-8 2986.1142ms
+2026-05-21 15:55:24.872 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=https://v.douyin.com/kUZPCZK8sXs/ - null null
+2026-05-21 15:55:24.873 +08:00 [INF] Executing endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 15:55:24.873 +08:00 [INF] Route matched with {action = "RemoveWatermark", controller = "DYVideo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveWatermark(System.String) on controller day1.Controllers.DYVideoController (day1).
+2026-05-21 15:55:24.873 +08:00 [INF] Start processing HTTP request POST http://localhost:8051/api/parse
+2026-05-21 15:55:24.873 +08:00 [INF] Sending HTTP request POST http://localhost:8051/api/parse
+2026-05-21 15:55:28.136 +08:00 [INF] Received HTTP response headers after 3263.1472ms - 200
+2026-05-21 15:55:28.136 +08:00 [INF] End processing HTTP request after 3263.3819ms - 200
+2026-05-21 15:55:28.137 +08:00 [INF] Executing OkObjectResult, writing value of type 'day1.Common.ApiResponse`1[[day1.DTOs.DYIRemoveVideoWatermarkDTO, day1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-21 15:55:28.137 +08:00 [INF] Executed action day1.Controllers.DYVideoController.RemoveWatermark (day1) in 3264.2508ms
+2026-05-21 15:55:28.137 +08:00 [INF] Executed endpoint 'day1.Controllers.DYVideoController.RemoveWatermark (day1)'
+2026-05-21 15:55:28.137 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/api/DYVideo?videoUrl=https://v.douyin.com/kUZPCZK8sXs/ - 200 null application/json; charset=utf-8 3264.7973ms
+2026-05-21 16:07:51.498 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-05-21 16:07:51.847 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 360.783ms
+2026-05-21 16:07:52.115 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-05-21 16:07:53.836 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1720.9393ms
+2026-05-21 16:08:46.788 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/index.html - null null
+2026-05-21 16:08:46.792 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/index.html - 200 null text/html;charset=utf-8 3.858ms
+2026-05-21 16:08:46.932 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - null null
+2026-05-21 16:08:46.949 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5272/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.1102ms

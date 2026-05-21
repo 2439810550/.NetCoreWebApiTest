@@ -18,6 +18,7 @@ namespace day1.Data
         public DbSet<Dish> Dishes { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Order_item> Order_Items { get; set; }
+        public DbSet<Cart> Carts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -49,7 +50,7 @@ namespace day1.Data
             modelBuilder.Entity<Order>()
                .HasIndex(o => o.Order_No)
                .IsUnique();
-
+            
             modelBuilder.Entity<Cart>().HasOne(oi=>oi.User).WithMany(o=>o.Carts).HasForeignKey(oi=>oi.UserId).OnDelete(DeleteBehavior.Cascade);
             modelBuilder.Entity<Cart>().HasOne(oi => oi.Dish).WithMany(o => o.Carts).HasForeignKey(oi => oi.DishId).OnDelete(DeleteBehavior.Restrict);
 

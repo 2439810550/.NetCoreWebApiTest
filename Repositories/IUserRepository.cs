@@ -19,5 +19,7 @@ namespace day1.Repositories
         User? GetByRefreshToken(string refreshToken);
 
         User? GetByUserId(long userId);
+
+        Task<(List<User> Users, int Total)> GetUsersPagedAsync(int page, int size, string? keyword);
     }
 }

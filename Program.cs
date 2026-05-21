@@ -21,6 +21,8 @@ using Microsoft.AspNetCore.Authorization;
 using day1.Services.RoleAndPermission;
 using day1.Services.Dish;
 using Microsoft.Extensions.FileProviders;
+using day1.Repositories.CartAndOrder;
+using day1.Services.CartAndOrder;
 var builder = WebApplication.CreateBuilder(args);
 /// 配置 JWT 认证密钥
 var jwtKey = builder.Configuration["Jwt:Key"] ?? throw new Exception("未配置 Jwt:Key");
@@ -31,7 +33,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("VueCors", policy =>
     {
         policy
-        .WithOrigins("http://localhost:5173")
+        .WithOrigins("http://localhost:5173", "http://47.99.133.151")
         .AllowAnyHeader()
         .AllowAnyMethod();
     });
@@ -48,6 +50,8 @@ builder.Services.AddScoped<ITokenService,TokenService>();
 builder.Services.AddScoped<IRoleAndPermissionServer, RoleAndPermissionServer>();
 builder.Services.AddScoped<IDishRepository,DishRepository>();
 builder.Services.AddScoped<IDishServer,DishServer>();
+builder.Services.AddScoped<ICartAndOrderRepository, CartAndOrderRepository>();
+builder.Services.AddScoped<ICartAndOrderServer, CartAndOrderServer>();
 /// 配置 FluentValidation自动注册 CreateUserDtoValidator
 builder.Services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserDtoValidator>());
 /// 配置 JWT 认证服务，默认认证方案为 JWT Bearer，使用 JWT Bearer 选项，进行 Token 验证配置
@@ -129,9 +133,14 @@ builder.Services.AddControllers(options =>
 {
     options.Filters.Add<ValidationFilter>();
 });
-builder.Services.AddHttpClient<IDouYinVideoApiService, DouYinVideoApiService>(client => 
+builder.Services.AddHttpClient<IDouYinVideoApiService, DouYinVideoApiService>(client =>
 {
     client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36");
+    client.Timeout = TimeSpan.FromSeconds(30);
+});
+builder.Services.AddHttpClient<IMediaParserService, MediaParserService>(client =>
+{
+    client.BaseAddress = new Uri("http://localhost:8051");
     client.Timeout = TimeSpan.FromSeconds(30);
 });
 builder.Services.AddScoped<DYVideoServer>();
@@ -148,20 +157,31 @@ if (app.Environment.IsDevelopment())
 /// 全局使用自定义异常处理中间件
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseCors("VueCors");
+
+// 静态文件 + 默认文档（必须在认证和控制器之前）
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 /// 启用认证和授权中间件
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
+/// SPA 回退：对于前端路由，未匹配控制器和静态文件的请求返回 index.html
+app.MapFallbackToFile("index.html");
 
-/// 应用启动时执行一次初始化，自动创建数据库，确保数据库结构正确
-using (var scope = app.Services.CreateScope())
+/// 应用启动时执行数据库初始化（失败不影响应用启动）
+try
 {
-   
-    scope.ServiceProvider.GetRequiredService<DBInitializer>().InitializeAsync().Wait();
-
+    using (var scope = app.Services.CreateScope())
+    {
+        scope.ServiceProvider.GetRequiredService<DBInitializer>().InitializeAsync().Wait();
+    }
 }
-app.UseStaticFiles();
+catch (Exception ex)
+{
+    Console.WriteLine($"[ERROR] 数据库初始化失败: {ex.Message}");
+}
 app.Run();
 

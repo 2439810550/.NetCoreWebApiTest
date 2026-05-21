@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Authorization;
 using day1.Domain.Security;
 using day1.Models;
 using day1.Common;
+using day1.Repositories.CartAndOrder;
+using day1.Services.CartAndOrder;
+using day1.Services.Dish;
 
 namespace day1.Extensions
 {
@@ -25,12 +28,14 @@ namespace day1.Extensions
             // 注册 Repository 层服务
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IRoleAndPermissionRepository, RoleAndPermissionRepository>();
+            services.AddScoped<ICartAndOrderRepository, CartAndOrderRepository>();
             
             // 注册 Service 层服务
             services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IRoleAndPermissionServer, RoleAndPermissionServer>();
+            services.AddScoped<ICartAndOrderServer, CartAndOrderServer>();
+            services.AddScoped<IDishServer, DishServer>();
             services.AddScoped<IDouYinVideoApiService, DouYinVideoApiService>();
             
             // 注册其他服务

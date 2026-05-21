@@ -1,4 +1,4 @@
-﻿﻿using day1.Models;
+﻿using day1.Models;
 using day1.DTOs;
 
 namespace day1.Services
@@ -7,15 +7,17 @@ namespace day1.Services
     {
         List<User> GetAllUsers();
 
-        CreateUserDTO CreateUser(DTOs.CreateUserDTO createUserDto);
+        User CreateUser(DTOs.CreateUserDTO createUserDto);
 
         User? GetById(long id);
 
         DTOs.LoginResponseDto Login(DTOs.CreateUserDTO createUserDTO);
 
         void DeleteByUserName(string username);
+        void DeleteByUserId(int userId);
 
-
+        Task<PagedResult<UserListDto>> GetUsersPagedAsync(int page, int size, string? keyword);
+        Task UpdateUserAsync(long id, UpdateUserDto dto);
 
     }
 }

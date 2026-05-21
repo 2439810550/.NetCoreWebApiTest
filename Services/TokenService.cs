@@ -19,11 +19,12 @@ namespace day1.Services
         private readonly IDateTimeProvider _dateTimeProvider;
         private readonly IRoleAndPermissionRepository _roleAndPermissionRepository;
 
-        public TokenService(IConfiguration configuration,IUserRepository userRepository,IDateTimeProvider dateTimeProvider)
+        public TokenService(IConfiguration configuration,IUserRepository userRepository,IDateTimeProvider dateTimeProvider,IRoleAndPermissionRepository roleAndPermissionRepository)
         {
             _configuration = configuration;
             _userRepository = userRepository;
             _dateTimeProvider = dateTimeProvider;
+            _roleAndPermissionRepository = roleAndPermissionRepository;
         }
         public string CreateAccessToken(User user,List<string> roles)
         {

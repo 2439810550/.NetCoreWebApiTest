@@ -15,7 +15,7 @@ namespace day1.Repositories
         {
             _context.Users.Add(user);
             _context.SaveChanges();
-            
+
             // 默认分配 User 角色
             var userRole = _context.Roles.FirstOrDefault(r => r.Name == "User");
             if (userRole != null)
@@ -34,6 +34,25 @@ namespace day1.Repositories
         {
             return _context.Users.ToList();
         }
+
+        public async Task<(List<User> Users, int Total)> GetUsersPagedAsync(int page, int size, string? keyword)
+        {
+            var query = _context.Users.AsQueryable();
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                query = query.Where(u => u.UserName.Contains(keyword));
+            }
+            var total = await query.CountAsync();
+            var users = await query
+                .OrderByDescending(u => u.CreateTime)
+                .Skip((page - 1) * size)
+                .Take(size)
+                .Include(u => u.UserRoles)
+                    .ThenInclude(ur => ur.Role)
+                .ToListAsync();
+            return (users, total);
+        }
+
         public bool ExctisUserName(string userName)
         {
             return _context.Users.Any(u => u.UserName == userName);

@@ -1,11 +1,8 @@
-﻿﻿using System.Runtime.CompilerServices;
-using day1.Common;
-using day1.Domain.Enum;
+﻿﻿using day1.Domain.Enum;
 using day1.Domain;
-using day1.Models;
 using day1.Services;
+using day1.DTOs;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using day1.Domain.Security;
 
@@ -30,8 +27,25 @@ namespace day1.Controllers
             return Ok(users);
         }
 
+        [Authorize(Roles = "Admin")]
+        [HttpGet("users")]
+        public async Task<IActionResult> GetUsersPaged(int page = 1, int size = 10, string? keyword = null)
+        {
+            var result = await _userService.GetUsersPagedAsync(page, size, keyword);
+            return Ok(result);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPut("user")]
+        public async Task<IActionResult> UpdateUser(UpdateUserDto dto)
+        {
+            await _userService.UpdateUserAsync(dto.Id, dto);
+            return Ok("更新成功!");
+        }
+
+        [Authorize(Roles = "Admin")]
         [HttpPost("user")]
-        public IActionResult AddUser(DTOs.CreateUserDTO createUserDTO)
+        public IActionResult AddUser(CreateUserDTO createUserDTO)
         {
             if (!ModelState.IsValid)
             {
@@ -59,14 +73,14 @@ namespace day1.Controllers
             return Ok(user);
         }
         [HttpPost("login")]
-        public IActionResult Login(DTOs.CreateUserDTO createUserDTO)
+        public IActionResult Login(CreateUserDTO createUserDTO)
         {
             var user = _userService.Login(createUserDTO);
             return Ok(user);
         }
         [HttpPost("refresh")]
         [AllowAnonymous]
-        public IActionResult ReFresh(string refreshtoken) 
+        public IActionResult ReFresh(string refreshtoken)
         {
                 var result= _tokenService.RefreshToken(refreshtoken);
                 return Ok(result);
@@ -77,6 +91,14 @@ namespace day1.Controllers
         {
                 _userService.DeleteByUserName(username);
                 return Ok("删除成功!");
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("DeleteByUserId")]
+        public IActionResult DeleteByUserId(int userid)
+        {
+            _userService.DeleteByUserId(userid);
+            return Ok("删除成功!");
         }
     }
 }
