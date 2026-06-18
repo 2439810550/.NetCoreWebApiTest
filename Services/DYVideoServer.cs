@@ -62,10 +62,10 @@ namespace day1.Services
             return trimmed;
         }
 
-        public async Task<ApiResponse<DYIRemoveVideoWatermarkDTO>> RemoveWatermarkAsync(string input)
+        public async Task<ApiResponse<DYIRemoveVideoWatermarkDTO>> RemoveWatermarkAsync(string input, string? proxyUrl = null)
         {
             // 主解析：media-parser
-            var mpResult = await _mediaParser.ParseAsync(input);
+            var mpResult = await _mediaParser.ParseAsync(input, proxyUrl);
             if (mpResult.Retcode == 200 && mpResult.Data != null)
             {
                 var mpData = mpResult.Data;

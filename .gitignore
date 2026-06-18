@@ -1,0 +1,11 @@
+bin/
+obj/
+logs/
+publish/
+.vs/
+.vscode/
+node_modules/
+wwwroot/
+*.user
+*.suo
+*.pbxuser

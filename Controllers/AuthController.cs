@@ -95,7 +95,7 @@ namespace day1.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpDelete("DeleteByUserId")]
-        public IActionResult DeleteByUserId(int userid)
+        public IActionResult DeleteByUserId(long userid)
         {
             _userService.DeleteByUserId(userid);
             return Ok("删除成功!");

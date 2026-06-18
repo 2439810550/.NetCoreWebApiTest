@@ -14,7 +14,7 @@ namespace day1.Services
         DTOs.LoginResponseDto Login(DTOs.CreateUserDTO createUserDTO);
 
         void DeleteByUserName(string username);
-        void DeleteByUserId(int userId);
+        void DeleteByUserId(long userId);
 
         Task<PagedResult<UserListDto>> GetUsersPagedAsync(int page, int size, string? keyword);
         Task UpdateUserAsync(long id, UpdateUserDto dto);

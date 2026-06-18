@@ -110,10 +110,10 @@ namespace day1.Services
         private void CheckPassword(string password)
         {
             if (password.Length < 6)
-                throw new Exception("密码长度不能小于6位");
+                throw new BusinessException(Domain.Enum.BusinessErrorCode.ValidationError, "密码长度不能小于6位");
 
             if (!password.Any(char.IsDigit) || !password.Any(char.IsLetter))
-                throw new Exception("密码必须包含字母和数字");
+                throw new BusinessException(Domain.Enum.BusinessErrorCode.ValidationError, "密码必须包含字母和数字");
         }
 
         public User? GetById(long id)
@@ -180,7 +180,7 @@ namespace day1.Services
             _userRepository.DeleteByUserName(username);
         }
 
-        public void DeleteByUserId(int userId)
+        public void DeleteByUserId(long userId)
         {
             var user = _userRepository.GetById(userId);
             if (user == null)

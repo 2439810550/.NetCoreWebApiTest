@@ -28,12 +28,15 @@ var builder = WebApplication.CreateBuilder(args);
 var jwtKey = builder.Configuration["Jwt:Key"] ?? throw new Exception("未配置 Jwt:Key");
 var key = Encoding.UTF8.GetBytes(jwtKey);
 //var key =Encoding.UTF8.GetBytes("ThisIsMySuperSecretKey1234567890123456");
+// CORS 配置：从配置读取允许的来源（生产环境应通过环境变量覆盖）
+var corsOrigins = builder.Configuration.GetSection("Cors:Origins").Get<string[]>()
+                  ?? new[] { "http://localhost:5173" };
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("VueCors", policy =>
     {
         policy
-        .WithOrigins("http://localhost:5173", "http://47.99.133.151")
+        .WithOrigins(corsOrigins)
         .AllowAnyHeader()
         .AllowAnyMethod();
     });
@@ -63,10 +66,12 @@ builder.Services.AddAuthentication(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
     {
-        ValidateIssuer = false,
-        ValidateAudience = false,
+        ValidateIssuer = true,
+        ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
         IssuerSigningKey = new SymmetricSecurityKey(key),
         ClockSkew = TimeSpan.Zero
     };
@@ -140,8 +145,20 @@ builder.Services.AddHttpClient<IDouYinVideoApiService, DouYinVideoApiService>(cl
 });
 builder.Services.AddHttpClient<IMediaParserService, MediaParserService>(client =>
 {
-    client.BaseAddress = new Uri("http://localhost:8051");
+    client.BaseAddress = new Uri(builder.Configuration["MediaParser:BaseUrl"] ?? "http://localhost:8051");
     client.Timeout = TimeSpan.FromSeconds(30);
+});
+
+// 视频代理专用的 HttpClient（不绑定 BaseAddress，动态请求不同域名）
+// 关闭自动重定向，由 ProxyVideo 手动跟随以保证每次跳转都带 Referer
+builder.Services.AddHttpClient("VideoProxy", client =>
+{
+    client.DefaultRequestHeaders.UserAgent.ParseAdd(
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
+    client.Timeout = TimeSpan.FromSeconds(60);
+}).ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
+{
+    AllowAutoRedirect = false
 });
 builder.Services.AddScoped<DYVideoServer>();
 builder.Services.AddScoped<DBInitializer>();
@@ -149,18 +166,28 @@ builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 
 // 配置 HTTP 请求管道
-if (app.Environment.IsDevelopment())
+// Swagger：开发环境默认开启，生产环境如需开启设置 EnableSwagger=true
+var enableSwagger = app.Environment.IsDevelopment()
+                    || builder.Configuration.GetValue<bool>("EnableSwagger");
+if (enableSwagger)
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 /// 全局使用自定义异常处理中间件
 app.UseMiddleware<ExceptionMiddleware>();
+
+// IIS 已处理 HTTPS，不需要 Kestrel 层重定向
 app.UseCors("VueCors");
 
-// 静态文件 + 默认文档（必须在认证和控制器之前）
+// 静态文件 + 默认文档（必须在 UseRouting 之前！）
+// ASP.NET Core 8 隐式将 UseRouting 放在管道最前面，MapFallbackToFile 的 endpoint
+// 会抢先匹配 /pigeon-shake/ 等无扩展名路径，导致 UseDefaultFiles 跳过重写。
+// 显式将 UseRouting 放在静态文件之后，确保 DefaultFiles 正常工作。
 app.UseDefaultFiles();
 app.UseStaticFiles();
+
+app.UseRouting();
 
 /// 启用认证和授权中间件
 app.UseAuthentication();

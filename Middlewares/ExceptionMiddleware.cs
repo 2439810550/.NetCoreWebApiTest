@@ -44,9 +44,10 @@ namespace day1.Middlewares
                 httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                 httpContext.Response.ContentType = "application/json";
                 var response = new ApiResponse<object>
-                { 
+                {
                     Success = false,
-                    Message = ex.Message,
+                    // 生产环境不暴露异常详情，仅返回通用错误信息
+                    Message = "服务器内部错误，请稍后重试",
                     Code=500
                 };
                 await httpContext.Response.WriteAsync(JsonSerializer.Serialize(response));

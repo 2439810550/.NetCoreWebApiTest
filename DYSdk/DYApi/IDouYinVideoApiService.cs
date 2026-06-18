@@ -10,7 +10,7 @@ namespace day1.DYSdk.DYApi
 
     public interface IMediaParserService
     {
-        Task<MediaParserResponse> ParseAsync(string text);
+        Task<MediaParserResponse> ParseAsync(string text, string? proxyUrl = null);
     }
 
     public class DouYinVideoApiService : IDouYinVideoApiService
@@ -52,9 +52,9 @@ namespace day1.DYSdk.DYApi
         {
             _httpClient = httpClient;
         }
-        public async Task<MediaParserResponse> ParseAsync(string text)
+        public async Task<MediaParserResponse> ParseAsync(string text, string? proxyUrl = null)
         {
-            var payload = JsonSerializer.Serialize(new { text });
+            var payload = JsonSerializer.Serialize(new { text, proxy_url = proxyUrl ?? "" });
             try
             {
                 var response = await _httpClient.PostAsync("/api/parse",
